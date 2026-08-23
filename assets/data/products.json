@@ -1,0 +1,5763 @@
+{
+ "categories": [
+  {
+   "id": 1,
+   "slug": "digital",
+   "emoji": "📱",
+   "sortOrder": 1,
+   "name": {
+    "en": "Phones & Digital",
+    "zhHans": "手机数码",
+    "zhHant": "手機數碼"
+   }
+  },
+  {
+   "id": 2,
+   "slug": "computers",
+   "emoji": "💻",
+   "sortOrder": 2,
+   "name": {
+    "en": "Computers & Office",
+    "zhHans": "电脑办公",
+    "zhHant": "電腦辦公"
+   }
+  },
+  {
+   "id": 3,
+   "slug": "appliances",
+   "emoji": "🔌",
+   "sortOrder": 3,
+   "name": {
+    "en": "Home Appliances",
+    "zhHans": "家用电器",
+    "zhHant": "家用電器"
+   }
+  },
+  {
+   "id": 4,
+   "slug": "audio",
+   "emoji": "🎧",
+   "sortOrder": 4,
+   "name": {
+    "en": "Audio & Video",
+    "zhHans": "耳机影音",
+    "zhHant": "耳機影音"
+   }
+  },
+  {
+   "id": 5,
+   "slug": "fashion",
+   "emoji": "👗",
+   "sortOrder": 5,
+   "name": {
+    "en": "Fashion",
+    "zhHans": "服饰鞋包",
+    "zhHant": "服飾鞋包"
+   }
+  },
+  {
+   "id": 6,
+   "slug": "beauty",
+   "emoji": "💄",
+   "sortOrder": 6,
+   "name": {
+    "en": "Beauty & Care",
+    "zhHans": "美妆个护",
+    "zhHant": "美妝個護"
+   }
+  },
+  {
+   "id": 7,
+   "slug": "grocery",
+   "emoji": "🍱",
+   "sortOrder": 7,
+   "name": {
+    "en": "Grocery & Fresh",
+    "zhHans": "食品生鲜",
+    "zhHant": "食品生鮮"
+   }
+  },
+  {
+   "id": 8,
+   "slug": "living",
+   "emoji": "🛋️",
+   "sortOrder": 8,
+   "name": {
+    "en": "Home & Living",
+    "zhHans": "家居日用",
+    "zhHant": "家居日用"
+   }
+  },
+  {
+   "id": 9,
+   "slug": "sports",
+   "emoji": "🏀",
+   "sortOrder": 9,
+   "name": {
+    "en": "Sports & Outdoor",
+    "zhHans": "运动户外",
+    "zhHant": "運動戶外"
+   }
+  },
+  {
+   "id": 10,
+   "slug": "baby",
+   "emoji": "🧸",
+   "sortOrder": 10,
+   "name": {
+    "en": "Baby & Toys",
+    "zhHans": "母婴玩具",
+    "zhHant": "母嬰玩具"
+   }
+  },
+  {
+   "id": 11,
+   "slug": "books",
+   "emoji": "📚",
+   "sortOrder": 11,
+   "name": {
+    "en": "Books & Fun",
+    "zhHans": "图书文娱",
+    "zhHant": "圖書文娛"
+   }
+  },
+  {
+   "id": 12,
+   "slug": "pet",
+   "emoji": "🐾",
+   "sortOrder": 12,
+   "name": {
+    "en": "Pet Life",
+    "zhHans": "宠物生活",
+    "zhHant": "寵物生活"
+   }
+  }
+ ],
+ "products": [
+  {
+   "id": 1,
+   "categoryId": 1,
+   "brand": {
+    "en": "Nebula",
+    "zhHans": "星尘",
+    "zhHant": "星塵"
+   },
+   "model": "X5 Pro",
+   "name": {
+    "en": "Nebula X5 Pro Flagship Smartphone 512GB",
+    "zhHans": "星尘 X5 Pro 旗舰手机 512GB",
+    "zhHant": "星塵 X5 Pro 旗艦手機 512GB"
+   },
+   "subtitle": {
+    "en": "Next-gen chip with 120Hz LTPO display and 100W fast charge.",
+    "zhHans": "新一代旗舰芯片，120Hz LTPO 护眼屏，100W 快充。",
+    "zhHant": "新一代旗艦晶片，120Hz LTPO 護眼螢幕，100W 快充。"
+   },
+   "description": {
+    "en": "Next-gen chip with 120Hz LTPO display and 100W fast charge. A favorite pick from our flagship smartphone selection.",
+    "zhHans": "新一代旗舰芯片，120Hz LTPO 护眼屏，100W 快充。来自星尘的热销之选，品质与口碑双在线。",
+    "zhHant": "新一代旗艦晶片，120Hz LTPO 護眼螢幕，100W 快充。來自星塵的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 459900,
+   "originalPriceCents": 529900,
+   "stock": 712,
+   "sales": 58320,
+   "rating": 4.6,
+   "tags": [
+    "flagship",
+    "5g",
+    "amoled"
+   ],
+   "flashSale": true,
+   "imageKeyword": "smartphone",
+   "lock": 107
+  },
+  {
+   "id": 2,
+   "categoryId": 1,
+   "brand": {
+    "en": "Nebula",
+    "zhHans": "星尘",
+    "zhHant": "星塵"
+   },
+   "model": "X5",
+   "name": {
+    "en": "Nebula X5 Flagship Smartphone 256GB",
+    "zhHans": "星尘 X5 旗舰手机 256GB",
+    "zhHant": "星塵 X5 旗艦手機 256GB"
+   },
+   "subtitle": {
+    "en": "Same flagship core, lighter on the wallet.",
+    "zhHans": "同款旗舰核心，价格更亲民。",
+    "zhHant": "同款旗艦核心，價格更親民。"
+   },
+   "description": {
+    "en": "Same flagship core, lighter on the wallet. A favorite pick from our flagship smartphone selection.",
+    "zhHans": "同款旗舰核心，价格更亲民。来自星尘的热销之选，品质与口碑双在线。",
+    "zhHant": "同款旗艦核心，價格更親民。來自星塵的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 359900,
+   "originalPriceCents": 399900,
+   "stock": 201,
+   "sales": 51258,
+   "rating": 4.5,
+   "tags": [
+    "flagship",
+    "5g"
+   ],
+   "flashSale": false,
+   "imageKeyword": "smartphone",
+   "lock": 114
+  },
+  {
+   "id": 3,
+   "categoryId": 1,
+   "brand": {
+    "en": "Aurora",
+    "zhHans": "极光",
+    "zhHant": "極光"
+   },
+   "model": "Fold S",
+   "name": {
+    "en": "Aurora Fold S Foldable Phone 512GB",
+    "zhHans": "极光 Fold S 折叠屏手机 512GB",
+    "zhHant": "極光 Fold S 摺疊螢幕手機 512GB"
+   },
+   "subtitle": {
+    "en": "8-inch inner screen folds into a pocketable body.",
+    "zhHans": "8 英寸内屏，折叠后轻松入袋。",
+    "zhHant": "8 吋內螢幕，摺疊後輕鬆入袋。"
+   },
+   "description": {
+    "en": "8-inch inner screen folds into a pocketable body. A favorite pick from our foldable phone selection.",
+    "zhHans": "8 英寸内屏，折叠后轻松入袋。来自极光的热销之选，品质与口碑双在线。",
+    "zhHant": "8 吋內螢幕，摺疊後輕鬆入袋。來自極光的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 799900,
+   "originalPriceCents": 899900,
+   "stock": 119,
+   "sales": 20700,
+   "rating": 4.7,
+   "tags": [
+    "foldable",
+    "5g"
+   ],
+   "flashSale": false,
+   "imageKeyword": "smartphone",
+   "lock": 121
+  },
+  {
+   "id": 4,
+   "categoryId": 1,
+   "brand": {
+    "en": "Baize",
+    "zhHans": "白泽",
+    "zhHant": "白澤"
+   },
+   "model": "Neo 9",
+   "name": {
+    "en": "Baize Neo 9 Performance Phone 256GB",
+    "zhHans": "白泽 Neo 9 性能手机 256GB",
+    "zhHant": "白澤 Neo 9 性能手機 256GB"
+   },
+   "subtitle": {
+    "en": "Gaming-grade cooling keeps frame rates flat.",
+    "zhHans": "电竞级散热，帧率稳如直线。",
+    "zhHant": "電競級散熱，幀率穩如直線。"
+   },
+   "description": {
+    "en": "Gaming-grade cooling keeps frame rates flat. A favorite pick from our performance phone selection.",
+    "zhHans": "电竞级散热，帧率稳如直线。来自白泽的热销之选，品质与口碑双在线。",
+    "zhHant": "電競級散熱，幀率穩如直線。來自白澤的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 259900,
+   "originalPriceCents": 299900,
+   "stock": 596,
+   "sales": 49183,
+   "rating": 4.5,
+   "tags": [
+    "gaming",
+    "5g"
+   ],
+   "flashSale": true,
+   "imageKeyword": "smartphone",
+   "lock": 128
+  },
+  {
+   "id": 5,
+   "categoryId": 1,
+   "brand": {
+    "en": "Mistral",
+    "zhHans": "岚风",
+    "zhHant": "嵐風"
+   },
+   "model": "Lite 5G",
+   "name": {
+    "en": "Mistral Lite 5G Budget Smartphone 128GB",
+    "zhHans": "岚风 Lite 5G 5G 千元机 128GB",
+    "zhHant": "嵐風 Lite 5G 5G 千元機 128GB"
+   },
+   "subtitle": {
+    "en": "5G and a big battery under ¥1,500.",
+    "zhHans": "千元档也有 5G 和大电池。",
+    "zhHant": "千元檔也有 5G 和大電池。"
+   },
+   "description": {
+    "en": "5G and a big battery under ¥1,500. A favorite pick from our budget smartphone selection.",
+    "zhHans": "千元档也有 5G 和大电池。来自岚风的热销之选，品质与口碑双在线。",
+    "zhHant": "千元檔也有 5G 和大電池。來自嵐風的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 129900,
+   "originalPriceCents": 149900,
+   "stock": 216,
+   "sales": 26174,
+   "rating": 4.9,
+   "tags": [
+    "budget",
+    "5g"
+   ],
+   "flashSale": false,
+   "imageKeyword": "smartphone",
+   "lock": 135
+  },
+  {
+   "id": 6,
+   "categoryId": 1,
+   "brand": {
+    "en": "Obsidian",
+    "zhHans": "曜石",
+    "zhHant": "曜石"
+   },
+   "model": "UltraCam 200",
+   "name": {
+    "en": "Obsidian UltraCam 200 Camera Phone 1TB",
+    "zhHans": "曜石 UltraCam 200 影像手机 1TB",
+    "zhHant": "曜石 UltraCam 200 影像手機 1TB"
+   },
+   "subtitle": {
+    "en": "1-inch sensor and 200MP periscope zoom.",
+    "zhHans": "一英寸大底，200MP 潜望长焦。",
+    "zhHant": "一吋大底，200MP 潛望長焦。"
+   },
+   "description": {
+    "en": "1-inch sensor and 200MP periscope zoom. A favorite pick from our camera phone selection.",
+    "zhHans": "一英寸大底，200MP 潜望长焦。来自曜石的热销之选，品质与口碑双在线。",
+    "zhHant": "一吋大底，200MP 潛望長焦。來自曜石的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 669900,
+   "originalPriceCents": 729900,
+   "stock": 909,
+   "sales": 1881,
+   "rating": 4.7,
+   "tags": [
+    "camera",
+    "flagship"
+   ],
+   "flashSale": false,
+   "imageKeyword": "smartphone",
+   "lock": 142
+  },
+  {
+   "id": 7,
+   "categoryId": 1,
+   "brand": {
+    "en": "Skylark",
+    "zhHans": "云雀",
+    "zhHant": "雲雀"
+   },
+   "model": "Tab Air",
+   "name": {
+    "en": "Skylark Tab Air Tablet 11英寸 256GB",
+    "zhHans": "云雀 Tab Air 平板电脑 11英寸 256GB",
+    "zhHant": "雲雀 Tab Air 平板電腦 11英寸 256GB"
+   },
+   "subtitle": {
+    "en": "2.8K 144Hz screen, great for notes and streaming.",
+    "zhHans": "2.8K 144Hz 好屏，笔记追剧两相宜。",
+    "zhHant": "2.8K 144Hz 好好螢幕，筆記追劇兩相宜。"
+   },
+   "description": {
+    "en": "2.8K 144Hz screen, great for notes and streaming. A favorite pick from our tablet selection.",
+    "zhHans": "2.8K 144Hz 好屏，笔记追剧两相宜。来自云雀的热销之选，品质与口碑双在线。",
+    "zhHant": "2.8K 144Hz 好好螢幕，筆記追劇兩相宜。來自雲雀的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 199900,
+   "originalPriceCents": 239900,
+   "stock": 514,
+   "sales": 43675,
+   "rating": 4.5,
+   "tags": [
+    "tablet",
+    "stylus"
+   ],
+   "flashSale": false,
+   "imageKeyword": "tablet",
+   "lock": 149
+  },
+  {
+   "id": 8,
+   "categoryId": 1,
+   "brand": {
+    "en": "Skylark",
+    "zhHans": "云雀",
+    "zhHant": "雲雀"
+   },
+   "model": "Tab Pro",
+   "name": {
+    "en": "Skylark Tab Pro Tablet 12.6英寸 512GB",
+    "zhHans": "云雀 Tab Pro 平板电脑 12.6英寸 512GB",
+    "zhHant": "雲雀 Tab Pro 平板電腦 12.6英寸 512GB"
+   },
+   "subtitle": {
+    "en": "Desktop-class chip handles light editing on the go.",
+    "zhHans": "桌面级芯片，随身轻办公。",
+    "zhHant": "桌面級晶片，隨身輕辦公。"
+   },
+   "description": {
+    "en": "Desktop-class chip handles light editing on the go. A favorite pick from our tablet selection.",
+    "zhHans": "桌面级芯片，随身轻办公。来自云雀的热销之选，品质与口碑双在线。",
+    "zhHant": "桌面級晶片，隨身輕辦公。來自雲雀的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 349900,
+   "originalPriceCents": 389900,
+   "stock": 928,
+   "sales": 38040,
+   "rating": 4.4,
+   "tags": [
+    "tablet",
+    "productivity"
+   ],
+   "flashSale": false,
+   "imageKeyword": "tablet",
+   "lock": 156
+  },
+  {
+   "id": 9,
+   "categoryId": 1,
+   "brand": {
+    "en": "Lumi",
+    "zhHans": "拾光",
+    "zhHant": "拾光"
+   },
+   "model": "Watch C3",
+   "name": {
+    "en": "Lumi Watch C3 Smartwatch",
+    "zhHans": "拾光 Watch C3 智能手表",
+    "zhHant": "拾光 Watch C3 智慧手錶"
+   },
+   "subtitle": {
+    "en": "14-day battery with full health tracking.",
+    "zhHans": "14 天长续航，健康监测全都有。",
+    "zhHant": "14 天長續航，健康監測全都有。"
+   },
+   "description": {
+    "en": "14-day battery with full health tracking. A favorite pick from our smartwatch selection.",
+    "zhHans": "14 天长续航，健康监测全都有。来自拾光的热销之选，品质与口碑双在线。",
+    "zhHant": "14 天長續航，健康監測全都有。來自拾光的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 89900,
+   "originalPriceCents": 109900,
+   "stock": 571,
+   "sales": 10007,
+   "rating": 4.6,
+   "tags": [
+    "smartwatch",
+    "health"
+   ],
+   "flashSale": true,
+   "imageKeyword": "smartwatch",
+   "lock": 163
+  },
+  {
+   "id": 10,
+   "categoryId": 1,
+   "brand": {
+    "en": "Lumi",
+    "zhHans": "拾光",
+    "zhHant": "拾光"
+   },
+   "model": "Band 9",
+   "name": {
+    "en": "Lumi Band 9 Fitness Band",
+    "zhHans": "拾光 Band 9 智能手环",
+    "zhHant": "拾光 Band 9 智慧手環"
+   },
+   "subtitle": {
+    "en": "Lightweight tracker for sleep, steps and SpO2.",
+    "zhHans": "轻若无物，睡眠步数血氧都记录。",
+    "zhHant": "輕若無物，睡眠步數血氧都記錄。"
+   },
+   "description": {
+    "en": "Lightweight tracker for sleep, steps and SpO2. A favorite pick from our fitness band selection.",
+    "zhHans": "轻若无物，睡眠步数血氧都记录。来自拾光的热销之选，品质与口碑双在线。",
+    "zhHant": "輕若無物，睡眠步數血氧都記錄。來自拾光的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 24900,
+   "originalPriceCents": 29900,
+   "stock": 262,
+   "sales": 33359,
+   "rating": 4.6,
+   "tags": [
+    "band",
+    "fitness"
+   ],
+   "flashSale": false,
+   "imageKeyword": "smartwatch",
+   "lock": 170
+  },
+  {
+   "id": 11,
+   "categoryId": 1,
+   "brand": {
+    "en": "Sailon",
+    "zhHans": "千帆",
+    "zhHant": "千帆"
+   },
+   "model": "Cam M2",
+   "name": {
+    "en": "Sailon Cam M2 Mirrorless Camera APS-C 双镜头",
+    "zhHans": "千帆 Cam M2 微单相机 APS-C 双镜头",
+    "zhHant": "千帆 Cam M2 微單相機 APS-C 双镜头"
+   },
+   "subtitle": {
+    "en": "Flip screen and eye-AF for vlog starters.",
+    "zhHans": "翻转屏+眼部对焦，Vlog 入门首选。",
+    "zhHant": "翻轉螢幕+眼部對焦，Vlog 入門首選。"
+   },
+   "description": {
+    "en": "Flip screen and eye-AF for vlog starters. A favorite pick from our mirrorless camera selection.",
+    "zhHans": "翻转屏+眼部对焦，Vlog 入门首选。来自千帆的热销之选，品质与口碑双在线。",
+    "zhHant": "翻轉螢幕+眼部對焦，Vlog 入門首選。來自千帆的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 489900,
+   "originalPriceCents": 559900,
+   "stock": 101,
+   "sales": 8203,
+   "rating": 4.7,
+   "tags": [
+    "camera",
+    "vlog"
+   ],
+   "flashSale": false,
+   "imageKeyword": "camera",
+   "lock": 177
+  },
+  {
+   "id": 12,
+   "categoryId": 1,
+   "brand": {
+    "en": "Sailon",
+    "zhHans": "千帆",
+    "zhHant": "千帆"
+   },
+   "model": "Cam Pocket",
+   "name": {
+    "en": "Sailon Cam Pocket Compact Camera",
+    "zhHans": "千帆 Cam Pocket 卡片相机",
+    "zhHant": "千帆 Cam Pocket 卡片相機"
+   },
+   "subtitle": {
+    "en": "Pocketable retro body, one-button shooting.",
+    "zhHans": "复古小巧机身，一键直出氛围感。",
+    "zhHant": "復古小巧機身，一鍵直出氛圍感。"
+   },
+   "description": {
+    "en": "Pocketable retro body, one-button shooting. A favorite pick from our compact camera selection.",
+    "zhHans": "复古小巧机身，一键直出氛围感。来自千帆的热销之选，品质与口碑双在线。",
+    "zhHant": "復古小巧機身，一鍵直出氛圍感。來自千帆的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 159900,
+   "originalPriceCents": 189900,
+   "stock": 298,
+   "sales": 57747,
+   "rating": 4.8,
+   "tags": [
+    "camera",
+    "retro"
+   ],
+   "flashSale": false,
+   "imageKeyword": "camera",
+   "lock": 184
+  },
+  {
+   "id": 13,
+   "categoryId": 1,
+   "brand": {
+    "en": "Volta",
+    "zhHans": "伏特",
+    "zhHant": "伏特"
+   },
+   "model": "Fly One",
+   "name": {
+    "en": "Volta Fly One Entry Drone",
+    "zhHans": "伏特 Fly One 入门无人机",
+    "zhHant": "伏特 Fly One 入門無人機"
+   },
+   "subtitle": {
+    "en": "GPS return-to-home and 31-min flight time.",
+    "zhHans": "GPS 一键返航，31 分钟续航。",
+    "zhHant": "GPS 一鍵返航，31 分鐘續航。"
+   },
+   "description": {
+    "en": "GPS return-to-home and 31-min flight time. A favorite pick from our entry drone selection.",
+    "zhHans": "GPS 一键返航，31 分钟续航。来自伏特的热销之选，品质与口碑双在线。",
+    "zhHant": "GPS 一鍵返航，31 分鐘續航。來自伏特的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 169900,
+   "originalPriceCents": 199900,
+   "stock": 803,
+   "sales": 33940,
+   "rating": 4.4,
+   "tags": [
+    "drone",
+    "gps"
+   ],
+   "flashSale": false,
+   "imageKeyword": "drone",
+   "lock": 191
+  },
+  {
+   "id": 14,
+   "categoryId": 1,
+   "brand": {
+    "en": "Volta",
+    "zhHans": "伏特",
+    "zhHant": "伏特"
+   },
+   "model": "Fly Mini",
+   "name": {
+    "en": "Volta Fly Mini Mini Drone",
+    "zhHans": "伏特 Fly Mini 迷你无人机",
+    "zhHant": "伏特 Fly Mini 迷你無人機"
+   },
+   "subtitle": {
+    "en": "Under 249g, no registration needed in most regions.",
+    "zhHans": "249g 以内，多数地区免登记。",
+    "zhHant": "249g 以內，多數地區免登記。"
+   },
+   "description": {
+    "en": "Under 249g, no registration needed in most regions. A favorite pick from our mini drone selection.",
+    "zhHans": "249g 以内，多数地区免登记。来自伏特的热销之选，品质与口碑双在线。",
+    "zhHant": "249g 以內，多數地區免登記。來自伏特的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 229900,
+   "originalPriceCents": 259900,
+   "stock": 132,
+   "sales": 15542,
+   "rating": 4.5,
+   "tags": [
+    "drone",
+    "mini"
+   ],
+   "flashSale": false,
+   "imageKeyword": "drone",
+   "lock": 198
+  },
+  {
+   "id": 15,
+   "categoryId": 1,
+   "brand": {
+    "en": "Kestrel",
+    "zhHans": "红隼",
+    "zhHant": "紅隼"
+   },
+   "model": "Charge 20K",
+   "name": {
+    "en": "Kestrel Charge 20K Power Bank 20000mAh 65W",
+    "zhHans": "红隼 Charge 20K 充电宝 20000mAh 65W",
+    "zhHant": "紅隼 Charge 20K 行動電源 20000mAh 65W"
+   },
+   "subtitle": {
+    "en": "Charges your laptop, airline-safe capacity.",
+    "zhHans": "能给笔记本充电，可带上飞机。",
+    "zhHant": "能給筆電充電，可帶上飛機。"
+   },
+   "description": {
+    "en": "Charges your laptop, airline-safe capacity. A favorite pick from our power bank selection.",
+    "zhHans": "能给笔记本充电，可带上飞机。来自红隼的热销之选，品质与口碑双在线。",
+    "zhHant": "能給筆電充電，可帶上飛機。來自紅隼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 19900,
+   "originalPriceCents": 25900,
+   "stock": 128,
+   "sales": 7680,
+   "rating": 4.5,
+   "tags": [
+    "powerbank",
+    "fastcharge"
+   ],
+   "flashSale": false,
+   "imageKeyword": "powerbank",
+   "lock": 205
+  },
+  {
+   "id": 16,
+   "categoryId": 1,
+   "brand": {
+    "en": "Kestrel",
+    "zhHans": "红隼",
+    "zhHant": "紅隼"
+   },
+   "model": "GaN Trio",
+   "name": {
+    "en": "Kestrel GaN Trio GaN Charger 65W 三口",
+    "zhHans": "红隼 GaN Trio 氮化镓充电器 65W 三口",
+    "zhHant": "紅隼 GaN Trio 氮化鎵充電器 65W 三口"
+   },
+   "subtitle": {
+    "en": "One brick for phone, tablet and laptop.",
+    "zhHans": "一个头搞定手机平板笔记本。",
+    "zhHant": "一個頭搞分手機平板筆電。"
+   },
+   "description": {
+    "en": "One brick for phone, tablet and laptop. A favorite pick from our gan charger selection.",
+    "zhHans": "一个头搞定手机平板笔记本。来自红隼的热销之选，品质与口碑双在线。",
+    "zhHant": "一個頭搞分手機平板筆電。來自紅隼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 16900,
+   "stock": 623,
+   "sales": 18840,
+   "rating": 4.5,
+   "tags": [
+    "charger",
+    "gan"
+   ],
+   "flashSale": false,
+   "imageKeyword": "powerbank",
+   "lock": 212
+  },
+  {
+   "id": 17,
+   "categoryId": 1,
+   "brand": {
+    "en": "Camellia",
+    "zhHans": "山茶",
+    "zhHant": "山茶"
+   },
+   "model": "Drive 4K",
+   "name": {
+    "en": "Camellia Drive 4K Dash Cam",
+    "zhHans": "山茶 Drive 4K 行车记录仪",
+    "zhHant": "山茶 Drive 4K 行車記錄器"
+   },
+   "subtitle": {
+    "en": "4K night vision with parking guard.",
+    "zhHans": "4K 夜视，停车监控全时守护。",
+    "zhHant": "4K 夜視，停車監控全時守護。"
+   },
+   "description": {
+    "en": "4K night vision with parking guard. A favorite pick from our dash cam selection.",
+    "zhHans": "4K 夜视，停车监控全时守护。来自山茶的热销之选，品质与口碑双在线。",
+    "zhHant": "4K 夜視，停車監控全時守護。來自山茶的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 391,
+   "sales": 40608,
+   "rating": 4.5,
+   "tags": [
+    "dashcam",
+    "car"
+   ],
+   "flashSale": false,
+   "imageKeyword": "camera",
+   "lock": 219
+  },
+  {
+   "id": 18,
+   "categoryId": 1,
+   "brand": {
+    "en": "Velvet",
+    "zhHans": "绒言",
+    "zhHant": "絨言"
+   },
+   "model": "Reader 7",
+   "name": {
+    "en": "Velvet Reader 7 E-reader 7英寸",
+    "zhHans": "绒言 Reader 7 电子书阅读器 7英寸",
+    "zhHant": "絨言 Reader 7 電子書閱讀器 7英寸"
+   },
+   "subtitle": {
+    "en": "Warm-light e-ink, weeks of reading per charge.",
+    "zhHans": "暖光墨水屏，一次充电读数周。",
+    "zhHant": "暖光墨水屏，一次充電讀數週。"
+   },
+   "description": {
+    "en": "Warm-light e-ink, weeks of reading per charge. A favorite pick from our e-reader selection.",
+    "zhHans": "暖光墨水屏，一次充电读数周。来自绒言的热销之选，品质与口碑双在线。",
+    "zhHant": "暖光墨水屏，一次充電讀數週。來自絨言的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 89900,
+   "originalPriceCents": 99900,
+   "stock": 485,
+   "sales": 54213,
+   "rating": 4.6,
+   "tags": [
+    "ereader",
+    "ink"
+   ],
+   "flashSale": false,
+   "imageKeyword": "tablet",
+   "lock": 226
+  },
+  {
+   "id": 19,
+   "categoryId": 2,
+   "brand": {
+    "en": "Mistral",
+    "zhHans": "岚风",
+    "zhHant": "嵐風"
+   },
+   "model": "Book 14",
+   "name": {
+    "en": "Mistral Book 14 Ultrabook 14英寸 32GB",
+    "zhHans": "岚风 Book 14 轻薄笔记本 14英寸 32GB",
+    "zhHant": "嵐風 Book 14 輕薄筆電 14英寸 32GB"
+   },
+   "subtitle": {
+    "en": "1.19kg magnesium body, all-day 18h battery.",
+    "zhHans": "1.19kg 镁合金机身，18 小时全天续航。",
+    "zhHant": "1.19kg 鎂合金機身，18 小時全天續航。"
+   },
+   "description": {
+    "en": "1.19kg magnesium body, all-day 18h battery. A favorite pick from our ultrabook selection.",
+    "zhHans": "1.19kg 镁合金机身，18 小时全天续航。来自岚风的热销之选，品质与口碑双在线。",
+    "zhHant": "1.19kg 鎂合金機身，18 小時全天續航。來自嵐風的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 569900,
+   "originalPriceCents": 629900,
+   "stock": 786,
+   "sales": 34771,
+   "rating": 4.9,
+   "tags": [
+    "laptop",
+    "ultrabook"
+   ],
+   "flashSale": false,
+   "imageKeyword": "laptop",
+   "lock": 233
+  },
+  {
+   "id": 20,
+   "categoryId": 2,
+   "brand": {
+    "en": "Obsidian",
+    "zhHans": "曜石",
+    "zhHant": "曜石"
+   },
+   "model": "Rig 16",
+   "name": {
+    "en": "Obsidian Rig 16 Gaming Laptop 16英寸 RTX级",
+    "zhHans": "曜石 Rig 16 游戏本 16英寸 RTX级",
+    "zhHant": "曜石 Rig 16 遊戲本 16英寸 RTX级"
+   },
+   "subtitle": {
+    "en": "240Hz panel with vapor-chamber cooling.",
+    "zhHans": "240Hz 高刷屏+均热板散热。",
+    "zhHant": "240Hz 高更新率螢幕+均熱板散熱。"
+   },
+   "description": {
+    "en": "240Hz panel with vapor-chamber cooling. A favorite pick from our gaming laptop selection.",
+    "zhHans": "240Hz 高刷屏+均热板散热。来自曜石的热销之选，品质与口碑双在线。",
+    "zhHant": "240Hz 高更新率螢幕+均熱板散熱。來自曜石的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 869900,
+   "originalPriceCents": 969900,
+   "stock": 618,
+   "sales": 43885,
+   "rating": 4.8,
+   "tags": [
+    "laptop",
+    "gaming"
+   ],
+   "flashSale": true,
+   "imageKeyword": "laptop",
+   "lock": 240
+  },
+  {
+   "id": 21,
+   "categoryId": 2,
+   "brand": {
+    "en": "Mousse",
+    "zhHans": "慕斯",
+    "zhHant": "慕斯"
+   },
+   "model": "Desk Mini",
+   "name": {
+    "en": "Mousse Desk Mini Mini PC",
+    "zhHans": "慕斯 Desk Mini 迷你主机",
+    "zhHant": "慕斯 Desk Mini 迷你主機"
+   },
+   "subtitle": {
+    "en": "Palm-sized desktop that drives triple 4K displays.",
+    "zhHans": "巴掌大的主机，点亮三块 4K 屏。",
+    "zhHant": "巴掌大的主機，點亮三塊 4K 螢幕。"
+   },
+   "description": {
+    "en": "Palm-sized desktop that drives triple 4K displays. A favorite pick from our mini pc selection.",
+    "zhHans": "巴掌大的主机，点亮三块 4K 屏。来自慕斯的热销之选，品质与口碑双在线。",
+    "zhHant": "巴掌大的主機，點亮三塊 4K 螢幕。來自慕斯的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 279900,
+   "originalPriceCents": 319900,
+   "stock": 702,
+   "sales": 1320,
+   "rating": 4.8,
+   "tags": [
+    "minipc",
+    "desktop"
+   ],
+   "flashSale": false,
+   "imageKeyword": "computer",
+   "lock": 247
+  },
+  {
+   "id": 22,
+   "categoryId": 2,
+   "brand": {
+    "en": "Mousse",
+    "zhHans": "慕斯",
+    "zhHant": "慕斯"
+   },
+   "model": "Office All-in-One",
+   "name": {
+    "en": "Mousse Office All-in-One All-in-One PC 27英寸",
+    "zhHans": "慕斯 Office All-in-One 一体机 27英寸",
+    "zhHant": "慕斯 Office All-in-One 一體機 27英寸"
+   },
+   "subtitle": {
+    "en": "Clean desk setup with pop-up webcam.",
+    "zhHans": "隐藏式摄像头，桌面一步清爽。",
+    "zhHant": "隱藏式鏡頭，桌面一步清爽。"
+   },
+   "description": {
+    "en": "Clean desk setup with pop-up webcam. A favorite pick from our all-in-one pc selection.",
+    "zhHans": "隐藏式摄像头，桌面一步清爽。来自慕斯的热销之选，品质与口碑双在线。",
+    "zhHant": "隱藏式鏡頭，桌面一步清爽。來自慕斯的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 469900,
+   "originalPriceCents": 529900,
+   "stock": 538,
+   "sales": 47009,
+   "rating": 4.5,
+   "tags": [
+    "aio",
+    "desktop"
+   ],
+   "flashSale": false,
+   "imageKeyword": "computer",
+   "lock": 254
+  },
+  {
+   "id": 23,
+   "categoryId": 2,
+   "brand": {
+    "en": "Tide",
+    "zhHans": "潮汐",
+    "zhHant": "潮汐"
+   },
+   "model": "Mech K87",
+   "name": {
+    "en": "Tide Mech K87 Mechanical Keyboard 87键 Gasket",
+    "zhHans": "潮汐 Mech K87 机械键盘 87键 Gasket",
+    "zhHant": "潮汐 Mech K87 機械鍵盤 87键 Gasket"
+   },
+   "subtitle": {
+    "en": "Hot-swap switches, gasket mount, creamy sound.",
+    "zhHans": "热插拔轴体+Gasket 结构，手感声音双在线。",
+    "zhHant": "熱插拔軸體+Gasket 結構，手感聲音雙在線。"
+   },
+   "description": {
+    "en": "Hot-swap switches, gasket mount, creamy sound. A favorite pick from our mechanical keyboard selection.",
+    "zhHans": "热插拔轴体+Gasket 结构，手感声音双在线。来自潮汐的热销之选，品质与口碑双在线。",
+    "zhHant": "熱插拔軸體+Gasket 結構，手感聲音雙在線。來自潮汐的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 472,
+   "sales": 45482,
+   "rating": 4.6,
+   "tags": [
+    "keyboard",
+    "mechanical"
+   ],
+   "flashSale": true,
+   "imageKeyword": "keyboard",
+   "lock": 261
+  },
+  {
+   "id": 24,
+   "categoryId": 2,
+   "brand": {
+    "en": "Tide",
+    "zhHans": "潮汐",
+    "zhHant": "潮汐"
+   },
+   "model": "Slim K1",
+   "name": {
+    "en": "Tide Slim K1 Keyboard",
+    "zhHans": "潮汐 Slim K1 薄膜键盘",
+    "zhHant": "潮汐 Slim K1 薄膜鍵盤"
+   },
+   "subtitle": {
+    "en": "Whisper-quiet scissor keys for the office.",
+    "zhHans": "剪刀脚静音结构，办公不扰邻。",
+    "zhHant": "剪刀腳靜音結構，辦公不擾鄰。"
+   },
+   "description": {
+    "en": "Whisper-quiet scissor keys for the office. A favorite pick from our keyboard selection.",
+    "zhHans": "剪刀脚静音结构，办公不扰邻。来自潮汐的热销之选，品质与口碑双在线。",
+    "zhHant": "剪刀腳靜音結構，辦公不擾鄰。來自潮汐的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 897,
+   "sales": 10281,
+   "rating": 4.6,
+   "tags": [
+    "keyboard",
+    "quiet"
+   ],
+   "flashSale": false,
+   "imageKeyword": "keyboard",
+   "lock": 268
+  },
+  {
+   "id": 25,
+   "categoryId": 2,
+   "brand": {
+    "en": "Ember",
+    "zhHans": "燃点",
+    "zhHant": "燃點"
+   },
+   "model": "Glide Pro",
+   "name": {
+    "en": "Ember Glide Pro Wireless Mouse",
+    "zhHans": "燃点 Glide Pro 无线鼠标",
+    "zhHant": "燃點 Glide Pro 無線滑鼠"
+   },
+   "subtitle": {
+    "en": "8K polling rate, 49g ultralight shell.",
+    "zhHans": "8000Hz 回报率，49g 轻量化外壳。",
+    "zhHant": "8000Hz 回報率，49g 輕量化外殼。"
+   },
+   "description": {
+    "en": "8K polling rate, 49g ultralight shell. A favorite pick from our wireless mouse selection.",
+    "zhHans": "8000Hz 回报率，49g 轻量化外壳。来自燃点的热销之选，品质与口碑双在线。",
+    "zhHant": "8000Hz 回報率，49g 輕量化外殼。來自燃點的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 24900,
+   "originalPriceCents": 29900,
+   "stock": 205,
+   "sales": 17021,
+   "rating": 4.3,
+   "tags": [
+    "mouse",
+    "wireless"
+   ],
+   "flashSale": false,
+   "imageKeyword": "mouse",
+   "lock": 275
+  },
+  {
+   "id": 26,
+   "categoryId": 2,
+   "brand": {
+    "en": "Ember",
+    "zhHans": "燃点",
+    "zhHant": "燃點"
+   },
+   "model": "Office Silent Mouse",
+   "name": {
+    "en": "Ember Office Silent Mouse Silent Mouse",
+    "zhHans": "燃点 Office Silent Mouse 静音鼠标",
+    "zhHant": "燃點 Office Silent Mouse 靜音滑鼠"
+   },
+   "subtitle": {
+    "en": "Muted clicks that survive open offices.",
+    "zhHans": "按键静音处理，开放办公室友好。",
+    "zhHant": "按鍵靜音處理，開放辦公室友善。"
+   },
+   "description": {
+    "en": "Muted clicks that survive open offices. A favorite pick from our silent mouse selection.",
+    "zhHans": "按键静音处理，开放办公室友好。来自燃点的热销之选，品质与口碑双在线。",
+    "zhHant": "按鍵靜音處理，開放辦公室友善。來自燃點的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 7900,
+   "originalPriceCents": 9900,
+   "stock": 724,
+   "sales": 37880,
+   "rating": 4.8,
+   "tags": [
+    "mouse",
+    "silent"
+   ],
+   "flashSale": false,
+   "imageKeyword": "mouse",
+   "lock": 282
+  },
+  {
+   "id": 27,
+   "categoryId": 2,
+   "brand": {
+    "en": "Sprout",
+    "zhHans": "芽绿",
+    "zhHant": "芽綠"
+   },
+   "model": "View 27",
+   "name": {
+    "en": "Sprout View 27 4K Monitor 27英寸",
+    "zhHans": "芽绿 View 27 4K 显示器 27英寸",
+    "zhHant": "芽綠 View 27 4K 顯示器 27英寸"
+   },
+   "subtitle": {
+    "en": "Factory-calibrated color, Type-C 90W.",
+    "zhHans": "出厂调色，Type-C 一线通 90W 反充。",
+    "zhHant": "原廠調色，Type-C 一線通 90W 反充。"
+   },
+   "description": {
+    "en": "Factory-calibrated color, Type-C 90W. A favorite pick from our 4k monitor selection.",
+    "zhHans": "出厂调色，Type-C 一线通 90W 反充。来自芽绿的热销之选，品质与口碑双在线。",
+    "zhHant": "原廠調色，Type-C 一線通 90W 反充。來自芽綠的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 219900,
+   "originalPriceCents": 259900,
+   "stock": 439,
+   "sales": 18467,
+   "rating": 4.8,
+   "tags": [
+    "monitor",
+    "4k"
+   ],
+   "flashSale": false,
+   "imageKeyword": "monitor",
+   "lock": 289
+  },
+  {
+   "id": 28,
+   "categoryId": 2,
+   "brand": {
+    "en": "Sprout",
+    "zhHans": "芽绿",
+    "zhHant": "芽綠"
+   },
+   "model": "View Portable",
+   "name": {
+    "en": "Sprout View Portable Portable Monitor 15.6英寸",
+    "zhHans": "芽绿 View Portable 便携显示器 15.6英寸",
+    "zhHant": "芽綠 View Portable 攜帶顯示器 15.6英寸"
+   },
+   "subtitle": {
+    "en": "Magnetic cover stand, single-cable setup.",
+    "zhHans": "磁吸保护套支架，一线即用。",
+    "zhHant": "磁吸保護套支架，一線即用。"
+   },
+   "description": {
+    "en": "Magnetic cover stand, single-cable setup. A favorite pick from our portable monitor selection.",
+    "zhHans": "磁吸保护套支架，一线即用。来自芽绿的热销之选，品质与口碑双在线。",
+    "zhHant": "磁吸保護套支架，一線即用。來自芽綠的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 99900,
+   "originalPriceCents": 119900,
+   "stock": 498,
+   "sales": 17037,
+   "rating": 4.6,
+   "tags": [
+    "monitor",
+    "portable"
+   ],
+   "flashSale": false,
+   "imageKeyword": "monitor",
+   "lock": 296
+  },
+  {
+   "id": 29,
+   "categoryId": 3,
+   "brand": {
+    "en": "Pinecone",
+    "zhHans": "松果",
+    "zhHant": "松果"
+   },
+   "model": "CycloVAC S9",
+   "name": {
+    "en": "Pinecone CycloVAC S9 Robot Vacuum",
+    "zhHans": "松果 CycloVAC S9 扫拖机器人",
+    "zhHant": "松果 CycloVAC S9 掃拖機器人"
+   },
+   "subtitle": {
+    "en": "AI obstacle avoidance and self-emptying base.",
+    "zhHans": "AI 避障+自动集尘，解放双手。",
+    "zhHant": "AI 避障+自動集塵，解放雙手。"
+   },
+   "description": {
+    "en": "AI obstacle avoidance and self-emptying base. A favorite pick from our robot vacuum selection.",
+    "zhHans": "AI 避障+自动集尘，解放双手。来自松果的热销之选，品质与口碑双在线。",
+    "zhHant": "AI 避障+自動集塵，解放雙手。來自松果的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 289900,
+   "originalPriceCents": 359900,
+   "stock": 178,
+   "sales": 24489,
+   "rating": 4.8,
+   "tags": [
+    "vacuum",
+    "robot"
+   ],
+   "flashSale": true,
+   "imageKeyword": "vacuum",
+   "lock": 303
+  },
+  {
+   "id": 30,
+   "categoryId": 3,
+   "brand": {
+    "en": "Pinecone",
+    "zhHans": "松果",
+    "zhHant": "松果"
+   },
+   "model": "Wash X",
+   "name": {
+    "en": "Pinecone Wash X Wall-wash Robot",
+    "zhHans": "松果 Wash X 洗地机器人",
+    "zhHant": "松果 Wash X 洗地機器人"
+   },
+   "subtitle": {
+    "en": "Mops floors and cleans its own rollers.",
+    "zhHans": "会拖地，还会自己搓滚刷。",
+    "zhHant": "會拖地，還會自己搓滾刷。"
+   },
+   "description": {
+    "en": "Mops floors and cleans its own rollers. A favorite pick from our wall-wash robot selection.",
+    "zhHans": "会拖地，还会自己搓滚刷。来自松果的热销之选，品质与口碑双在线。",
+    "zhHant": "會拖地，還會自己搓滾刷。來自松果的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 399900,
+   "originalPriceCents": 469900,
+   "stock": 945,
+   "sales": 46442,
+   "rating": 4.5,
+   "tags": [
+    "vacuum",
+    "mop"
+   ],
+   "flashSale": false,
+   "imageKeyword": "vacuum",
+   "lock": 310
+  },
+  {
+   "id": 31,
+   "categoryId": 3,
+   "brand": {
+    "en": "Glacier",
+    "zhHans": "冰川",
+    "zhHant": "冰川"
+   },
+   "model": "AirFry 5L",
+   "name": {
+    "en": "Glacier AirFry 5L Air Fryer 5L",
+    "zhHans": "冰川 AirFry 5L 空气炸锅 5L",
+    "zhHant": "冰川 AirFry 5L 氣炸鍋 5L"
+   },
+   "subtitle": {
+    "en": "Visual window, one-dial presets for crispy snacks.",
+    "zhHans": "可视窗+旋钮预设，炸物零失败。",
+    "zhHant": "視窗+旋鈕預設，炸物零失敗。"
+   },
+   "description": {
+    "en": "Visual window, one-dial presets for crispy snacks. A favorite pick from our air fryer selection.",
+    "zhHans": "可视窗+旋钮预设，炸物零失败。来自冰川的热销之选，品质与口碑双在线。",
+    "zhHant": "視窗+旋鈕預設，炸物零失敗。來自冰川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 39900,
+   "stock": 541,
+   "sales": 12808,
+   "rating": 4.5,
+   "tags": [
+    "airfryer",
+    "kitchen"
+   ],
+   "flashSale": false,
+   "imageKeyword": "air fryer",
+   "lock": 317
+  },
+  {
+   "id": 32,
+   "categoryId": 3,
+   "brand": {
+    "en": "Glacier",
+    "zhHans": "冰川",
+    "zhHant": "冰川"
+   },
+   "model": "MultiPot 6L",
+   "name": {
+    "en": "Glacier MultiPot 6L Pressure Cooker 6L",
+    "zhHans": "冰川 MultiPot 6L 电压力锅 6L",
+    "zhHant": "冰川 MultiPot 6L 電壓力鍋 6L"
+   },
+   "subtitle": {
+    "en": "Eight-in-one cooking from stews to yogurt.",
+    "zhHans": "炖煮焖焗一锅八用。",
+    "zhHant": "燉煮燜燴一鍋八用。"
+   },
+   "description": {
+    "en": "Eight-in-one cooking from stews to yogurt. A favorite pick from our pressure cooker selection.",
+    "zhHans": "炖煮焖焗一锅八用。来自冰川的热销之选，品质与口碑双在线。",
+    "zhHant": "燉煮燜燴一鍋八用。來自冰川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 34900,
+   "originalPriceCents": 42900,
+   "stock": 616,
+   "sales": 11164,
+   "rating": 4.9,
+   "tags": [
+    "cooker",
+    "kitchen"
+   ],
+   "flashSale": false,
+   "imageKeyword": "rice cooker",
+   "lock": 324
+  },
+  {
+   "id": 33,
+   "categoryId": 3,
+   "brand": {
+    "en": "Glacier",
+    "zhHans": "冰川",
+    "zhHant": "冰川"
+   },
+   "model": "RicePro",
+   "name": {
+    "en": "Glacier RicePro Rice Cooker 4L IH",
+    "zhHans": "冰川 RicePro 电饭煲 4L IH",
+    "zhHant": "冰川 RicePro 電子鍋 4L IH"
+   },
+   "subtitle": {
+    "en": "IH heating for fluffier grains every time.",
+    "zhHans": "IH 电磁加热，粒粒分明。",
+    "zhHant": "IH 電磁加熱，粒粒分明。"
+   },
+   "description": {
+    "en": "IH heating for fluffier grains every time. A favorite pick from our rice cooker selection.",
+    "zhHans": "IH 电磁加热，粒粒分明。来自冰川的热销之选，品质与口碑双在线。",
+    "zhHant": "IH 電磁加熱，粒粒分明。來自冰川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 49900,
+   "originalPriceCents": 59900,
+   "stock": 292,
+   "sales": 16482,
+   "rating": 4.7,
+   "tags": [
+    "ricecooker",
+    "kitchen"
+   ],
+   "flashSale": false,
+   "imageKeyword": "rice cooker",
+   "lock": 331
+  },
+  {
+   "id": 34,
+   "categoryId": 3,
+   "brand": {
+    "en": "Moonview",
+    "zhHans": "月见",
+    "zhHant": "月見"
+   },
+   "model": "BrewBar Espresso",
+   "name": {
+    "en": "Moonview BrewBar Espresso Espresso Machine 20bar",
+    "zhHans": "月见 BrewBar Espresso 意式咖啡机 20bar",
+    "zhHant": "月見 BrewBar Espresso 義式咖啡機 20bar"
+   },
+   "subtitle": {
+    "en": "20-bar pump and steam wand for cafe-level shots.",
+    "zhHans": "20bar 泵+蒸汽奶泡棒，在家出品咖啡馆。",
+    "zhHant": "20bar 泵+蒸氣奶泡棒，在家重現咖啡館。"
+   },
+   "description": {
+    "en": "20-bar pump and steam wand for cafe-level shots. A favorite pick from our espresso machine selection.",
+    "zhHans": "20bar 泵+蒸汽奶泡棒，在家出品咖啡馆。来自月见的热销之选，品质与口碑双在线。",
+    "zhHant": "20bar 泵+蒸氣奶泡棒，在家重現咖啡館。來自月見的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 139900,
+   "originalPriceCents": 169900,
+   "stock": 868,
+   "sales": 14460,
+   "rating": 4.9,
+   "tags": [
+    "coffee",
+    "espresso"
+   ],
+   "flashSale": false,
+   "imageKeyword": "coffee machine",
+   "lock": 338
+  },
+  {
+   "id": 35,
+   "categoryId": 3,
+   "brand": {
+    "en": "Moonview",
+    "zhHans": "月见",
+    "zhHant": "月見"
+   },
+   "model": "DripDaily",
+   "name": {
+    "en": "Moonview DripDaily Drip Coffee Maker",
+    "zhHans": "月见 DripDaily 滴滤咖啡机",
+    "zhHant": "月見 DripDaily 滴濾咖啡機"
+   },
+   "subtitle": {
+    "en": "Bean-to-cup grinder built in.",
+    "zhHans": "自带磨豆，现磨现煮。",
+    "zhHant": "自帶磨豆，現磨現煮。"
+   },
+   "description": {
+    "en": "Bean-to-cup grinder built in. A favorite pick from our drip coffee maker selection.",
+    "zhHans": "自带磨豆，现磨现煮。来自月见的热销之选，品质与口碑双在线。",
+    "zhHant": "自帶磨豆，現磨現煮。來自月見的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 69900,
+   "originalPriceCents": 84900,
+   "stock": 515,
+   "sales": 29995,
+   "rating": 4.8,
+   "tags": [
+    "coffee",
+    "drip"
+   ],
+   "flashSale": false,
+   "imageKeyword": "coffee machine",
+   "lock": 345
+  },
+  {
+   "id": 36,
+   "categoryId": 3,
+   "brand": {
+    "en": "Anvil",
+    "zhHans": "铁砧",
+    "zhHant": "鐵砧"
+   },
+   "model": "PureAir Pro",
+   "name": {
+    "en": "Anvil PureAir Pro Air Purifier",
+    "zhHans": "铁砧 PureAir Pro 空气净化器",
+    "zhHant": "鐵砧 PureAir Pro 空氣清淨機"
+   },
+   "subtitle": {
+    "en": "HEPA-13 filtration for 60㎡ rooms.",
+    "zhHans": "HEPA-13 滤网，60㎡ 大空间适用。",
+    "zhHant": "HEPA-13 濾網，60㎡ 大空間適用。"
+   },
+   "description": {
+    "en": "HEPA-13 filtration for 60㎡ rooms. A favorite pick from our air purifier selection.",
+    "zhHans": "HEPA-13 滤网，60㎡ 大空间适用。来自铁砧的热销之选，品质与口碑双在线。",
+    "zhHant": "HEPA-13 濾網，60㎡ 大空間適用。來自鐵砧的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 129900,
+   "originalPriceCents": 159900,
+   "stock": 141,
+   "sales": 13127,
+   "rating": 4.5,
+   "tags": [
+    "purifier",
+    "hepa"
+   ],
+   "flashSale": false,
+   "imageKeyword": "air purifier",
+   "lock": 352
+  },
+  {
+   "id": 37,
+   "categoryId": 3,
+   "brand": {
+    "en": "Anvil",
+    "zhHans": "铁砧",
+    "zhHant": "鐵砧"
+   },
+   "model": "BreezeTower",
+   "name": {
+    "en": "Anvil BreezeTower Bladeless Fan",
+    "zhHans": "铁砧 BreezeTower 无叶风扇",
+    "zhHant": "鐵砧 BreezeTower 無葉風扇"
+   },
+   "subtitle": {
+    "en": "Quiet airflow that is safe around kids.",
+    "zhHans": "无叶安全出风，带娃家庭放心。",
+    "zhHant": "無葉安全出風，育兒家庭安心。"
+   },
+   "description": {
+    "en": "Quiet airflow that is safe around kids. A favorite pick from our bladeless fan selection.",
+    "zhHans": "无叶安全出风，带娃家庭放心。来自铁砧的热销之选，品质与口碑双在线。",
+    "zhHant": "無葉安全出風，育兒家庭安心。來自鐵砧的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 79900,
+   "originalPriceCents": 99900,
+   "stock": 209,
+   "sales": 21419,
+   "rating": 4.7,
+   "tags": [
+    "fan",
+    "bladeless"
+   ],
+   "flashSale": false,
+   "imageKeyword": "fan",
+   "lock": 359
+  },
+  {
+   "id": 38,
+   "categoryId": 3,
+   "brand": {
+    "en": "Wildpath",
+    "zhHans": "野径",
+    "zhHant": "野徑"
+   },
+   "model": "SteamCare",
+   "name": {
+    "en": "Wildpath SteamCare Garment Steamer",
+    "zhHans": "野径 SteamCare 挂烫机",
+    "zhHant": "野徑 SteamCare 掛燙機"
+   },
+   "subtitle": {
+    "en": "30-second heatup, kills dust mites on fabric.",
+    "zhHans": "30 秒出蒸汽，除螨熨烫二合一。",
+    "zhHant": "30 秒出蒸汽，除蟎熨燙二合一。"
+   },
+   "description": {
+    "en": "30-second heatup, kills dust mites on fabric. A favorite pick from our garment steamer selection.",
+    "zhHans": "30 秒出蒸汽，除螨熨烫二合一。来自野径的热销之选，品质与口碑双在线。",
+    "zhHant": "30 秒出蒸汽，除蟎熨燙二合一。來自野徑的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 36900,
+   "stock": 337,
+   "sales": 57379,
+   "rating": 4.4,
+   "tags": [
+    "steamer",
+    "laundry"
+   ],
+   "flashSale": false,
+   "imageKeyword": "iron",
+   "lock": 366
+  },
+  {
+   "id": 39,
+   "categoryId": 3,
+   "brand": {
+    "en": "Wildpath",
+    "zhHans": "野径",
+    "zhHant": "野徑"
+   },
+   "model": "DryBox Mini",
+   "name": {
+    "en": "Wildpath DryBox Mini Shoe Dryer",
+    "zhHans": "野径 DryBox Mini 烘鞋器",
+    "zhHant": "野徑 DryBox Mini 烘鞋器"
+   },
+   "subtitle": {
+    "en": "Ozone deodorizing for rainy-day shoes.",
+    "zhHans": "臭氧除味，雨天湿鞋 overnight 干爽。",
+    "zhHant": "臭氧除味，雨天濕鞋一夜乾爽。"
+   },
+   "description": {
+    "en": "Ozone deodorizing for rainy-day shoes. A favorite pick from our shoe dryer selection.",
+    "zhHans": "臭氧除味，雨天湿鞋 overnight 干爽。来自野径的热销之选，品质与口碑双在线。",
+    "zhHant": "臭氧除味，雨天濕鞋一夜乾爽。來自野徑的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 587,
+   "sales": 28846,
+   "rating": 4.4,
+   "tags": [
+    "dryer",
+    "shoes"
+   ],
+   "flashSale": false,
+   "imageKeyword": "iron",
+   "lock": 373
+  },
+  {
+   "id": 40,
+   "categoryId": 3,
+   "brand": {
+    "en": "Frosting",
+    "zhHans": "糖霜",
+    "zhHant": "糖霜"
+   },
+   "model": "FrostFree 452",
+   "name": {
+    "en": "Frosting FrostFree 452 Refrigerator 452L 十字门",
+    "zhHans": "糖霜 FrostFree 452 冰箱 452L 十字门",
+    "zhHant": "糖霜 FrostFree 452 冰箱 452L 十字门"
+   },
+   "subtitle": {
+    "en": "Dual-cycle cooling keeps produce crisp longer.",
+    "zhHans": "双循环制冷，果蔬保鲜更久。",
+    "zhHant": "雙循環製冷，蔬果保鮮更久。"
+   },
+   "description": {
+    "en": "Dual-cycle cooling keeps produce crisp longer. A favorite pick from our refrigerator selection.",
+    "zhHans": "双循环制冷，果蔬保鲜更久。来自糖霜的热销之选，品质与口碑双在线。",
+    "zhHant": "雙循環製冷，蔬果保鮮更久。來自糖霜的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 329900,
+   "originalPriceCents": 379900,
+   "stock": 544,
+   "sales": 40572,
+   "rating": 4.4,
+   "tags": [
+    "fridge",
+    "large"
+   ],
+   "flashSale": false,
+   "imageKeyword": "refrigerator",
+   "lock": 380
+  },
+  {
+   "id": 41,
+   "categoryId": 4,
+   "brand": {
+    "en": "Nebula",
+    "zhHans": "星尘",
+    "zhHant": "星塵"
+   },
+   "model": "Pods Pro 3",
+   "name": {
+    "en": "Nebula Pods Pro 3 ANC Earbuds",
+    "zhHans": "星尘 Pods Pro 3 降噪耳机",
+    "zhHant": "星塵 Pods Pro 3 降噪耳機"
+   },
+   "subtitle": {
+    "en": "48dB hybrid ANC with spatial audio.",
+    "zhHans": "48dB 混合降噪，支持空间音频。",
+    "zhHant": "48dB 混合降噪，支援空間音訊。"
+   },
+   "description": {
+    "en": "48dB hybrid ANC with spatial audio. A favorite pick from our anc earbuds selection.",
+    "zhHans": "48dB 混合降噪，支持空间音频。来自星尘的热销之选，品质与口碑双在线。",
+    "zhHant": "48dB 混合降噪，支援空間音訊。來自星塵的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 99900,
+   "originalPriceCents": 129900,
+   "stock": 304,
+   "sales": 46899,
+   "rating": 4.9,
+   "tags": [
+    "anc",
+    "earbuds"
+   ],
+   "flashSale": true,
+   "imageKeyword": "earbuds",
+   "lock": 387
+  },
+  {
+   "id": 42,
+   "categoryId": 4,
+   "brand": {
+    "en": "Aurora",
+    "zhHans": "极光",
+    "zhHant": "極光"
+   },
+   "model": "ClipAir",
+   "name": {
+    "en": "Aurora ClipAir Open-ear Clip Earbuds",
+    "zhHans": "极光 ClipAir 耳夹式耳机",
+    "zhHant": "極光 ClipAir 耳夾式耳機"
+   },
+   "subtitle": {
+    "en": "2026's hottest form factor: open-ear, all-day comfort.",
+    "zhHans": "年度爆火形态：耳夹开放佩戴，久戴不痛。",
+    "zhHant": "年度爆紅形態：耳夾開放配戴，久戴不痛。"
+   },
+   "description": {
+    "en": "2026's hottest form factor: open-ear, all-day comfort. A favorite pick from our open-ear clip earbuds selection.",
+    "zhHans": "年度爆火形态：耳夹开放佩戴，久戴不痛。来自极光的热销之选，品质与口碑双在线。",
+    "zhHant": "年度爆紅形態：耳夾開放配戴，久戴不痛。來自極光的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 49900,
+   "originalPriceCents": 59900,
+   "stock": 211,
+   "sales": 21845,
+   "rating": 4.8,
+   "tags": [
+    "clip",
+    "open-ear"
+   ],
+   "flashSale": true,
+   "imageKeyword": "earbuds",
+   "lock": 394
+  },
+  {
+   "id": 43,
+   "categoryId": 4,
+   "brand": {
+    "en": "Aurora",
+    "zhHans": "极光",
+    "zhHant": "極光"
+   },
+   "model": "BoneRun",
+   "name": {
+    "en": "Aurora BoneRun Bone Conduction Headset",
+    "zhHans": "极光 BoneRun 骨传导耳机",
+    "zhHant": "極光 BoneRun 骨傳導耳機"
+   },
+   "subtitle": {
+    "en": "Stay aware of traffic while training.",
+    "zhHans": "跑步骑行不堵耳，安全听见环境音。",
+    "zhHant": "跑步騎行不堵耳，安心聽見環境音。"
+   },
+   "description": {
+    "en": "Stay aware of traffic while training. A favorite pick from our bone conduction headset selection.",
+    "zhHans": "跑步骑行不堵耳，安全听见环境音。来自极光的热销之选，品质与口碑双在线。",
+    "zhHant": "跑步騎行不堵耳，安心聽見環境音。來自極光的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 602,
+   "sales": 7392,
+   "rating": 4.6,
+   "tags": [
+    "bone",
+    "sports"
+   ],
+   "flashSale": false,
+   "imageKeyword": "headphones",
+   "lock": 401
+  },
+  {
+   "id": 44,
+   "categoryId": 4,
+   "brand": {
+    "en": "Skylark",
+    "zhHans": "云雀",
+    "zhHant": "雲雀"
+   },
+   "model": "Wire C",
+   "name": {
+    "en": "Skylark Wire C USB-C Earphones",
+    "zhHans": "云雀 Wire C Type-C 有线耳机",
+    "zhHant": "雲雀 Wire C Type-C 有線耳機"
+   },
+   "subtitle": {
+    "en": "The retro comeback: zero latency, zero charging.",
+    "zhHans": "翻红单品：零延迟，不用充电。",
+    "zhHant": "翻紅單品：零延遲，無需充電。"
+   },
+   "description": {
+    "en": "The retro comeback: zero latency, zero charging. A favorite pick from our usb-c earphones selection.",
+    "zhHans": "翻红单品：零延迟，不用充电。来自云雀的热销之选，品质与口碑双在线。",
+    "zhHant": "翻紅單品：零延遲，無需充電。來自雲雀的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 5900,
+   "originalPriceCents": 7900,
+   "stock": 104,
+   "sales": 33795,
+   "rating": 4.7,
+   "tags": [
+    "wired",
+    "usbc"
+   ],
+   "flashSale": false,
+   "imageKeyword": "earphones",
+   "lock": 408
+  },
+  {
+   "id": 45,
+   "categoryId": 4,
+   "brand": {
+    "en": "Baize",
+    "zhHans": "白泽",
+    "zhHant": "白澤"
+   },
+   "model": "Studio 900",
+   "name": {
+    "en": "Baize Studio 900 Over-ear Headphones",
+    "zhHans": "白泽 Studio 900 头戴式耳机",
+    "zhHant": "白澤 Studio 900 頭戴式耳機"
+   },
+   "subtitle": {
+    "en": "50mm drivers tuned for long mixing sessions.",
+    "zhHans": "50mm 单元，长时间监听也舒适。",
+    "zhHant": "50mm 單元，長時間監聽也舒適。"
+   },
+   "description": {
+    "en": "50mm drivers tuned for long mixing sessions. A favorite pick from our over-ear headphones selection.",
+    "zhHans": "50mm 单元，长时间监听也舒适。来自白泽的热销之选，品质与口碑双在线。",
+    "zhHant": "50mm 單元，長時間監聽也舒適。來自白澤的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 748,
+   "sales": 36184,
+   "rating": 4.5,
+   "tags": [
+    "over-ear",
+    "studio"
+   ],
+   "flashSale": false,
+   "imageKeyword": "headphones",
+   "lock": 415
+  },
+  {
+   "id": 46,
+   "categoryId": 4,
+   "brand": {
+    "en": "Mistral",
+    "zhHans": "岚风",
+    "zhHant": "嵐風"
+   },
+   "model": "SilentMax",
+   "name": {
+    "en": "Mistral SilentMax Travel ANC Headphones",
+    "zhHans": "岚风 SilentMax 旅行降噪头戴",
+    "zhHant": "嵐風 SilentMax 旅行降噪頭戴"
+   },
+   "subtitle": {
+    "en": "60h playtime, folds flat for the commute.",
+    "zhHans": "60 小时续航，通勤折叠随行。",
+    "zhHant": "60 小時續航，通勤摺疊隨行。"
+   },
+   "description": {
+    "en": "60h playtime, folds flat for the commute. A favorite pick from our travel anc headphones selection.",
+    "zhHans": "60 小时续航，通勤折叠随行。来自岚风的热销之选，品质与口碑双在线。",
+    "zhHant": "60 小時續航，通勤摺疊隨行。來自嵐風的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 89900,
+   "originalPriceCents": 109900,
+   "stock": 964,
+   "sales": 24580,
+   "rating": 4.5,
+   "tags": [
+    "anc",
+    "over-ear"
+   ],
+   "flashSale": false,
+   "imageKeyword": "headphones",
+   "lock": 422
+  },
+  {
+   "id": 47,
+   "categoryId": 4,
+   "brand": {
+    "en": "Obsidian",
+    "zhHans": "曜石",
+    "zhHant": "曜石"
+   },
+   "model": "Boom 360",
+   "name": {
+    "en": "Obsidian Boom 360 Bluetooth Speaker",
+    "zhHans": "曜石 Boom 360 蓝牙音箱",
+    "zhHant": "曜石 Boom 360 藍牙喇叭"
+   },
+   "subtitle": {
+    "en": "IP67 waterproof, pairs two for stereo.",
+    "zhHans": "IP67 防水，可组双声道立体声。",
+    "zhHant": "IP67 防水，可組雙聲道立體聲。"
+   },
+   "description": {
+    "en": "IP67 waterproof, pairs two for stereo. A favorite pick from our bluetooth speaker selection.",
+    "zhHans": "IP67 防水，可组双声道立体声。来自曜石的热销之选，品质与口碑双在线。",
+    "zhHant": "IP67 防水，可組雙聲道立體聲。來自曜石的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 34900,
+   "originalPriceCents": 42900,
+   "stock": 765,
+   "sales": 35937,
+   "rating": 4.7,
+   "tags": [
+    "speaker",
+    "bluetooth"
+   ],
+   "flashSale": false,
+   "imageKeyword": "speaker",
+   "lock": 429
+  },
+  {
+   "id": 48,
+   "categoryId": 4,
+   "brand": {
+    "en": "Lumi",
+    "zhHans": "拾光",
+    "zhHant": "拾光"
+   },
+   "model": "VinylOne",
+   "name": {
+    "en": "Lumi VinylOne Turntable",
+    "zhHans": "拾光 VinylOne 黑胶唱片机",
+    "zhHant": "拾光 VinylOne 黑膠唱機"
+   },
+   "subtitle": {
+    "en": "Built-in preamp, Bluetooth out to your speakers.",
+    "zhHans": "内置唱放，蓝牙直连音箱。",
+    "zhHant": "內建唱放，藍牙直連喇叭。"
+   },
+   "description": {
+    "en": "Built-in preamp, Bluetooth out to your speakers. A favorite pick from our turntable selection.",
+    "zhHans": "内置唱放，蓝牙直连音箱。来自拾光的热销之选，品质与口碑双在线。",
+    "zhHant": "內建唱放，藍牙直連喇叭。來自拾光的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 109900,
+   "originalPriceCents": 129900,
+   "stock": 566,
+   "sales": 35957,
+   "rating": 4.7,
+   "tags": [
+    "vinyl",
+    "turntable"
+   ],
+   "flashSale": false,
+   "imageKeyword": "turntable",
+   "lock": 436
+  },
+  {
+   "id": 49,
+   "categoryId": 4,
+   "brand": {
+    "en": "Sailon",
+    "zhHans": "千帆",
+    "zhHant": "千帆"
+   },
+   "model": "Beam Projector",
+   "name": {
+    "en": "Sailon Beam Projector Smart Projector",
+    "zhHans": "千帆 Beam Projector 智能投影仪",
+    "zhHant": "千帆 Beam Projector 智慧投影機"
+   },
+   "subtitle": {
+    "en": "Auto-focus 1080p native, 150-inch max.",
+    "zhHans": "原生 1080P 自动对焦，最大 150 英寸。",
+    "zhHant": "原生 1080P 自動對焦，最大 150 吋。"
+   },
+   "description": {
+    "en": "Auto-focus 1080p native, 150-inch max. A favorite pick from our smart projector selection.",
+    "zhHans": "原生 1080P 自动对焦，最大 150 英寸。来自千帆的热销之选，品质与口碑双在线。",
+    "zhHant": "原生 1080P 自動對焦，最大 150 吋。來自千帆的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 249900,
+   "originalPriceCents": 299900,
+   "stock": 446,
+   "sales": 38710,
+   "rating": 4.7,
+   "tags": [
+    "projector",
+    "cinema"
+   ],
+   "flashSale": true,
+   "imageKeyword": "projector",
+   "lock": 443
+  },
+  {
+   "id": 50,
+   "categoryId": 4,
+   "brand": {
+    "en": "Volta",
+    "zhHans": "伏特",
+    "zhHant": "伏特"
+   },
+   "model": "SoundBar 2.1",
+   "name": {
+    "en": "Volta SoundBar 2.1 Soundbar",
+    "zhHans": "伏特 SoundBar 2.1 回音壁音响",
+    "zhHant": "伏特 SoundBar 2.1 Soundbar 音響"
+   },
+   "subtitle": {
+    "en": "Wireless subwoofer, night mode for apartments.",
+    "zhHans": "无线低音炮，夜间模式不扰邻。",
+    "zhHant": "無線超低音，夜間模式不擾鄰。"
+   },
+   "description": {
+    "en": "Wireless subwoofer, night mode for apartments. A favorite pick from our soundbar selection.",
+    "zhHans": "无线低音炮，夜间模式不扰邻。来自伏特的热销之选，品质与口碑双在线。",
+    "zhHant": "無線超低音，夜間模式不擾鄰。來自伏特的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 99900,
+   "originalPriceCents": 129900,
+   "stock": 948,
+   "sales": 44392,
+   "rating": 4.9,
+   "tags": [
+    "soundbar",
+    "tv"
+   ],
+   "flashSale": false,
+   "imageKeyword": "speaker",
+   "lock": 450
+  },
+  {
+   "id": 51,
+   "categoryId": 5,
+   "brand": {
+    "en": "Kestrel",
+    "zhHans": "红隼",
+    "zhHant": "紅隼"
+   },
+   "model": "CloudDown 800",
+   "name": {
+    "en": "Kestrel CloudDown 800 Down Jacket 800蓬",
+    "zhHans": "红隼 CloudDown 800 羽绒服 800蓬",
+    "zhHant": "紅隼 CloudDown 800 羽絨外套 800蓬"
+   },
+   "subtitle": {
+    "en": "800-fill goose down, packs into its own pocket.",
+    "zhHans": "800 蓬鹅绒，可收纳进口袋。",
+    "zhHant": "800 蓬鵝絨，可收納進口袋。"
+   },
+   "description": {
+    "en": "800-fill goose down, packs into its own pocket. A favorite pick from our down jacket selection.",
+    "zhHans": "800 蓬鹅绒，可收纳进口袋。来自红隼的热销之选，品质与口碑双在线。",
+    "zhHant": "800 蓬鵝絨，可收納進口袋。來自紅隼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 89900,
+   "originalPriceCents": 129900,
+   "stock": 84,
+   "sales": 13925,
+   "rating": 4.9,
+   "tags": [
+    "downjacket",
+    "winter"
+   ],
+   "flashSale": true,
+   "imageKeyword": "down jacket",
+   "lock": 457
+  },
+  {
+   "id": 52,
+   "categoryId": 5,
+   "brand": {
+    "en": "Camellia",
+    "zhHans": "山茶",
+    "zhHant": "山茶"
+   },
+   "model": "Softshell City",
+   "name": {
+    "en": "Camellia Softshell City Softshell Jacket",
+    "zhHans": "山茶 Softshell City 软壳外套",
+    "zhHant": "山茶 Softshell City 軟殼外套"
+   },
+   "subtitle": {
+    "en": "Windproof, water-repellent, city-commute cut.",
+    "zhHans": "防风泼水，通勤版型利落。",
+    "zhHant": "防風撥水，通勤版型俐落。"
+   },
+   "description": {
+    "en": "Windproof, water-repellent, city-commute cut. A favorite pick from our softshell jacket selection.",
+    "zhHans": "防风泼水，通勤版型利落。来自山茶的热销之选，品质与口碑双在线。",
+    "zhHant": "防風撥水，通勤版型俐落。來自山茶的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 49900,
+   "originalPriceCents": 64900,
+   "stock": 572,
+   "sales": 15121,
+   "rating": 4.7,
+   "tags": [
+    "jacket",
+    "windbreaker"
+   ],
+   "flashSale": false,
+   "imageKeyword": "jacket",
+   "lock": 464
+  },
+  {
+   "id": 53,
+   "categoryId": 5,
+   "brand": {
+    "en": "Velvet",
+    "zhHans": "绒言",
+    "zhHant": "絨言"
+   },
+   "model": "Merino Base",
+   "name": {
+    "en": "Velvet Merino Base Merino Baselayer",
+    "zhHans": "绒言 Merino Base 美利奴保暖内衣",
+    "zhHant": "絨言 Merino Base 美麗諾保暖衣"
+   },
+   "subtitle": {
+    "en": "17.5-micron merino, itch-free warmth.",
+    "zhHans": "17.5 微支美利奴羊毛，亲肤不扎。",
+    "zhHant": "17.5 微支美麗諾羊毛，親膚不扎。"
+   },
+   "description": {
+    "en": "17.5-micron merino, itch-free warmth. A favorite pick from our merino baselayer selection.",
+    "zhHans": "17.5 微支美利奴羊毛，亲肤不扎。来自绒言的热销之选，品质与口碑双在线。",
+    "zhHant": "17.5 微支美麗諾羊毛，親膚不扎。來自絨言的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 218,
+   "sales": 27516,
+   "rating": 4.6,
+   "tags": [
+    "merino",
+    "baselayer"
+   ],
+   "flashSale": false,
+   "imageKeyword": "sweater",
+   "lock": 471
+  },
+  {
+   "id": 54,
+   "categoryId": 5,
+   "brand": {
+    "en": "Mousse",
+    "zhHans": "慕斯",
+    "zhHant": "慕斯"
+   },
+   "model": "HeavyLoop Hoodie",
+   "name": {
+    "en": "Mousse HeavyLoop Hoodie Heavyweight Hoodie 450g",
+    "zhHans": "慕斯 HeavyLoop Hoodie 重磅卫衣 450g",
+    "zhHant": "慕斯 HeavyLoop Hoodie 重磅衛衣 450g"
+   },
+   "subtitle": {
+    "en": "450gsm loopback cotton, boxy street fit.",
+    "zhHans": "450 克毛圈棉，宽松街头版型。",
+    "zhHant": "450 克毛圈棉，寬鬆街頭版型。"
+   },
+   "description": {
+    "en": "450gsm loopback cotton, boxy street fit. A favorite pick from our heavyweight hoodie selection.",
+    "zhHans": "450 克毛圈棉，宽松街头版型。来自慕斯的热销之选，品质与口碑双在线。",
+    "zhHant": "450 克毛圈棉，寬鬆街頭版型。來自慕斯的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 36900,
+   "stock": 917,
+   "sales": 53148,
+   "rating": 4.7,
+   "tags": [
+    "hoodie",
+    "streetwear"
+   ],
+   "flashSale": false,
+   "imageKeyword": "hoodie",
+   "lock": 478
+  },
+  {
+   "id": 55,
+   "categoryId": 5,
+   "brand": {
+    "en": "Tide",
+    "zhHans": "潮汐",
+    "zhHant": "潮汐"
+   },
+   "model": "AirRunner 4",
+   "name": {
+    "en": "Tide AirRunner 4 Running Shoes",
+    "zhHans": "潮汐 AirRunner 4 跑鞋",
+    "zhHant": "潮汐 AirRunner 4 跑鞋"
+   },
+   "subtitle": {
+    "en": "Supercritical foam returns 78% energy.",
+    "zhHans": "超临界发泡中底，回弹 78%。",
+    "zhHant": "超臨界發泡中底，回彈 78%。"
+   },
+   "description": {
+    "en": "Supercritical foam returns 78% energy. A favorite pick from our running shoes selection.",
+    "zhHans": "超临界发泡中底，回弹 78%。来自潮汐的热销之选，品质与口碑双在线。",
+    "zhHant": "超臨界發泡中底，回彈 78%。來自潮汐的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 49900,
+   "originalPriceCents": 59900,
+   "stock": 98,
+   "sales": 40806,
+   "rating": 4.9,
+   "tags": [
+    "running",
+    "shoes"
+   ],
+   "flashSale": true,
+   "imageKeyword": "running shoes",
+   "lock": 485
+  },
+  {
+   "id": 56,
+   "categoryId": 5,
+   "brand": {
+    "en": "Kestrel",
+    "zhHans": "红隼",
+    "zhHant": "紅隼"
+   },
+   "model": "TrailGrip GTX",
+   "name": {
+    "en": "Kestrel TrailGrip GTX Trail Shoes",
+    "zhHans": "红隼 TrailGrip GTX 越野跑鞋",
+    "zhHant": "紅隼 TrailGrip GTX 越野跑鞋"
+   },
+   "subtitle": {
+    "en": "Aggressive lugs bite into wet gravel.",
+    "zhHans": "深齿抓地，湿滑碎石路稳住。",
+    "zhHant": "深齒抓地，濕滑碎石路穩住。"
+   },
+   "description": {
+    "en": "Aggressive lugs bite into wet gravel. A favorite pick from our trail shoes selection.",
+    "zhHans": "深齿抓地，湿滑碎石路稳住。来自红隼的热销之选，品质与口碑双在线。",
+    "zhHant": "深齒抓地，濕滑碎石路穩住。來自紅隼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 54900,
+   "originalPriceCents": 66900,
+   "stock": 223,
+   "sales": 16540,
+   "rating": 4.4,
+   "tags": [
+    "trail",
+    "shoes"
+   ],
+   "flashSale": false,
+   "imageKeyword": "hiking boots",
+   "lock": 492
+  },
+  {
+   "id": 57,
+   "categoryId": 5,
+   "brand": {
+    "en": "Ember",
+    "zhHans": "燃点",
+    "zhHant": "燃點"
+   },
+   "model": "BoardLeather Lo",
+   "name": {
+    "en": "Ember BoardLeather Lo Leather Sneakers",
+    "zhHans": "燃点 BoardLeather Lo 小白鞋",
+    "zhHant": "燃點 BoardLeather Lo 小白鞋"
+   },
+   "subtitle": {
+    "en": "Full-grain leather, machine washable insole.",
+    "zhHans": "头层牛皮鞋面，鞋垫可拆洗。",
+    "zhHant": "頭層牛皮鞋面，鞋墊可拆洗。"
+   },
+   "description": {
+    "en": "Full-grain leather, machine washable insole. A favorite pick from our leather sneakers selection.",
+    "zhHans": "头层牛皮鞋面，鞋垫可拆洗。来自燃点的热销之选，品质与口碑双在线。",
+    "zhHant": "頭層牛皮鞋面，鞋墊可拆洗。來自燃點的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 139,
+   "sales": 37045,
+   "rating": 4.6,
+   "tags": [
+    "sneakers",
+    "white"
+   ],
+   "flashSale": false,
+   "imageKeyword": "sneakers",
+   "lock": 499
+  },
+  {
+   "id": 58,
+   "categoryId": 5,
+   "brand": {
+    "en": "Sprout",
+    "zhHans": "芽绿",
+    "zhHant": "芽綠"
+   },
+   "model": "Chelsea 05",
+   "name": {
+    "en": "Sprout Chelsea 05 Chelsea Boots",
+    "zhHans": "芽绿 Chelsea 05 切尔西靴",
+    "zhHant": "芽綠 Chelsea 05 切爾西靴"
+   },
+   "subtitle": {
+    "en": "Goodyear welted, resoleable for years.",
+    "zhHans": "固特异工艺，穿旧可换底。",
+    "zhHant": "固特異工藝，穿舊可換底。"
+   },
+   "description": {
+    "en": "Goodyear welted, resoleable for years. A favorite pick from our chelsea boots selection.",
+    "zhHans": "固特异工艺，穿旧可换底。来自芽绿的热销之选，品质与口碑双在线。",
+    "zhHant": "固特異工藝，穿舊可換底。來自芽綠的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 69900,
+   "originalPriceCents": 84900,
+   "stock": 627,
+   "sales": 23093,
+   "rating": 4.4,
+   "tags": [
+    "boots",
+    "chelsea"
+   ],
+   "flashSale": false,
+   "imageKeyword": "leather shoes",
+   "lock": 506
+  },
+  {
+   "id": 59,
+   "categoryId": 5,
+   "brand": {
+    "en": "Pinecone",
+    "zhHans": "松果",
+    "zhHant": "松果"
+   },
+   "model": "Everyday Pack 22L",
+   "name": {
+    "en": "Pinecone Everyday Pack 22L Backpack 22L",
+    "zhHans": "松果 Everyday Pack 22L 双肩包 22L",
+    "zhHant": "松果 Everyday Pack 22L 後背包 22L"
+   },
+   "subtitle": {
+    "en": "16-inch laptop sleeve, luggage pass-through.",
+    "zhHans": "可放 16 寸笔电，行李箱拉杆穿越设计。",
+    "zhHant": "可放 16 吋筆電，行李箱拉桿穿越設計。"
+   },
+   "description": {
+    "en": "16-inch laptop sleeve, luggage pass-through. A favorite pick from our backpack selection.",
+    "zhHans": "可放 16 寸笔电，行李箱拉杆穿越设计。来自松果的热销之选，品质与口碑双在线。",
+    "zhHant": "可放 16 吋筆電，行李箱拉桿穿越設計。來自松果的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 34900,
+   "originalPriceCents": 42900,
+   "stock": 437,
+   "sales": 33605,
+   "rating": 4.4,
+   "tags": [
+    "backpack",
+    "commute"
+   ],
+   "flashSale": false,
+   "imageKeyword": "backpack",
+   "lock": 513
+  },
+  {
+   "id": 60,
+   "categoryId": 5,
+   "brand": {
+    "en": "Pinecone",
+    "zhHans": "松果",
+    "zhHant": "松果"
+   },
+   "model": "Tote Canvas",
+   "name": {
+    "en": "Pinecone Tote Canvas Canvas Tote",
+    "zhHans": "松果 Tote Canvas 帆布托特包",
+    "zhHant": "松果 Tote Canvas 帆布托特包"
+   },
+   "subtitle": {
+    "en": "16oz canvas with leather-reinforced base.",
+    "zhHans": "16 安厚帆布，皮革加固底托。",
+    "zhHant": "16 安厚帆布，皮革加固底托。"
+   },
+   "description": {
+    "en": "16oz canvas with leather-reinforced base. A favorite pick from our canvas tote selection.",
+    "zhHans": "16 安厚帆布，皮革加固底托。来自松果的热销之选，品质与口碑双在线。",
+    "zhHant": "16 安厚帆布，皮革加固底托。來自松果的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 775,
+   "sales": 59915,
+   "rating": 4.6,
+   "tags": [
+    "tote",
+    "canvas"
+   ],
+   "flashSale": false,
+   "imageKeyword": "bag",
+   "lock": 520
+  },
+  {
+   "id": 61,
+   "categoryId": 5,
+   "brand": {
+    "en": "Glacier",
+    "zhHans": "冰川",
+    "zhHant": "冰川"
+   },
+   "model": "Metro Crossbody",
+   "name": {
+    "en": "Glacier Metro Crossbody Crossbody Bag",
+    "zhHans": "冰川 Metro Crossbody 斜挎包",
+    "zhHant": "冰川 Metro Crossbody 斜背包"
+   },
+   "subtitle": {
+    "en": "RFID-blocking pocket and magnetic quick clasp.",
+    "zhHans": "防盗刷卡位+磁吸快开扣。",
+    "zhHant": "防盜刷卡位+磁吸快開扣。"
+   },
+   "description": {
+    "en": "RFID-blocking pocket and magnetic quick clasp. A favorite pick from our crossbody bag selection.",
+    "zhHans": "防盗刷卡位+磁吸快开扣。来自冰川的热销之选，品质与口碑双在线。",
+    "zhHant": "防盜刷卡位+磁吸快開扣。來自冰川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 25900,
+   "originalPriceCents": 31900,
+   "stock": 402,
+   "sales": 31848,
+   "rating": 4.9,
+   "tags": [
+    "crossbody",
+    "bag"
+   ],
+   "flashSale": false,
+   "imageKeyword": "handbag",
+   "lock": 527
+  },
+  {
+   "id": 62,
+   "categoryId": 5,
+   "brand": {
+    "en": "Moonview",
+    "zhHans": "月见",
+    "zhHant": "月見"
+   },
+   "model": "BaseCap Logo",
+   "name": {
+    "en": "Moonview BaseCap Logo Baseball Cap",
+    "zhHans": "月见 BaseCap Logo 棒球帽",
+    "zhHant": "月見 BaseCap Logo 棒球帽"
+   },
+   "subtitle": {
+    "en": "Unstructured six-panel with adjustable strap.",
+    "zhHans": "软顶六片，可调节头围。",
+    "zhHant": "軟頂六片，可調節頭圍。"
+   },
+   "description": {
+    "en": "Unstructured six-panel with adjustable strap. A favorite pick from our baseball cap selection.",
+    "zhHans": "软顶六片，可调节头围。来自月见的热销之选，品质与口碑双在线。",
+    "zhHant": "軟頂六片，可調節頭圍。來自月見的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 11900,
+   "stock": 115,
+   "sales": 40941,
+   "rating": 4.9,
+   "tags": [
+    "cap",
+    "accessory"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cap",
+   "lock": 534
+  },
+  {
+   "id": 63,
+   "categoryId": 5,
+   "brand": {
+    "en": "Anvil",
+    "zhHans": "铁砧",
+    "zhHant": "鐵砧"
+   },
+   "model": "SilkSquare 90",
+   "name": {
+    "en": "Anvil SilkSquare 90 Silk Scarf 90cm",
+    "zhHans": "铁砧 SilkSquare 90 真丝方巾 90cm",
+    "zhHant": "鐵砧 SilkSquare 90 真絲方巾 90cm"
+   },
+   "subtitle": {
+    "en": "90cm mulberry silk, hand-rolled edges.",
+    "zhHans": "90cm 桑蚕丝，手工卷边。",
+    "zhHant": "90cm 桑蠶絲，手工捲邊。"
+   },
+   "description": {
+    "en": "90cm mulberry silk, hand-rolled edges. A favorite pick from our silk scarf selection.",
+    "zhHans": "90cm 桑蚕丝，手工卷边。来自铁砧的热销之选，品质与口碑双在线。",
+    "zhHant": "90cm 桑蠶絲，手工捲邊。來自鐵砧的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 39900,
+   "stock": 95,
+   "sales": 19515,
+   "rating": 4.8,
+   "tags": [
+    "scarf",
+    "silk"
+   ],
+   "flashSale": false,
+   "imageKeyword": "scarf",
+   "lock": 541
+  },
+  {
+   "id": 64,
+   "categoryId": 5,
+   "brand": {
+    "en": "Wildpath",
+    "zhHans": "野径",
+    "zhHant": "野徑"
+   },
+   "model": "ThermalSet W",
+   "name": {
+    "en": "Wildpath ThermalSet W Thermal Set",
+    "zhHans": "野径 ThermalSet W 德绒保暖套装",
+    "zhHant": "野徑 ThermalSet W 德絨保暖套裝"
+   },
+   "subtitle": {
+    "en": "Brushed thermo-knit, seamless cuffs.",
+    "zhHans": "德绒磨毛面料，无痕袖口。",
+    "zhHant": "德絨磨毛面料，無痕袖口。"
+   },
+   "description": {
+    "en": "Brushed thermo-knit, seamless cuffs. A favorite pick from our thermal set selection.",
+    "zhHans": "德绒磨毛面料，无痕袖口。来自野径的热销之选，品质与口碑双在线。",
+    "zhHant": "德絨磨毛面料，無痕袖口。來自野徑的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 19900,
+   "originalPriceCents": 25900,
+   "stock": 268,
+   "sales": 5690,
+   "rating": 4.5,
+   "tags": [
+    "thermal",
+    "winter"
+   ],
+   "flashSale": false,
+   "imageKeyword": "clothing",
+   "lock": 548
+  },
+  {
+   "id": 65,
+   "categoryId": 5,
+   "brand": {
+    "en": "Frosting",
+    "zhHans": "糖霜",
+    "zhHant": "糖霜"
+   },
+   "model": "WideLeg Denim",
+   "name": {
+    "en": "Frosting WideLeg Denim Wide-leg Jeans",
+    "zhHans": "糖霜 WideLeg Denim 阔腿牛仔裤",
+    "zhHant": "糖霜 WideLeg Denim 闊腿牛仔褲"
+   },
+   "subtitle": {
+    "en": "Rigid 13oz selvedge that breaks in beautifully.",
+    "zhHans": "13oz 赤耳丹宁，越穿越有型。",
+    "zhHant": "13oz 赤耳丹寧，越穿越有型。"
+   },
+   "description": {
+    "en": "Rigid 13oz selvedge that breaks in beautifully. A favorite pick from our wide-leg jeans selection.",
+    "zhHans": "13oz 赤耳丹宁，越穿越有型。来自糖霜的热销之选，品质与口碑双在线。",
+    "zhHant": "13oz 赤耳丹寧，越穿越有型。來自糖霜的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 35900,
+   "originalPriceCents": 44900,
+   "stock": 145,
+   "sales": 50083,
+   "rating": 4.6,
+   "tags": [
+    "jeans",
+    "denim"
+   ],
+   "flashSale": false,
+   "imageKeyword": "jeans",
+   "lock": 555
+  },
+  {
+   "id": 66,
+   "categoryId": 5,
+   "brand": {
+    "en": "Bamboo",
+    "zhHans": "竹语",
+    "zhHant": "竹語"
+   },
+   "model": "LoungeKnit Set",
+   "name": {
+    "en": "Bamboo LoungeKnit Set Loungewear Set",
+    "zhHans": "竹语 LoungeKnit Set 家居服套装",
+    "zhHant": "竹語 LoungeKnit Set 家居服套裝"
+   },
+   "subtitle": {
+    "en": "Modal blend, soft enough to sleep in.",
+    "zhHans": "莫代尔混纺，软到可以直接睡。",
+    "zhHant": "莫代爾混紡，軟到可以直接睡。"
+   },
+   "description": {
+    "en": "Modal blend, soft enough to sleep in. A favorite pick from our loungewear set selection.",
+    "zhHans": "莫代尔混纺，软到可以直接睡。来自竹语的热销之选，品质与口碑双在线。",
+    "zhHant": "莫代爾混紡，軟到可以直接睡。來自竹語的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 17900,
+   "originalPriceCents": 22900,
+   "stock": 380,
+   "sales": 16780,
+   "rating": 4.9,
+   "tags": [
+    "loungewear",
+    "home"
+   ],
+   "flashSale": false,
+   "imageKeyword": "pajamas",
+   "lock": 562
+  },
+  {
+   "id": 67,
+   "categoryId": 6,
+   "brand": {
+    "en": "Deepblue",
+    "zhHans": "深蓝",
+    "zhHant": "深藍"
+   },
+   "model": "Glow Serum",
+   "name": {
+    "en": "Deepblue Glow Serum Brightening Serum 30ml",
+    "zhHans": "深蓝 Glow Serum 美白精华 30ml",
+    "zhHant": "深藍 Glow Serum 美白精華 30ml"
+   },
+   "subtitle": {
+    "en": "5% niacinamide with tranexamic acid.",
+    "zhHans": "5% 烟酰胺+传明酸配方。",
+    "zhHant": "5% 菸鹼醯胺+傳明酸配方。"
+   },
+   "description": {
+    "en": "5% niacinamide with tranexamic acid. A favorite pick from our brightening serum selection.",
+    "zhHans": "5% 烟酰胺+传明酸配方。来自深蓝的热销之选，品质与口碑双在线。",
+    "zhHant": "5% 菸鹼醯胺+傳明酸配方。來自深藍的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 21900,
+   "originalPriceCents": 26900,
+   "stock": 338,
+   "sales": 32545,
+   "rating": 4.8,
+   "tags": [
+    "serum",
+    "skincare"
+   ],
+   "flashSale": true,
+   "imageKeyword": "skincare",
+   "lock": 569
+  },
+  {
+   "id": 68,
+   "categoryId": 6,
+   "brand": {
+    "en": "Deepblue",
+    "zhHans": "深蓝",
+    "zhHant": "深藍"
+   },
+   "model": "Barrier Cream",
+   "name": {
+    "en": "Deepblue Barrier Cream Moisturizer 50g",
+    "zhHans": "深蓝 Barrier Cream 保湿面霜 50g",
+    "zhHant": "深藍 Barrier Cream 保濕面霜 50g"
+   },
+   "subtitle": {
+    "en": "Ceramide complex repairs winter-dry skin.",
+    "zhHans": "神经酰胺复配，拯救冬季干皮。",
+    "zhHant": "神經醯胺複配，拯救冬季乾肌。"
+   },
+   "description": {
+    "en": "Ceramide complex repairs winter-dry skin. A favorite pick from our moisturizer selection.",
+    "zhHans": "神经酰胺复配，拯救冬季干皮。来自深蓝的热销之选，品质与口碑双在线。",
+    "zhHant": "神經醯胺複配，拯救冬季乾肌。來自深藍的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 18900,
+   "originalPriceCents": 22900,
+   "stock": 488,
+   "sales": 33542,
+   "rating": 4.5,
+   "tags": [
+    "cream",
+    "moisturizer"
+   ],
+   "flashSale": false,
+   "imageKeyword": "skincare",
+   "lock": 576
+  },
+  {
+   "id": 69,
+   "categoryId": 6,
+   "brand": {
+    "en": "Dewdrop",
+    "zhHans": "晨露",
+    "zhHant": "晨露"
+   },
+   "model": "SunScreen SPF50+",
+   "name": {
+    "en": "Dewdrop SunScreen SPF50+ Sunscreen SPF50+ PA++++",
+    "zhHans": "晨露 SunScreen SPF50+ 防晒霜 SPF50+ PA++++",
+    "zhHant": "晨露 SunScreen SPF50+ 防曬乳 SPF50+ PA++++"
+   },
+   "subtitle": {
+    "en": "Watery gel finish, no white cast.",
+    "zhHans": "水感啫喱质地，不假白不闷痘。",
+    "zhHant": "水感凝膠質地，不假白不悶痘。"
+   },
+   "description": {
+    "en": "Watery gel finish, no white cast. A favorite pick from our sunscreen selection.",
+    "zhHans": "水感啫喱质地，不假白不闷痘。来自晨露的热销之选，品质与口碑双在线。",
+    "zhHant": "水感凝膠質地，不假白不悶痘。來自晨露的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 97,
+   "sales": 34353,
+   "rating": 4.7,
+   "tags": [
+    "sunscreen",
+    "spf"
+   ],
+   "flashSale": false,
+   "imageKeyword": "sunscreen",
+   "lock": 583
+  },
+  {
+   "id": 70,
+   "categoryId": 6,
+   "brand": {
+    "en": "Dewdrop",
+    "zhHans": "晨露",
+    "zhHant": "晨露"
+   },
+   "model": "Cleansing Balm",
+   "name": {
+    "en": "Dewdrop Cleansing Balm Cleansing Balm 100ml",
+    "zhHans": "晨露 Cleansing Balm 卸妆膏 100ml",
+    "zhHant": "晨露 Cleansing Balm 卸妝膏 100ml"
+   },
+   "subtitle": {
+    "en": "Melts sunscreen and makeup in one pass.",
+    "zhHans": "一瓶卸净防晒彩妆，乳化快不糊眼。",
+    "zhHant": "一瓶卸淨防曬彩妝，乳化快不糊眼。"
+   },
+   "description": {
+    "en": "Melts sunscreen and makeup in one pass. A favorite pick from our cleansing balm selection.",
+    "zhHans": "一瓶卸净防晒彩妆，乳化快不糊眼。来自晨露的热销之选，品质与口碑双在线。",
+    "zhHant": "一瓶卸淨防曬彩妝，乳化快不糊眼。來自晨露的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 10900,
+   "originalPriceCents": 13900,
+   "stock": 67,
+   "sales": 45018,
+   "rating": 4.5,
+   "tags": [
+    "cleanser",
+    "makeup-removal"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cosmetics",
+   "lock": 590
+  },
+  {
+   "id": 71,
+   "categoryId": 6,
+   "brand": {
+    "en": "Jelly",
+    "zhHans": "果冻",
+    "zhHant": "果凍"
+   },
+   "model": "Velvet Lip #08",
+   "name": {
+    "en": "Jelly Velvet Lip #08 Matte Lipstick #08 枫叶红",
+    "zhHans": "果冻 Velvet Lip #08 哑光唇膏 #08 枫叶红",
+    "zhHant": "果凍 Velvet Lip #08 霧面唇膏 #08 枫叶红"
+   },
+   "subtitle": {
+    "en": "Weightless matte that never cracks.",
+    "zhHans": "轻盈雾面，显白不拔干。",
+    "zhHant": "輕盈霧面，顯白不拔乾。"
+   },
+   "description": {
+    "en": "Weightless matte that never cracks. A favorite pick from our matte lipstick selection.",
+    "zhHans": "轻盈雾面，显白不拔干。来自果冻的热销之选，品质与口碑双在线。",
+    "zhHant": "輕盈霧面，顯白不拔乾。來自果凍的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 9900,
+   "originalPriceCents": 12900,
+   "stock": 386,
+   "sales": 41915,
+   "rating": 4.8,
+   "tags": [
+    "lipstick",
+    "makeup"
+   ],
+   "flashSale": false,
+   "imageKeyword": "lipstick",
+   "lock": 597
+  },
+  {
+   "id": 72,
+   "categoryId": 6,
+   "brand": {
+    "en": "Jelly",
+    "zhHans": "果冻",
+    "zhHant": "果凍"
+   },
+   "model": "Gloss Water",
+   "name": {
+    "en": "Jelly Gloss Water Lip Gloss",
+    "zhHans": "果冻 Gloss Water 镜面唇釉",
+    "zhHant": "果凍 Gloss Water 鏡面唇釉"
+   },
+   "subtitle": {
+    "en": "Mirror shine with a hint of mint.",
+    "zhHans": "镜面水光，淡淡薄荷清凉感。",
+    "zhHant": "鏡面水光，淡淡薄荷清涼感。"
+   },
+   "description": {
+    "en": "Mirror shine with a hint of mint. A favorite pick from our lip gloss selection.",
+    "zhHans": "镜面水光，淡淡薄荷清凉感。来自果冻的热销之选，品质与口碑双在线。",
+    "zhHant": "鏡面水光，淡淡薄荷清涼感。來自果凍的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 10900,
+   "stock": 251,
+   "sales": 28077,
+   "rating": 4.3,
+   "tags": [
+    "lipgloss",
+    "makeup"
+   ],
+   "flashSale": false,
+   "imageKeyword": "lipstick",
+   "lock": 604
+  },
+  {
+   "id": 73,
+   "categoryId": 6,
+   "brand": {
+    "en": "Whaletalk",
+    "zhHans": "鲸语",
+    "zhHant": "鯨語"
+   },
+   "model": "Palette Sunset",
+   "name": {
+    "en": "Whaletalk Palette Sunset Eyeshadow Palette 12色",
+    "zhHans": "鲸语 Palette Sunset 眼影盘 12色",
+    "zhHant": "鯨語 Palette Sunset 眼影盤 12色"
+   },
+   "subtitle": {
+    "en": "Buttery mattes and foil shimmers.",
+    "zhHans": "软糯哑光+金属偏光，一盘成妆。",
+    "zhHant": "軟糯霧面+金屬偏光，一盤成妝。"
+   },
+   "description": {
+    "en": "Buttery mattes and foil shimmers. A favorite pick from our eyeshadow palette selection.",
+    "zhHans": "软糯哑光+金属偏光，一盘成妆。来自鲸语的热销之选，品质与口碑双在线。",
+    "zhHant": "軟糯霧面+金屬偏光，一盤成妝。來自鯨語的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 14900,
+   "originalPriceCents": 18900,
+   "stock": 394,
+   "sales": 26193,
+   "rating": 4.6,
+   "tags": [
+    "eyeshadow",
+    "palette"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cosmetics",
+   "lock": 611
+  },
+  {
+   "id": 74,
+   "categoryId": 6,
+   "brand": {
+    "en": "Whaletalk",
+    "zhHans": "鲸语",
+    "zhHant": "鯨語"
+   },
+   "model": "Liquid Blush",
+   "name": {
+    "en": "Whaletalk Liquid Blush Liquid Blush",
+    "zhHans": "鲸语 Liquid Blush 液体腮红",
+    "zhHant": "鯨語 Liquid Blush 液體腮紅"
+   },
+   "subtitle": {
+    "en": "One dot is enough for a natural flush.",
+    "zhHans": "一点就晕染，自然好气色。",
+    "zhHant": "一點就暈染，自然好氣色。"
+   },
+   "description": {
+    "en": "One dot is enough for a natural flush. A favorite pick from our liquid blush selection.",
+    "zhHans": "一点就晕染，自然好气色。来自鲸语的热销之选，品质与口碑双在线。",
+    "zhHant": "一點就暈染，自然好氣色。來自鯨語的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 10900,
+   "stock": 606,
+   "sales": 48948,
+   "rating": 4.4,
+   "tags": [
+    "blush",
+    "makeup"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cosmetics",
+   "lock": 618
+  },
+  {
+   "id": 75,
+   "categoryId": 6,
+   "brand": {
+    "en": "Marigold",
+    "zhHans": "金盏",
+    "zhHant": "金盞"
+   },
+   "model": "HairFix Bond",
+   "name": {
+    "en": "Marigold HairFix Bond Hair Mask 250ml",
+    "zhHans": "金盏 HairFix Bond 发膜 250ml",
+    "zhHant": "金盞 HairFix Bond 髮膜 250ml"
+   },
+   "subtitle": {
+    "en": "Bond-repair treatment for bleached hair.",
+    "zhHans": "漂染救星，修护二硫键。",
+    "zhHant": "漂染救星，修護雙硫鍵。"
+   },
+   "description": {
+    "en": "Bond-repair treatment for bleached hair. A favorite pick from our hair mask selection.",
+    "zhHans": "漂染救星，修护二硫键。来自金盏的热销之选，品质与口碑双在线。",
+    "zhHant": "漂染救星，修護雙硫鍵。來自金盞的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 13900,
+   "originalPriceCents": 16900,
+   "stock": 331,
+   "sales": 52034,
+   "rating": 4.9,
+   "tags": [
+    "haircare",
+    "mask"
+   ],
+   "flashSale": false,
+   "imageKeyword": "shampoo",
+   "lock": 625
+  },
+  {
+   "id": 76,
+   "categoryId": 6,
+   "brand": {
+    "en": "Marigold",
+    "zhHans": "金盏",
+    "zhHant": "金盞"
+   },
+   "model": "ScalpSerum",
+   "name": {
+    "en": "Marigold ScalpSerum Scalp Serum",
+    "zhHans": "金盏 ScalpSerum 头皮精华",
+    "zhHant": "金盞 ScalpSerum 頭皮精華"
+   },
+   "subtitle": {
+    "en": "Caffeine + peptides for fuller-looking hair.",
+    "zhHans": "咖啡因+胜肽，蓬松感看得见。",
+    "zhHant": "咖啡因+勝肽，蓬鬆感看得見。"
+   },
+   "description": {
+    "en": "Caffeine + peptides for fuller-looking hair. A favorite pick from our scalp serum selection.",
+    "zhHans": "咖啡因+胜肽，蓬松感看得见。来自金盏的热销之选，品质与口碑双在线。",
+    "zhHant": "咖啡因+勝肽，蓬鬆感看得見。來自金盞的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 951,
+   "sales": 21496,
+   "rating": 4.3,
+   "tags": [
+    "scalp",
+    "haircare"
+   ],
+   "flashSale": false,
+   "imageKeyword": "shampoo",
+   "lock": 632
+  },
+  {
+   "id": 77,
+   "categoryId": 6,
+   "brand": {
+    "en": "OrchardTalk",
+    "zhHans": "果园说",
+    "zhHant": "果園說"
+   },
+   "model": "Aqua Cologne",
+   "name": {
+    "en": "OrchardTalk Aqua Cologne Eau de Toilette 50ml",
+    "zhHans": "果园说 Aqua Cologne 淡香水 50ml",
+    "zhHant": "果園說 Aqua Cologne 淡香水 50ml"
+   },
+   "subtitle": {
+    "en": "Bergamot and sea salt, clean and unisex.",
+    "zhHans": "佛手柑与海盐，干净的中性香。",
+    "zhHant": "佛手柑與海鹽，乾淨的中性香。"
+   },
+   "description": {
+    "en": "Bergamot and sea salt, clean and unisex. A favorite pick from our eau de toilette selection.",
+    "zhHans": "佛手柑与海盐，干净的中性香。来自果园说的热销之选，品质与口碑双在线。",
+    "zhHant": "佛手柑與海鹽，乾淨的中性香。來自果園說的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 36900,
+   "stock": 645,
+   "sales": 41356,
+   "rating": 4.7,
+   "tags": [
+    "perfume",
+    "fragrance"
+   ],
+   "flashSale": false,
+   "imageKeyword": "perfume",
+   "lock": 639
+  },
+  {
+   "id": 78,
+   "categoryId": 6,
+   "brand": {
+    "en": "OrchardTalk",
+    "zhHans": "果园说",
+    "zhHant": "果園說"
+   },
+   "model": "Oud Intense",
+   "name": {
+    "en": "OrchardTalk Oud Intense Eau de Parfum 30ml",
+    "zhHans": "果园说 Oud Intense 浓香水 30ml",
+    "zhHant": "果園說 Oud Intense 濃香水 30ml"
+   },
+   "subtitle": {
+    "en": "Smoky oud with warm amber drydown.",
+    "zhHans": "烟熏乌木，尾调琥珀温暖。",
+    "zhHant": "煙燻烏木，尾調琥珀溫暖。"
+   },
+   "description": {
+    "en": "Smoky oud with warm amber drydown. A favorite pick from our eau de parfum selection.",
+    "zhHans": "烟熏乌木，尾调琥珀温暖。来自果园说的热销之选，品质与口碑双在线。",
+    "zhHant": "煙燻烏木，尾調琥珀溫暖。來自果園說的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 454,
+   "sales": 38823,
+   "rating": 4.9,
+   "tags": [
+    "perfume",
+    "oud"
+   ],
+   "flashSale": false,
+   "imageKeyword": "perfume",
+   "lock": 646
+  },
+  {
+   "id": 79,
+   "categoryId": 6,
+   "brand": {
+    "en": "GrainRain",
+    "zhHans": "谷雨",
+    "zhHant": "穀雨"
+   },
+   "model": "SonicBrush X",
+   "name": {
+    "en": "GrainRain SonicBrush X Electric Toothbrush",
+    "zhHans": "谷雨 SonicBrush X 电动牙刷",
+    "zhHant": "穀雨 SonicBrush X 電動牙刷"
+   },
+   "subtitle": {
+    "en": "Pressure sensor guards your gums.",
+    "zhHans": "压感提醒，刷牙不伤龈。",
+    "zhHant": "壓感提醒，刷牙不傷齦。"
+   },
+   "description": {
+    "en": "Pressure sensor guards your gums. A favorite pick from our electric toothbrush selection.",
+    "zhHans": "压感提醒，刷牙不伤龈。来自谷雨的热销之选，品质与口碑双在线。",
+    "zhHant": "壓感提醒，刷牙不傷齦。來自穀雨的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 24900,
+   "originalPriceCents": 31900,
+   "stock": 477,
+   "sales": 52858,
+   "rating": 4.4,
+   "tags": [
+    "toothbrush",
+    "sonic"
+   ],
+   "flashSale": false,
+   "imageKeyword": "toothbrush",
+   "lock": 653
+  },
+  {
+   "id": 80,
+   "categoryId": 6,
+   "brand": {
+    "en": "GrainRain",
+    "zhHans": "谷雨",
+    "zhHant": "穀雨"
+   },
+   "model": "WaterFloss Pro",
+   "name": {
+    "en": "GrainRain WaterFloss Pro Water Flosser",
+    "zhHans": "谷雨 WaterFloss Pro 冲牙器",
+    "zhHant": "穀雨 WaterFloss Pro 沖牙器"
+   },
+   "subtitle": {
+    "en": "180ml tank, five pressure modes.",
+    "zhHans": "180ml 大水箱，五档水压。",
+    "zhHant": "180ml 大水箱，五段水壓。"
+   },
+   "description": {
+    "en": "180ml tank, five pressure modes. A favorite pick from our water flosser selection.",
+    "zhHans": "180ml 大水箱，五档水压。来自谷雨的热销之选，品质与口碑双在线。",
+    "zhHant": "180ml 大水箱，五段水壓。來自穀雨的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 19900,
+   "originalPriceCents": 25900,
+   "stock": 87,
+   "sales": 4243,
+   "rating": 4.5,
+   "tags": [
+    "flosser",
+    "oral"
+   ],
+   "flashSale": false,
+   "imageKeyword": "toothbrush",
+   "lock": 660
+  },
+  {
+   "id": 81,
+   "categoryId": 7,
+   "brand": {
+    "en": "TasteHill",
+    "zhHans": "味觉山",
+    "zhHant": "味覺山"
+   },
+   "model": "",
+   "name": {
+    "en": "TasteHill Nut Gift Box 30包",
+    "zhHans": "味觉山 每日坚果礼盒 30包",
+    "zhHant": "味覺山 每日堅果禮盒 30包"
+   },
+   "subtitle": {
+    "en": "Six nuts and dried fruits per pack, fresh-locked.",
+    "zhHans": "六种坚果果干配比，锁鲜独立包。",
+    "zhHant": "六種堅果果乾配比，鎖鮮獨立包。"
+   },
+   "description": {
+    "en": "Six nuts and dried fruits per pack, fresh-locked. A favorite pick from our nut gift box selection.",
+    "zhHans": "六种坚果果干配比，锁鲜独立包。来自味觉山的热销之选，品质与口碑双在线。",
+    "zhHant": "六種堅果果乾配比，鎖鮮獨立包。來自味覺山的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 16900,
+   "stock": 739,
+   "sales": 55230,
+   "rating": 4.4,
+   "tags": [
+    "nuts",
+    "snack"
+   ],
+   "flashSale": true,
+   "imageKeyword": "nuts",
+   "lock": 667
+  },
+  {
+   "id": 82,
+   "categoryId": 7,
+   "brand": {
+    "en": "OrchardTalk",
+    "zhHans": "果园说",
+    "zhHant": "果園說"
+   },
+   "model": "",
+   "name": {
+    "en": "OrchardTalk Instant Noodles 5连包",
+    "zhHans": "果园说 网红拌面 5连包",
+    "zhHant": "果園說 網紅拌麵 5连包"
+   },
+   "subtitle": {
+    "en": "Springy noodles with scallion-oil sauce.",
+    "zhHans": "葱油酱汁+弹牙碱水面。",
+    "zhHant": "蔥油醬汁+彈牙鹼水麵。"
+   },
+   "description": {
+    "en": "Springy noodles with scallion-oil sauce. A favorite pick from our instant noodles selection.",
+    "zhHans": "葱油酱汁+弹牙碱水面。来自果园说的热销之选，品质与口碑双在线。",
+    "zhHant": "蔥油醬汁+彈牙鹼水麵。來自果園說的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 3900,
+   "originalPriceCents": 4900,
+   "stock": 950,
+   "sales": 10871,
+   "rating": 4.7,
+   "tags": [
+    "noodles",
+    "instant"
+   ],
+   "flashSale": false,
+   "imageKeyword": "noodles",
+   "lock": 674
+  },
+  {
+   "id": 83,
+   "categoryId": 7,
+   "brand": {
+    "en": "OrchardTalk",
+    "zhHans": "果园说",
+    "zhHant": "果園說"
+   },
+   "model": "",
+   "name": {
+    "en": "OrchardTalk Coffee Beans 1kg",
+    "zhHans": "果园说 精品咖啡豆 1kg",
+    "zhHant": "果園說 精品咖啡豆 1kg"
+   },
+   "subtitle": {
+    "en": "Medium roast blend, notes of chocolate and plum.",
+    "zhHans": "中烘拼配，巧克力与乌梅风味。",
+    "zhHant": "中烘拼配，巧克力與烏梅風味。"
+   },
+   "description": {
+    "en": "Medium roast blend, notes of chocolate and plum. A favorite pick from our coffee beans selection.",
+    "zhHans": "中烘拼配，巧克力与乌梅风味。来自果园说的热销之选，品质与口碑双在线。",
+    "zhHant": "中烘拼配，巧克力與烏梅風味。來自果園說的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 126,
+   "sales": 26686,
+   "rating": 4.7,
+   "tags": [
+    "coffee",
+    "beans"
+   ],
+   "flashSale": false,
+   "imageKeyword": "coffee beans",
+   "lock": 681
+  },
+  {
+   "id": 84,
+   "categoryId": 7,
+   "brand": {
+    "en": "TasteHill",
+    "zhHans": "味觉山",
+    "zhHant": "味覺山"
+   },
+   "model": "",
+   "name": {
+    "en": "TasteHill Milk Oolong",
+    "zhHans": "味觉山 金萱奶茶专用茶",
+    "zhHant": "味覺山 金萱奶茶專用茶"
+   },
+   "subtitle": {
+    "en": "Creamy oolong base for homemade milk tea.",
+    "zhHans": "自带奶香的金萱，自制奶茶基底。",
+    "zhHant": "自帶奶香的金萱，自製奶茶基底。"
+   },
+   "description": {
+    "en": "Creamy oolong base for homemade milk tea. A favorite pick from our milk oolong selection.",
+    "zhHans": "自带奶香的金萱，自制奶茶基底。来自味觉山的热销之选，品质与口碑双在线。",
+    "zhHant": "自帶奶香的金萱，自製奶茶基底。來自味覺山的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 6900,
+   "originalPriceCents": 8900,
+   "stock": 708,
+   "sales": 22089,
+   "rating": 4.8,
+   "tags": [
+    "tea",
+    "oolong"
+   ],
+   "flashSale": false,
+   "imageKeyword": "tea",
+   "lock": 688
+  },
+  {
+   "id": 85,
+   "categoryId": 7,
+   "brand": {
+    "en": "GrainRain",
+    "zhHans": "谷雨",
+    "zhHant": "穀雨"
+   },
+   "model": "",
+   "name": {
+    "en": "GrainRain Dried Mango 200g",
+    "zhHans": "谷雨 芒果干 200g",
+    "zhHant": "穀雨 芒果乾 200g"
+   },
+   "subtitle": {
+    "en": "No added sugar, just sun-sweet fruit.",
+    "zhHans": "零添加蔗糖，只有阳光的甜。",
+    "zhHant": "零添加蔗糖，只有陽光的甜。"
+   },
+   "description": {
+    "en": "No added sugar, just sun-sweet fruit. A favorite pick from our dried mango selection.",
+    "zhHans": "零添加蔗糖，只有阳光的甜。来自谷雨的热销之选，品质与口碑双在线。",
+    "zhHant": "零添加蔗糖，只有陽光的甜。來自穀雨的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 4500,
+   "originalPriceCents": 5900,
+   "stock": 523,
+   "sales": 43859,
+   "rating": 4.3,
+   "tags": [
+    "mango",
+    "dried-fruit"
+   ],
+   "flashSale": false,
+   "imageKeyword": "dried fruit",
+   "lock": 695
+  },
+  {
+   "id": 86,
+   "categoryId": 7,
+   "brand": {
+    "en": "GrainRain",
+    "zhHans": "谷雨",
+    "zhHant": "穀雨"
+   },
+   "model": "",
+   "name": {
+    "en": "GrainRain Chili Crisp 210g",
+    "zhHans": "谷雨 油泼辣子 210g",
+    "zhHant": "穀雨 油潑辣子 210g"
+   },
+   "subtitle": {
+    "en": "Crispy chili flakes in aromatic oil.",
+    "zhHans": "香脆辣椒粒，拌饭拌面都香。",
+    "zhHant": "香脆辣椒粒，拌飯拌麵都香。"
+   },
+   "description": {
+    "en": "Crispy chili flakes in aromatic oil. A favorite pick from our chili crisp selection.",
+    "zhHans": "香脆辣椒粒，拌饭拌面都香。来自谷雨的热销之选，品质与口碑双在线。",
+    "zhHant": "香脆辣椒粒，拌飯拌麵都香。來自穀雨的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 2900,
+   "originalPriceCents": 3600,
+   "stock": 726,
+   "sales": 51400,
+   "rating": 4.9,
+   "tags": [
+    "chili",
+    "sauce"
+   ],
+   "flashSale": false,
+   "imageKeyword": "sauce",
+   "lock": 702
+  },
+  {
+   "id": 87,
+   "categoryId": 7,
+   "brand": {
+    "en": "FreshEdge",
+    "zhHans": "鲜锋",
+    "zhHant": "鮮鋒"
+   },
+   "model": "",
+   "name": {
+    "en": "FreshEdge Fresh Milk 950ml×2",
+    "zhHans": "鲜锋 低温鲜牛奶 950ml×2",
+    "zhHant": "鮮鋒 低溫鮮乳 950ml×2"
+   },
+   "subtitle": {
+    "en": "75°C pasteurized, creamy but clean finish.",
+    "zhHans": "75°C 巴氏杀菌，奶香浓而不腻。",
+    "zhHant": "75°C 巴氏殺菌，奶香濃而不膩。"
+   },
+   "description": {
+    "en": "75°C pasteurized, creamy but clean finish. A favorite pick from our fresh milk selection.",
+    "zhHans": "75°C 巴氏杀菌，奶香浓而不腻。来自鲜锋的热销之选，品质与口碑双在线。",
+    "zhHant": "75°C 巴氏殺菌，奶香濃而不膩。來自鮮鋒的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 3900,
+   "originalPriceCents": 4500,
+   "stock": 253,
+   "sales": 46350,
+   "rating": 4.4,
+   "tags": [
+    "milk",
+    "fresh"
+   ],
+   "flashSale": false,
+   "imageKeyword": "milk",
+   "lock": 709
+  },
+  {
+   "id": 88,
+   "categoryId": 7,
+   "brand": {
+    "en": "OrchardTalk",
+    "zhHans": "果园说",
+    "zhHant": "果園說"
+   },
+   "model": "",
+   "name": {
+    "en": "OrchardTalk Greek Yogurt 4杯",
+    "zhHans": "果园说 希腊酸奶 4杯",
+    "zhHant": "果園說 希臘優格 4杯"
+   },
+   "subtitle": {
+    "en": "Triple strained, thick as cheesecake.",
+    "zhHans": "三次过滤，浓稠如芝士蛋糕。",
+    "zhHant": "三次過濾，濃稠如起司蛋糕。"
+   },
+   "description": {
+    "en": "Triple strained, thick as cheesecake. A favorite pick from our greek yogurt selection.",
+    "zhHans": "三次过滤，浓稠如芝士蛋糕。来自果园说的热销之选，品质与口碑双在线。",
+    "zhHant": "三次過濾，濃稠如起司蛋糕。來自果園說的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 4900,
+   "originalPriceCents": 5900,
+   "stock": 737,
+   "sales": 52729,
+   "rating": 4.4,
+   "tags": [
+    "yogurt",
+    "dairy"
+   ],
+   "flashSale": false,
+   "imageKeyword": "yogurt",
+   "lock": 716
+  },
+  {
+   "id": 89,
+   "categoryId": 7,
+   "brand": {
+    "en": "FreshEdge",
+    "zhHans": "鲜锋",
+    "zhHant": "鮮鋒"
+   },
+   "model": "",
+   "name": {
+    "en": "FreshEdge Atlantic Salmon 400g",
+    "zhHans": "鲜锋 冰鲜三文鱼刺身段 400g",
+    "zhHant": "鮮鋒 冰鮮鮭魚生魚片段 400g"
+   },
+   "subtitle": {
+    "en": "Sushi-grade cut, cold-chain delivered.",
+    "zhHans": "刺身级部位，冷链直达。",
+    "zhHant": "生魚片級部位，冷鏈直達。"
+   },
+   "description": {
+    "en": "Sushi-grade cut, cold-chain delivered. A favorite pick from our atlantic salmon selection.",
+    "zhHans": "刺身级部位，冷链直达。来自鲜锋的热销之选，品质与口碑双在线。",
+    "zhHant": "生魚片級部位，冷鏈直達。來自鮮鋒的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 10900,
+   "stock": 818,
+   "sales": 14291,
+   "rating": 4.3,
+   "tags": [
+    "salmon",
+    "seafood"
+   ],
+   "flashSale": false,
+   "imageKeyword": "salmon",
+   "lock": 723
+  },
+  {
+   "id": 90,
+   "categoryId": 7,
+   "brand": {
+    "en": "OrchardTalk",
+    "zhHans": "果园说",
+    "zhHant": "果園說"
+   },
+   "model": "",
+   "name": {
+    "en": "OrchardTalk Beef Cube 1kg",
+    "zhHans": "果园说 原切牛腱子 1kg",
+    "zhHant": "果園說 原切牛腱子 1kg"
+   },
+   "subtitle": {
+    "en": "Single-origin grass-fed, no marinade injected.",
+    "zhHans": "草饲整切，无注水无腌制。",
+    "zhHant": "草飼整切，無注水無醃製。"
+   },
+   "description": {
+    "en": "Single-origin grass-fed, no marinade injected. A favorite pick from our beef cube selection.",
+    "zhHans": "草饲整切，无注水无腌制。来自果园说的热销之选，品质与口碑双在线。",
+    "zhHant": "草飼整切，無注水無醃製。來自果園說的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 13900,
+   "originalPriceCents": 16900,
+   "stock": 615,
+   "sales": 10764,
+   "rating": 4.8,
+   "tags": [
+    "beef",
+    "meat"
+   ],
+   "flashSale": false,
+   "imageKeyword": "steak",
+   "lock": 730
+  },
+  {
+   "id": 91,
+   "categoryId": 7,
+   "brand": {
+    "en": "FreshEdge",
+    "zhHans": "鲜锋",
+    "zhHant": "鮮鋒"
+   },
+   "model": "",
+   "name": {
+    "en": "FreshEdge Cherry Box 2J 500g",
+    "zhHans": "鲜锋 车厘子礼盒 2J 500g",
+    "zhHant": "鮮鋒 櫻桃禮盒 2J 500g"
+   },
+   "subtitle": {
+    "en": "Crisp sweet cherries in foam-protected box.",
+    "zhHans": "脆甜多汁，防震泡沫箱锁鲜。",
+    "zhHant": "脆甜多汁，防震保麗龍箱鎖鮮。"
+   },
+   "description": {
+    "en": "Crisp sweet cherries in foam-protected box. A favorite pick from our cherry box selection.",
+    "zhHans": "脆甜多汁，防震泡沫箱锁鲜。来自鲜锋的热销之选，品质与口碑双在线。",
+    "zhHant": "脆甜多汁，防震保麗龍箱鎖鮮。來自鮮鋒的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 9990,
+   "originalPriceCents": 13900,
+   "stock": 356,
+   "sales": 3285,
+   "rating": 4.5,
+   "tags": [
+    "cherry",
+    "fruit"
+   ],
+   "flashSale": true,
+   "imageKeyword": "cherries",
+   "lock": 737
+  },
+  {
+   "id": 92,
+   "categoryId": 7,
+   "brand": {
+    "en": "TasteHill",
+    "zhHans": "味觉山",
+    "zhHant": "味覺山"
+   },
+   "model": "",
+   "name": {
+    "en": "TasteHill Aiyu Jelly Kit",
+    "zhHans": "味觉山 爱玉冻DIY套装",
+    "zhHant": "味覺山 愛玉凍DIY套裝"
+   },
+   "subtitle": {
+    "en": "Summer dessert kit with lemon syrup.",
+    "zhHans": "夏日消暑甜品，配柠檬糖浆。",
+    "zhHant": "夏日消暑甜品，配檸檬糖漿。"
+   },
+   "description": {
+    "en": "Summer dessert kit with lemon syrup. A favorite pick from our aiyu jelly kit selection.",
+    "zhHans": "夏日消暑甜品，配柠檬糖浆。来自味觉山的热销之选，品质与口碑双在线。",
+    "zhHant": "夏日消暑甜品，配檸檬糖漿。來自味覺山的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 3500,
+   "originalPriceCents": 4500,
+   "stock": 121,
+   "sales": 29327,
+   "rating": 4.5,
+   "tags": [
+    "jelly",
+    "dessert"
+   ],
+   "flashSale": false,
+   "imageKeyword": "dessert",
+   "lock": 744
+  },
+  {
+   "id": 93,
+   "categoryId": 7,
+   "brand": {
+    "en": "GrainRain",
+    "zhHans": "谷雨",
+    "zhHant": "穀雨"
+   },
+   "model": "",
+   "name": {
+    "en": "GrainRain Granola 500g",
+    "zhHans": "谷雨 烘焙麦片 500g",
+    "zhHant": "穀雨 烘焙穀物麥片 500g"
+   },
+   "subtitle": {
+    "en": "Oat clusters baked with honey and coconut.",
+    "zhHans": "蜂蜜椰子烘烤，块块酥脆。",
+    "zhHant": "蜂蜜椰子烘烤，塊塊酥脆。"
+   },
+   "description": {
+    "en": "Oat clusters baked with honey and coconut. A favorite pick from our granola selection.",
+    "zhHans": "蜂蜜椰子烘烤，块块酥脆。来自谷雨的热销之选，品质与口碑双在线。",
+    "zhHant": "蜂蜜椰子烘烤，塊塊酥脆。來自穀雨的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 4900,
+   "originalPriceCents": 6200,
+   "stock": 957,
+   "sales": 45599,
+   "rating": 4.3,
+   "tags": [
+    "granola",
+    "breakfast"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cereal",
+   "lock": 751
+  },
+  {
+   "id": 94,
+   "categoryId": 7,
+   "brand": {
+    "en": "GrainRain",
+    "zhHans": "谷雨",
+    "zhHant": "穀雨"
+   },
+   "model": "",
+   "name": {
+    "en": "GrainRain Seaweed Snack",
+    "zhHans": "谷雨 海苔脆片",
+    "zhHant": "穀雨 海苔脆片"
+   },
+   "subtitle": {
+    "en": "Roasted with sesame oil, lightly salted.",
+    "zhHans": "芝麻油轻焙，薄脆不腻口。",
+    "zhHant": "芝麻油輕焙，薄脆不膩口。"
+   },
+   "description": {
+    "en": "Roasted with sesame oil, lightly salted. A favorite pick from our seaweed snack selection.",
+    "zhHans": "芝麻油轻焙，薄脆不腻口。来自谷雨的热销之选，品质与口碑双在线。",
+    "zhHant": "芝麻油輕焙，薄脆不膩口。來自穀雨的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 2500,
+   "originalPriceCents": 3200,
+   "stock": 381,
+   "sales": 23043,
+   "rating": 4.8,
+   "tags": [
+    "seaweed",
+    "snack"
+   ],
+   "flashSale": false,
+   "imageKeyword": "snacks",
+   "lock": 758
+  },
+  {
+   "id": 95,
+   "categoryId": 8,
+   "brand": {
+    "en": "ClearZone",
+    "zhHans": "净界",
+    "zhHant": "淨界"
+   },
+   "model": "CloudLoft Pillow",
+   "name": {
+    "en": "ClearZone CloudLoft Pillow Bed Pillow 一对",
+    "zhHans": "净界 CloudLoft Pillow 云感枕头 一对",
+    "zhHant": "淨界 CloudLoft Pillow 雲感枕頭 一对"
+   },
+   "subtitle": {
+    "en": "Adjustable fill height for side and back sleepers.",
+    "zhHans": "枕高可调，侧睡仰睡都贴合。",
+    "zhHant": "枕高可調，側睡仰睡都貼合。"
+   },
+   "description": {
+    "en": "Adjustable fill height for side and back sleepers. A favorite pick from our bed pillow selection.",
+    "zhHans": "枕高可调，侧睡仰睡都贴合。来自净界的热销之选，品质与口碑双在线。",
+    "zhHant": "枕高可調，側睡仰睡都貼合。來自淨界的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 19900,
+   "originalPriceCents": 25900,
+   "stock": 192,
+   "sales": 41663,
+   "rating": 4.8,
+   "tags": [
+    "pillow",
+    "bedding"
+   ],
+   "flashSale": false,
+   "imageKeyword": "pillow",
+   "lock": 765
+  },
+  {
+   "id": 96,
+   "categoryId": 8,
+   "brand": {
+    "en": "WeaveHome",
+    "zhHans": "织家",
+    "zhHant": "織家"
+   },
+   "model": "TENCEL Set",
+   "name": {
+    "en": "WeaveHome TENCEL Set Bedding Set 1.8m床",
+    "zhHans": "织家 TENCEL Set 天丝四件套 1.8m床",
+    "zhHant": "織家 TENCEL Set 天絲床包組 1.8m床"
+   },
+   "subtitle": {
+    "en": "Cool-touch tencel, deep-pocket fitted sheet.",
+    "zhHans": "凉感天丝，深口袋床笠不移位。",
+    "zhHant": "涼感天絲，深口袋床包不移位。"
+   },
+   "description": {
+    "en": "Cool-touch tencel, deep-pocket fitted sheet. A favorite pick from our bedding set selection.",
+    "zhHans": "凉感天丝，深口袋床笠不移位。来自织家的热销之选，品质与口碑双在线。",
+    "zhHant": "涼感天絲，深口袋床包不移位。來自織家的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 39900,
+   "originalPriceCents": 49900,
+   "stock": 930,
+   "sales": 52873,
+   "rating": 4.6,
+   "tags": [
+    "bedding",
+    "tencel"
+   ],
+   "flashSale": true,
+   "imageKeyword": "bedding",
+   "lock": 772
+  },
+  {
+   "id": 97,
+   "categoryId": 8,
+   "brand": {
+    "en": "WeaveHome",
+    "zhHans": "织家",
+    "zhHant": "織家"
+   },
+   "model": "SoyGlow Candle",
+   "name": {
+    "en": "WeaveHome SoyGlow Candle Scented Candle 180g",
+    "zhHans": "织家 SoyGlow Candle 香薰蜡烛 180g",
+    "zhHant": "織家 SoyGlow Candle 香氛蠟燭 180g"
+   },
+   "subtitle": {
+    "en": "Soy wax with fig and cedar notes.",
+    "zhHans": "大豆蜡，无花果与雪松调。",
+    "zhHant": "大豆蠟，無花果與雪松調。"
+   },
+   "description": {
+    "en": "Soy wax with fig and cedar notes. A favorite pick from our scented candle selection.",
+    "zhHans": "大豆蜡，无花果与雪松调。来自织家的热销之选，品质与口碑双在线。",
+    "zhHant": "大豆蠟，無花果與雪松調。來自織家的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 9900,
+   "originalPriceCents": 12900,
+   "stock": 488,
+   "sales": 6175,
+   "rating": 4.9,
+   "tags": [
+    "candle",
+    "aroma"
+   ],
+   "flashSale": false,
+   "imageKeyword": "candle",
+   "lock": 779
+  },
+  {
+   "id": 98,
+   "categoryId": 8,
+   "brand": {
+    "en": "WeaveHome",
+    "zhHans": "织家",
+    "zhHant": "織家"
+   },
+   "model": "ReedDiffuser",
+   "name": {
+    "en": "WeaveHome ReedDiffuser Reed Diffuser 150ml",
+    "zhHans": "织家 ReedDiffuser 无火藤条香薰 150ml",
+    "zhHant": "織家 ReedDiffuser 無火藤條香薰 150ml"
+   },
+   "subtitle": {
+    "en": "Eight-week continuous scent for entryways.",
+    "zhHans": "持续留香约八周，玄关卧室适用。",
+    "zhHant": "持續留香約八週，玄關臥室適用。"
+   },
+   "description": {
+    "en": "Eight-week continuous scent for entryways. A favorite pick from our reed diffuser selection.",
+    "zhHans": "持续留香约八周，玄关卧室适用。来自织家的热销之选，品质与口碑双在线。",
+    "zhHant": "持續留香約八週，玄關臥室適用。來自織家的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 11900,
+   "originalPriceCents": 14900,
+   "stock": 760,
+   "sales": 42362,
+   "rating": 4.9,
+   "tags": [
+    "diffuser",
+    "aroma"
+   ],
+   "flashSale": false,
+   "imageKeyword": "perfume",
+   "lock": 786
+  },
+  {
+   "id": 99,
+   "categoryId": 8,
+   "brand": {
+    "en": "ClearZone",
+    "zhHans": "净界",
+    "zhHant": "淨界"
+   },
+   "model": "Umbrella Auto",
+   "name": {
+    "en": "ClearZone Umbrella Auto Automatic Umbrella",
+    "zhHans": "净界 Umbrella Auto 自动晴雨伞",
+    "zhHant": "淨界 Umbrella Auto 自動晴雨傘"
+   },
+   "subtitle": {
+    "en": "Ten-bone fiberglass frame survives gales.",
+    "zhHans": "十骨玻纤抗风，一键开收。",
+    "zhHant": "十骨玻纖抗風，一鍵開收。"
+   },
+   "description": {
+    "en": "Ten-bone fiberglass frame survives gales. A favorite pick from our automatic umbrella selection.",
+    "zhHans": "十骨玻纤抗风，一键开收。来自净界的热销之选，品质与口碑双在线。",
+    "zhHant": "十骨玻纖抗風，一鍵開收。來自淨界的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 7900,
+   "originalPriceCents": 9900,
+   "stock": 179,
+   "sales": 45578,
+   "rating": 4.9,
+   "tags": [
+    "umbrella",
+    "rain"
+   ],
+   "flashSale": false,
+   "imageKeyword": "umbrella",
+   "lock": 793
+  },
+  {
+   "id": 100,
+   "categoryId": 8,
+   "brand": {
+    "en": "StrideFit",
+    "zhHans": "步履",
+    "zhHant": "步履"
+   },
+   "model": "ThermoFlask 1L",
+   "name": {
+    "en": "StrideFit ThermoFlask 1L Insulated Bottle 1L",
+    "zhHans": "步履 ThermoFlask 1L 保温杯 1L",
+    "zhHant": "步履 ThermoFlask 1L 保溫瓶 1L"
+   },
+   "subtitle": {
+    "en": "24h heat retention, leak-proof lid.",
+    "zhHans": "24 小时保温，倒置不漏。",
+    "zhHant": "24 小時保溫，倒置不漏。"
+   },
+   "description": {
+    "en": "24h heat retention, leak-proof lid. A favorite pick from our insulated bottle selection.",
+    "zhHans": "24 小时保温，倒置不漏。来自步履的热销之选，品质与口碑双在线。",
+    "zhHant": "24 小時保溫，倒置不漏。來自步履的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 476,
+   "sales": 4758,
+   "rating": 4.3,
+   "tags": [
+    "bottle",
+    "thermal"
+   ],
+   "flashSale": false,
+   "imageKeyword": "water bottle",
+   "lock": 800
+  },
+  {
+   "id": 101,
+   "categoryId": 8,
+   "brand": {
+    "en": "WeaveHome",
+    "zhHans": "织家",
+    "zhHant": "織家"
+   },
+   "model": "DustFree Mop",
+   "name": {
+    "en": "WeaveHome DustFree Mop Flat Spray Mop",
+    "zhHans": "织家 DustFree Mop 喷水平板拖把",
+    "zhHant": "織家 DustFree Mop 噴水平板拖把"
+   },
+   "subtitle": {
+    "en": "360° swivel head with washable pads.",
+    "zhHans": "360° 旋转头，拖布可洗可换。",
+    "zhHant": "360° 旋轉頭，拖布可洗可換。"
+   },
+   "description": {
+    "en": "360° swivel head with washable pads. A favorite pick from our flat spray mop selection.",
+    "zhHans": "360° 旋转头，拖布可洗可换。来自织家的热销之选，品质与口碑双在线。",
+    "zhHant": "360° 旋轉頭，拖布可洗可換。來自織家的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 11900,
+   "stock": 523,
+   "sales": 4083,
+   "rating": 4.7,
+   "tags": [
+    "mop",
+    "cleaning"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cleaning",
+   "lock": 807
+  },
+  {
+   "id": 102,
+   "categoryId": 8,
+   "brand": {
+    "en": "ClearZone",
+    "zhHans": "净界",
+    "zhHant": "淨界"
+   },
+   "model": "Vac Bags XL",
+   "name": {
+    "en": "ClearZone Vac Bags XL Vacuum Storage Bags 6只装",
+    "zhHans": "净界 Vac Bags XL 真空压缩袋 6只装",
+    "zhHant": "淨界 Vac Bags XL 真空壓縮袋 6只装"
+   },
+   "subtitle": {
+    "en": "Triple winter coats down to one drawer.",
+    "zhHans": "三件冬被压缩成一抽屉。",
+    "zhHant": "三件冬被壓縮成一抽屜。"
+   },
+   "description": {
+    "en": "Triple winter coats down to one drawer. A favorite pick from our vacuum storage bags selection.",
+    "zhHans": "三件冬被压缩成一抽屉。来自净界的热销之选，品质与口碑双在线。",
+    "zhHant": "三件冬被壓縮成一抽屜。來自淨界的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 5900,
+   "originalPriceCents": 7900,
+   "stock": 335,
+   "sales": 47013,
+   "rating": 4.6,
+   "tags": [
+    "storage",
+    "vacuum"
+   ],
+   "flashSale": false,
+   "imageKeyword": "storage",
+   "lock": 814
+  },
+  {
+   "id": 103,
+   "categoryId": 8,
+   "brand": {
+    "en": "ClearZone",
+    "zhHans": "净界",
+    "zhHant": "淨界"
+   },
+   "model": "LED Mirror",
+   "name": {
+    "en": "ClearZone LED Mirror Vanity Mirror",
+    "zhHans": "净界 LED Mirror 化妆镜",
+    "zhHant": "淨界 LED Mirror 化妝鏡"
+   },
+   "subtitle": {
+    "en": "Three color temperatures, USB-C powered.",
+    "zhHans": "三档色温，Type-C 供电。",
+    "zhHant": "三段色溫，Type-C 供電。"
+   },
+   "description": {
+    "en": "Three color temperatures, USB-C powered. A favorite pick from our vanity mirror selection.",
+    "zhHans": "三档色温，Type-C 供电。来自净界的热销之选，品质与口碑双在线。",
+    "zhHant": "三段色溫，Type-C 供電。來自淨界的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 14900,
+   "originalPriceCents": 18900,
+   "stock": 342,
+   "sales": 51166,
+   "rating": 4.8,
+   "tags": [
+    "mirror",
+    "vanity"
+   ],
+   "flashSale": false,
+   "imageKeyword": "mirror",
+   "lock": 821
+  },
+  {
+   "id": 104,
+   "categoryId": 8,
+   "brand": {
+    "en": "StrideFit",
+    "zhHans": "步履",
+    "zhHant": "步履"
+   },
+   "model": "Laundry Balls",
+   "name": {
+    "en": "StrideFit Laundry Balls Washer Balls",
+    "zhHans": "步履 Laundry Balls 洗衣球",
+    "zhHant": "步履 Laundry Balls 洗衣球"
+   },
+   "subtitle": {
+    "en": "Reduces tangling and residue without detergent boosters.",
+    "zhHans": "减少缠绕残留，无需额外柔顺剂。",
+    "zhHant": "減少纏繞殘留，無需額外柔順劑。"
+   },
+   "description": {
+    "en": "Reduces tangling and residue without detergent boosters. A favorite pick from our washer balls selection.",
+    "zhHans": "减少缠绕残留，无需额外柔顺剂。来自步履的热销之选，品质与口碑双在线。",
+    "zhHant": "減少纏繞殘留，無需額外柔順劑。來自步履的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 3900,
+   "originalPriceCents": 4900,
+   "stock": 729,
+   "sales": 39480,
+   "rating": 4.9,
+   "tags": [
+    "laundry",
+    "washing"
+   ],
+   "flashSale": false,
+   "imageKeyword": "laundry",
+   "lock": 828
+  },
+  {
+   "id": 105,
+   "categoryId": 8,
+   "brand": {
+    "en": "StrideFit",
+    "zhHans": "步履",
+    "zhHant": "步履"
+   },
+   "model": "Desk Organizer",
+   "name": {
+    "en": "StrideFit Desk Organizer Desk Organizer",
+    "zhHans": "步履 Desk Organizer 桌面收纳架",
+    "zhHant": "步履 Desk Organizer 桌面收納架"
+   },
+   "subtitle": {
+    "en": "Bamboo and steel, tablet stand built in.",
+    "zhHans": "竹木拼接，自带平板支架位。",
+    "zhHant": "竹木拼接，自帶平板支架位。"
+   },
+   "description": {
+    "en": "Bamboo and steel, tablet stand built in. A favorite pick from our desk organizer selection.",
+    "zhHans": "竹木拼接，自带平板支架位。来自步履的热销之选，品质与口碑双在线。",
+    "zhHant": "竹木拼接，自帶平板支架位。來自步履的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 10900,
+   "stock": 717,
+   "sales": 51321,
+   "rating": 4.6,
+   "tags": [
+    "organizer",
+    "desk"
+   ],
+   "flashSale": false,
+   "imageKeyword": "desk",
+   "lock": 835
+  },
+  {
+   "id": 106,
+   "categoryId": 8,
+   "brand": {
+    "en": "ClearZone",
+    "zhHans": "净界",
+    "zhHant": "淨界"
+   },
+   "model": "Blackout Curtain",
+   "name": {
+    "en": "ClearZone Blackout Curtain Blackout Curtains",
+    "zhHans": "净界 Blackout Curtain 遮光窗帘",
+    "zhHant": "淨界 Blackout Curtain 遮光窗簾"
+   },
+   "subtitle": {
+    "en": "99% blackout with thermal lining.",
+    "zhHans": "遮光率 99%，附带保温涂层。",
+    "zhHant": "遮光率 99%，附帶保溫塗層。"
+   },
+   "description": {
+    "en": "99% blackout with thermal lining. A favorite pick from our blackout curtains selection.",
+    "zhHans": "遮光率 99%，附带保温涂层。来自净界的热销之选，品质与口碑双在线。",
+    "zhHant": "遮光率 99%，附帶保溫塗層。來自淨界的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 22900,
+   "originalPriceCents": 28900,
+   "stock": 948,
+   "sales": 46364,
+   "rating": 4.7,
+   "tags": [
+    "curtain",
+    "blackout"
+   ],
+   "flashSale": false,
+   "imageKeyword": "curtain",
+   "lock": 842
+  },
+  {
+   "id": 107,
+   "categoryId": 8,
+   "brand": {
+    "en": "ClearZone",
+    "zhHans": "净界",
+    "zhHant": "淨界"
+   },
+   "model": "Slipper Cloud",
+   "name": {
+    "en": "ClearZone Slipper Cloud House Slippers",
+    "zhHans": "净界 Slipper Cloud 棉拖鞋",
+    "zhHant": "淨界 Slipper Cloud 棉拖鞋"
+   },
+   "subtitle": {
+    "en": "Memory foam footbed, machine-washable.",
+    "zhHans": "记忆鞋底，可直接机洗。",
+    "zhHant": "記憶鞋底，可直接機洗。"
+   },
+   "description": {
+    "en": "Memory foam footbed, machine-washable. A favorite pick from our house slippers selection.",
+    "zhHans": "记忆鞋底，可直接机洗。来自净界的热销之选，品质与口碑双在线。",
+    "zhHant": "記憶鞋底，可直接機洗。來自淨界的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 6900,
+   "originalPriceCents": 8900,
+   "stock": 524,
+   "sales": 52889,
+   "rating": 4.9,
+   "tags": [
+    "slippers",
+    "home"
+   ],
+   "flashSale": false,
+   "imageKeyword": "slippers",
+   "lock": 849
+  },
+  {
+   "id": 108,
+   "categoryId": 8,
+   "brand": {
+    "en": "WeaveHome",
+    "zhHans": "织家",
+    "zhHant": "織家"
+   },
+   "model": "Storage Rack",
+   "name": {
+    "en": "WeaveHome Storage Rack Shoe Rack 6层",
+    "zhHans": "织家 Storage Rack 落地鞋架 6层",
+    "zhHant": "織家 Storage Rack 落地鞋架 6层"
+   },
+   "subtitle": {
+    "en": "Six tiers of breathable mesh shelving.",
+    "zhHans": "六层网布层架，组装免工具。",
+    "zhHant": "六層網布層架，組裝免工具。"
+   },
+   "description": {
+    "en": "Six tiers of breathable mesh shelving. A favorite pick from our shoe rack selection.",
+    "zhHans": "六层网布层架，组装免工具。来自织家的热销之选，品质与口碑双在线。",
+    "zhHant": "六層網布層架，組裝免工具。來自織家的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 10900,
+   "originalPriceCents": 13900,
+   "stock": 661,
+   "sales": 36059,
+   "rating": 4.5,
+   "tags": [
+    "rack",
+    "shoes"
+   ],
+   "flashSale": false,
+   "imageKeyword": "shelf",
+   "lock": 856
+  },
+  {
+   "id": 109,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "IronBell Set",
+   "name": {
+    "en": "TinyBud IronBell Set Adjustable Dumbbell 24kg",
+    "zhHans": "童萌 IronBell Set 可调节哑铃 24kg",
+    "zhHant": "童萌 IronBell Set 可調節啞鈴 24kg"
+   },
+   "subtitle": {
+    "en": "Dial from 2.5kg to 24kg in seconds.",
+    "zhHans": "旋钮秒切 2.5-24kg。",
+    "zhHant": "旋鈕秒切 2.5-24kg。"
+   },
+   "description": {
+    "en": "Dial from 2.5kg to 24kg in seconds. A favorite pick from our adjustable dumbbell selection.",
+    "zhHans": "旋钮秒切 2.5-24kg。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "旋鈕秒切 2.5-24kg。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 89900,
+   "originalPriceCents": 109900,
+   "stock": 356,
+   "sales": 29294,
+   "rating": 4.7,
+   "tags": [
+    "dumbbell",
+    "fitness"
+   ],
+   "flashSale": false,
+   "imageKeyword": "dumbbell",
+   "lock": 863
+  },
+  {
+   "id": 110,
+   "categoryId": 9,
+   "brand": {
+    "en": "PeakGo",
+    "zhHans": "峰行",
+    "zhHant": "峰行"
+   },
+   "model": "YogaMat Pro",
+   "name": {
+    "en": "PeakGo YogaMat Pro Yoga Mat 8mm",
+    "zhHans": "峰行 YogaMat Pro 瑜伽垫 8mm",
+    "zhHant": "峰行 YogaMat Pro 瑜珈墊 8mm"
+   },
+   "subtitle": {
+    "en": "Non-slip TPE with alignment lines.",
+    "zhHans": "TPE 防滑带对位线。",
+    "zhHant": "TPE 防滑帶對位線。"
+   },
+   "description": {
+    "en": "Non-slip TPE with alignment lines. A favorite pick from our yoga mat selection.",
+    "zhHans": "TPE 防滑带对位线。来自峰行的热销之选，品质与口碑双在线。",
+    "zhHant": "TPE 防滑帶對位線。來自峰行的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 502,
+   "sales": 41340,
+   "rating": 4.8,
+   "tags": [
+    "yoga",
+    "mat"
+   ],
+   "flashSale": false,
+   "imageKeyword": "yoga mat",
+   "lock": 870
+  },
+  {
+   "id": 111,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "RowFlow",
+   "name": {
+    "en": "TinyBud RowFlow Rowing Machine",
+    "zhHans": "童萌 RowFlow 划船机",
+    "zhHant": "童萌 RowFlow 划船機"
+   },
+   "subtitle": {
+    "en": "Water-resistance rower with app courses.",
+    "zhHans": "水阻划船机，App 课程跟练。",
+    "zhHant": "水阻划船機，App 課程跟練。"
+   },
+   "description": {
+    "en": "Water-resistance rower with app courses. A favorite pick from our rowing machine selection.",
+    "zhHans": "水阻划船机，App 课程跟练。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "水阻划船機，App 課程跟練。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 199900,
+   "originalPriceCents": 249900,
+   "stock": 849,
+   "sales": 17838,
+   "rating": 4.8,
+   "tags": [
+    "rowing",
+    "cardio"
+   ],
+   "flashSale": false,
+   "imageKeyword": "gym",
+   "lock": 877
+  },
+  {
+   "id": 112,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "FoldTread",
+   "name": {
+    "en": "TinyBud FoldTread Walking Pad",
+    "zhHans": "童萌 FoldTread 走步机",
+    "zhHant": "童萌 FoldTread 走路機"
+   },
+   "subtitle": {
+    "en": "Slides under the sofa, remote controlled.",
+    "zhHans": "可推入沙发底，遥控操作。",
+    "zhHant": "可推入沙發底，遙控操作。"
+   },
+   "description": {
+    "en": "Slides under the sofa, remote controlled. A favorite pick from our walking pad selection.",
+    "zhHans": "可推入沙发底，遥控操作。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "可推入沙發底，遙控操作。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 139900,
+   "originalPriceCents": 169900,
+   "stock": 154,
+   "sales": 2579,
+   "rating": 4.9,
+   "tags": [
+    "treadmill",
+    "walking"
+   ],
+   "flashSale": false,
+   "imageKeyword": "treadmill",
+   "lock": 884
+  },
+  {
+   "id": 113,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "CampTent 3",
+   "name": {
+    "en": "TinyBud CampTent 3 Camping Tent 3人",
+    "zhHans": "童萌 CampTent 3 露营帐篷 3人",
+    "zhHant": "童萌 CampTent 3 露營帳篷 3人"
+   },
+   "subtitle": {
+    "en": "Auto-pop-up setup under two minutes.",
+    "zhHans": "两分钟自动速开。",
+    "zhHant": "兩分鐘自動速開。"
+   },
+   "description": {
+    "en": "Auto-pop-up setup under two minutes. A favorite pick from our camping tent selection.",
+    "zhHans": "两分钟自动速开。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "兩分鐘自動速開。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 45900,
+   "originalPriceCents": 55900,
+   "stock": 265,
+   "sales": 10725,
+   "rating": 4.6,
+   "tags": [
+    "tent",
+    "camping"
+   ],
+   "flashSale": false,
+   "imageKeyword": "tent",
+   "lock": 891
+  },
+  {
+   "id": 114,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "SleepPad R",
+   "name": {
+    "en": "TinyBud SleepPad R Sleeping Pad",
+    "zhHans": "童萌 SleepPad R 充气睡垫",
+    "zhHant": "童萌 SleepPad R 充氣睡墊"
+   },
+   "subtitle": {
+    "en": "R-value 4.5 for three-season nights.",
+    "zhHans": "R 值 4.5，三季露营够暖。",
+    "zhHant": "R 值 4.5，三季露營夠暖。"
+   },
+   "description": {
+    "en": "R-value 4.5 for three-season nights. A favorite pick from our sleeping pad selection.",
+    "zhHans": "R 值 4.5，三季露营够暖。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "R 值 4.5，三季露營夠暖。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 36900,
+   "stock": 556,
+   "sales": 54333,
+   "rating": 4.9,
+   "tags": [
+    "pad",
+    "camping"
+   ],
+   "flashSale": false,
+   "imageKeyword": "camping",
+   "lock": 898
+  },
+  {
+   "id": 115,
+   "categoryId": 9,
+   "brand": {
+    "en": "PeakGo",
+    "zhHans": "峰行",
+    "zhHant": "峰行"
+   },
+   "model": "SummitPack 40L",
+   "name": {
+    "en": "PeakGo SummitPack 40L Hiking Backpack 40L",
+    "zhHans": "峰行 SummitPack 40L 登山包 40L",
+    "zhHant": "峰行 SummitPack 40L 登山包 40L"
+   },
+   "subtitle": {
+    "en": "Ventilated frame and rain cover included.",
+    "zhHans": "透气背架，附赠防雨罩。",
+    "zhHant": "透氣背架，附贈防雨罩。"
+   },
+   "description": {
+    "en": "Ventilated frame and rain cover included. A favorite pick from our hiking backpack selection.",
+    "zhHans": "透气背架，附赠防雨罩。来自峰行的热销之选，品质与口碑双在线。",
+    "zhHant": "透氣背架，附贈防雨罩。來自峰行的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 49900,
+   "originalPriceCents": 59900,
+   "stock": 966,
+   "sales": 37129,
+   "rating": 4.9,
+   "tags": [
+    "backpack",
+    "hiking"
+   ],
+   "flashSale": false,
+   "imageKeyword": "backpack",
+   "lock": 905
+  },
+  {
+   "id": 116,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "TrailPole C",
+   "name": {
+    "en": "TinyBud TrailPole C Trekking Poles 一对",
+    "zhHans": "童萌 TrailPole C 登山杖 一对",
+    "zhHant": "童萌 TrailPole C 登山杖 一对"
+   },
+   "subtitle": {
+    "en": "Carbon shafts with cork grips, 210g each.",
+    "zhHans": "碳素杖身+软木握柄，单支仅 210g。",
+    "zhHant": "碳素杖身+軟木握柄，單支僅 210g。"
+   },
+   "description": {
+    "en": "Carbon shafts with cork grips, 210g each. A favorite pick from our trekking poles selection.",
+    "zhHans": "碳素杖身+软木握柄，单支仅 210g。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "碳素杖身+軟木握柄，單支僅 210g。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 35900,
+   "originalPriceCents": 42900,
+   "stock": 79,
+   "sales": 27341,
+   "rating": 4.4,
+   "tags": [
+    "poles",
+    "trekking"
+   ],
+   "flashSale": false,
+   "imageKeyword": "hiking",
+   "lock": 912
+  },
+  {
+   "id": 117,
+   "categoryId": 9,
+   "brand": {
+    "en": "PeakGo",
+    "zhHans": "峰行",
+    "zhHant": "峰行"
+   },
+   "model": "RideHelmet",
+   "name": {
+    "en": "PeakGo RideHelmet Bike Helmet",
+    "zhHans": "峰行 RideHelmet 骑行头盔",
+    "zhHant": "峰行 RideHelmet 安全帽"
+   },
+   "subtitle": {
+    "en": "In-mold shell, 24 vents, 280g.",
+    "zhHans": "一体成型 24 孔通风，仅 280g。",
+    "zhHant": "一體成型 24 孔通風，僅 280g。"
+   },
+   "description": {
+    "en": "In-mold shell, 24 vents, 280g. A favorite pick from our bike helmet selection.",
+    "zhHans": "一体成型 24 孔通风，仅 280g。来自峰行的热销之选，品质与口碑双在线。",
+    "zhHant": "一體成型 24 孔通風，僅 280g。來自峰行的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 24900,
+   "originalPriceCents": 29900,
+   "stock": 236,
+   "sales": 4951,
+   "rating": 4.6,
+   "tags": [
+    "helmet",
+    "cycling"
+   ],
+   "flashSale": false,
+   "imageKeyword": "bicycle helmet",
+   "lock": 919
+  },
+  {
+   "id": 118,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "JumpRope S",
+   "name": {
+    "en": "TinyBud JumpRope S Smart Jump Rope",
+    "zhHans": "童萌 JumpRope S 智能跳绳",
+    "zhHant": "童萌 JumpRope S 智能跳繩"
+   },
+   "subtitle": {
+    "en": "Counts jumps and syncs workouts to your phone.",
+    "zhHans": "自动计数，训练数据同步手机。",
+    "zhHant": "自動計數，訓練數據同步手機。"
+   },
+   "description": {
+    "en": "Counts jumps and syncs workouts to your phone. A favorite pick from our smart jump rope selection.",
+    "zhHans": "自动计数，训练数据同步手机。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "自動計數，訓練數據同步手機。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 9900,
+   "originalPriceCents": 12900,
+   "stock": 700,
+   "sales": 4644,
+   "rating": 4.3,
+   "tags": [
+    "rope",
+    "jumping"
+   ],
+   "flashSale": false,
+   "imageKeyword": "jump rope",
+   "lock": 926
+  },
+  {
+   "id": 119,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "GripTrainer",
+   "name": {
+    "en": "TinyBud GripTrainer Grip Trainer",
+    "zhHans": "童萌 GripTrainer 握力器",
+    "zhHant": "童萌 GripTrainer 握力器"
+   },
+   "subtitle": {
+    "en": "Adjustable 10-60kg resistance.",
+    "zhHans": "10-60kg 可调阻力。",
+    "zhHant": "10-60kg 可調阻力。"
+   },
+   "description": {
+    "en": "Adjustable 10-60kg resistance. A favorite pick from our grip trainer selection.",
+    "zhHans": "10-60kg 可调阻力。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "10-60kg 可調阻力。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 4900,
+   "originalPriceCents": 6900,
+   "stock": 203,
+   "sales": 28282,
+   "rating": 4.7,
+   "tags": [
+    "grip",
+    "training"
+   ],
+   "flashSale": false,
+   "imageKeyword": "fitness",
+   "lock": 933
+  },
+  {
+   "id": 120,
+   "categoryId": 9,
+   "brand": {
+    "en": "TinyBud",
+    "zhHans": "童萌",
+    "zhHant": "童萌"
+   },
+   "model": "PoolGoggles",
+   "name": {
+    "en": "TinyBud PoolGoggles Swim Goggles",
+    "zhHans": "童萌 PoolGoggles 泳镜",
+    "zhHant": "童萌 PoolGoggles 泳鏡"
+   },
+   "subtitle": {
+    "en": "Anti-fog coating that lasts seasons.",
+    "zhHans": "长效防雾镀膜，不起雾不勒眼。",
+    "zhHant": "長效防霧鍍膜，不起霧不勒眼。"
+   },
+   "description": {
+    "en": "Anti-fog coating that lasts seasons. A favorite pick from our swim goggles selection.",
+    "zhHans": "长效防雾镀膜，不起雾不勒眼。来自童萌的热销之选，品质与口碑双在线。",
+    "zhHant": "長效防霧鍍膜，不起霧不勒眼。來自童萌的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 7900,
+   "originalPriceCents": 9900,
+   "stock": 472,
+   "sales": 29822,
+   "rating": 4.9,
+   "tags": [
+    "goggles",
+    "swimming"
+   ],
+   "flashSale": false,
+   "imageKeyword": "swimming",
+   "lock": 940
+  },
+  {
+   "id": 121,
+   "categoryId": 10,
+   "brand": {
+    "en": "JoyBrick",
+    "zhHans": "乐拼",
+    "zhHant": "樂拼"
+   },
+   "model": "Stroller Air",
+   "name": {
+    "en": "JoyBrick Stroller Air Lightweight Stroller",
+    "zhHans": "乐拼 Stroller Air 婴儿推车",
+    "zhHant": "樂拼 Stroller Air 嬰兒推車"
+   },
+   "subtitle": {
+    "en": "6.2kg cabin-size fold with one hand.",
+    "zhHans": "仅 6.2kg，单手折叠可登机。",
+    "zhHant": "僅 6.2kg，單手摺疊可登機。"
+   },
+   "description": {
+    "en": "6.2kg cabin-size fold with one hand. A favorite pick from our lightweight stroller selection.",
+    "zhHans": "仅 6.2kg，单手折叠可登机。来自乐拼的热销之选，品质与口碑双在线。",
+    "zhHant": "僅 6.2kg，單手摺疊可登機。來自樂拼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 129900,
+   "originalPriceCents": 159900,
+   "stock": 91,
+   "sales": 40149,
+   "rating": 4.5,
+   "tags": [
+    "stroller",
+    "baby"
+   ],
+   "flashSale": false,
+   "imageKeyword": "stroller",
+   "lock": 947
+  },
+  {
+   "id": 122,
+   "categoryId": 10,
+   "brand": {
+    "en": "JoyBrick",
+    "zhHans": "乐拼",
+    "zhHant": "樂拼"
+   },
+   "model": "CozyCrib Sheet",
+   "name": {
+    "en": "JoyBrick CozyCrib Sheet Crib Sheet",
+    "zhHans": "乐拼 CozyCrib Sheet 婴儿床包",
+    "zhHant": "樂拼 CozyCrib Sheet 嬰兒床包"
+   },
+   "subtitle": {
+    "en": "Organic cotton, OEKO-TEX certified.",
+    "zhHans": "有机棉材质，OEKO-TEX 认证。",
+    "zhHant": "有機棉材質，OEKO-TEX 認證。"
+   },
+   "description": {
+    "en": "Organic cotton, OEKO-TEX certified. A favorite pick from our crib sheet selection.",
+    "zhHans": "有机棉材质，OEKO-TEX 认证。来自乐拼的热销之选，品质与口碑双在线。",
+    "zhHant": "有機棉材質，OEKO-TEX 認證。來自樂拼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 257,
+   "sales": 16835,
+   "rating": 4.8,
+   "tags": [
+    "crib",
+    "bedding"
+   ],
+   "flashSale": false,
+   "imageKeyword": "baby",
+   "lock": 954
+  },
+  {
+   "id": 123,
+   "categoryId": 10,
+   "brand": {
+    "en": "JoyBrick",
+    "zhHans": "乐拼",
+    "zhHant": "樂拼"
+   },
+   "model": "MilkWarmer",
+   "name": {
+    "en": "JoyBrick MilkWarmer Bottle Warmer",
+    "zhHans": "乐拼 MilkWarmer 温奶器",
+    "zhHant": "樂拼 MilkWarmer 溫奶器"
+   },
+   "subtitle": {
+    "en": "Precise 37°C warming without hot spots.",
+    "zhHans": "精准 37°C，受热均匀不烫口。",
+    "zhHant": "精準 37°C，受熱均勻不燙口。"
+   },
+   "description": {
+    "en": "Precise 37°C warming without hot spots. A favorite pick from our bottle warmer selection.",
+    "zhHans": "精准 37°C，受热均匀不烫口。来自乐拼的热销之选，品质与口碑双在线。",
+    "zhHant": "精準 37°C，受熱均勻不燙口。來自樂拼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 346,
+   "sales": 44145,
+   "rating": 4.9,
+   "tags": [
+    "warmer",
+    "feeding"
+   ],
+   "flashSale": false,
+   "imageKeyword": "kitchen",
+   "lock": 961
+  },
+  {
+   "id": 124,
+   "categoryId": 10,
+   "brand": {
+    "en": "PageRiver",
+    "zhHans": "页川",
+    "zhHant": "頁川"
+   },
+   "model": "SterilBox",
+   "name": {
+    "en": "PageRiver SterilBox Bottle Sterilizer",
+    "zhHans": "页川 SterilBox 消毒烘干锅",
+    "zhHant": "頁川 SterilBox 消毒烘乾鍋"
+   },
+   "subtitle": {
+    "en": "UV sterilize plus dry in 19 minutes.",
+    "zhHans": "紫外线消毒+烘干，19 分钟搞定。",
+    "zhHant": "紫外線消毒+烘乾，19 分鐘搞定。"
+   },
+   "description": {
+    "en": "UV sterilize plus dry in 19 minutes. A favorite pick from our bottle sterilizer selection.",
+    "zhHans": "紫外线消毒+烘干，19 分钟搞定。来自页川的热销之选，品质与口碑双在线。",
+    "zhHant": "紫外線消毒+烘乾，19 分鐘搞定。來自頁川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 35900,
+   "stock": 916,
+   "sales": 34422,
+   "rating": 4.4,
+   "tags": [
+    "sterilizer",
+    "uv"
+   ],
+   "flashSale": false,
+   "imageKeyword": "appliance",
+   "lock": 968
+  },
+  {
+   "id": 125,
+   "categoryId": 10,
+   "brand": {
+    "en": "JoyBrick",
+    "zhHans": "乐拼",
+    "zhHant": "樂拼"
+   },
+   "model": "DiaperBag Pro",
+   "name": {
+    "en": "JoyBrick DiaperBag Pro Diaper Backpack",
+    "zhHans": "乐拼 DiaperBag Pro 妈咪包",
+    "zhHant": "樂拼 DiaperBag Pro 媽咪包"
+   },
+   "subtitle": {
+    "en": "Insulated bottle pockets and changing pad.",
+    "zhHans": "保温奶瓶位+便携尿布垫。",
+    "zhHant": "保溫奶瓶位+便攜尿布墊。"
+   },
+   "description": {
+    "en": "Insulated bottle pockets and changing pad. A favorite pick from our diaper backpack selection.",
+    "zhHans": "保温奶瓶位+便携尿布垫。来自乐拼的热销之选，品质与口碑双在线。",
+    "zhHant": "保溫奶瓶位+便攜尿布墊。來自樂拼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 25900,
+   "originalPriceCents": 31900,
+   "stock": 711,
+   "sales": 13567,
+   "rating": 4.7,
+   "tags": [
+    "diaperbag",
+    "mom"
+   ],
+   "flashSale": false,
+   "imageKeyword": "backpack",
+   "lock": 975
+  },
+  {
+   "id": 126,
+   "categoryId": 10,
+   "brand": {
+    "en": "JoyBrick",
+    "zhHans": "乐拼",
+    "zhHant": "樂拼"
+   },
+   "model": "BlockSet 120",
+   "name": {
+    "en": "JoyBrick BlockSet 120 Building Blocks 120粒",
+    "zhHans": "乐拼 BlockSet 120 大颗粒积木 120粒",
+    "zhHant": "樂拼 BlockSet 120 大顆粒積木 120粒"
+   },
+   "subtitle": {
+    "en": "Chunky toddler-safe bricks with storage bin.",
+    "zhHans": "加厚大颗粒防误吞，附收纳桶。",
+    "zhHant": "加厚大顆粒防誤吞，附收納桶。"
+   },
+   "description": {
+    "en": "Chunky toddler-safe bricks with storage bin. A favorite pick from our building blocks selection.",
+    "zhHans": "加厚大颗粒防误吞，附收纳桶。来自乐拼的热销之选，品质与口碑双在线。",
+    "zhHant": "加厚大顆粒防誤吞，附收納桶。來自樂拼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 343,
+   "sales": 7506,
+   "rating": 4.4,
+   "tags": [
+    "blocks",
+    "toys"
+   ],
+   "flashSale": false,
+   "imageKeyword": "toy blocks",
+   "lock": 982
+  },
+  {
+   "id": 127,
+   "categoryId": 10,
+   "brand": {
+    "en": "JoyBrick",
+    "zhHans": "乐拼",
+    "zhHant": "樂拼"
+   },
+   "model": "PlushBear 40",
+   "name": {
+    "en": "JoyBrick PlushBear 40 Teddy Bear 40cm",
+    "zhHans": "乐拼 PlushBear 40 毛绒泰迪熊 40cm",
+    "zhHant": "樂拼 PlushBear 40 毛絨泰迪熊 40cm"
+   },
+   "subtitle": {
+    "en": "Hypoallergenic plush, embroidered eyes.",
+    "zhHans": "低敏面料，刺绣眼睛更安全。",
+    "zhHant": "低敏面料，刺繡眼睛更安全。"
+   },
+   "description": {
+    "en": "Hypoallergenic plush, embroidered eyes. A favorite pick from our teddy bear selection.",
+    "zhHans": "低敏面料，刺绣眼睛更安全。来自乐拼的热销之选，品质与口碑双在线。",
+    "zhHant": "低敏面料，刺繡眼睛更安全。來自樂拼的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 9900,
+   "originalPriceCents": 12900,
+   "stock": 331,
+   "sales": 26017,
+   "rating": 4.3,
+   "tags": [
+    "plush",
+    "bear"
+   ],
+   "flashSale": true,
+   "imageKeyword": "teddy bear",
+   "lock": 989
+  },
+  {
+   "id": 128,
+   "categoryId": 10,
+   "brand": {
+    "en": "PageRiver",
+    "zhHans": "页川",
+    "zhHant": "頁川"
+   },
+   "model": "PuzzleBoard",
+   "name": {
+    "en": "PageRiver PuzzleBoard Wooden Puzzle",
+    "zhHans": "页川 PuzzleBoard 木质拼图",
+    "zhHant": "頁川 PuzzleBoard 木質拼圖"
+   },
+   "subtitle": {
+    "en": "Thick wooden pieces for little hands.",
+    "zhHans": "加厚木质抓握片，锻炼精细动作。",
+    "zhHant": "加厚木質抓握片，鍛鍊精細動作。"
+   },
+   "description": {
+    "en": "Thick wooden pieces for little hands. A favorite pick from our wooden puzzle selection.",
+    "zhHans": "加厚木质抓握片，锻炼精细动作。来自页川的热销之选，品质与口碑双在线。",
+    "zhHant": "加厚木質抓握片，鍛鍊精細動作。來自頁川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 6900,
+   "originalPriceCents": 8900,
+   "stock": 511,
+   "sales": 16348,
+   "rating": 4.6,
+   "tags": [
+    "puzzle",
+    "wooden"
+   ],
+   "flashSale": false,
+   "imageKeyword": "puzzle",
+   "lock": 996
+  },
+  {
+   "id": 129,
+   "categoryId": 10,
+   "brand": {
+    "en": "PageRiver",
+    "zhHans": "页川",
+    "zhHant": "頁川"
+   },
+   "model": "RCDrift Mini",
+   "name": {
+    "en": "PageRiver RCDrift Mini RC Drift Car",
+    "zhHans": "页川 RCDrift Mini 遥控漂移车",
+    "zhHant": "頁川 RCDrift Mini 遙控漂移車"
+   },
+   "subtitle": {
+    "en": "Four-wheel drive with swap drift tires.",
+    "zhHans": "四轮驱动，漂移胎可换。",
+    "zhHant": "四輪驅動，漂移胎可換。"
+   },
+   "description": {
+    "en": "Four-wheel drive with swap drift tires. A favorite pick from our rc drift car selection.",
+    "zhHans": "四轮驱动，漂移胎可换。来自页川的热销之选，品质与口碑双在线。",
+    "zhHant": "四輪驅動，漂移胎可換。來自頁川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 19900,
+   "originalPriceCents": 24900,
+   "stock": 352,
+   "sales": 23939,
+   "rating": 4.6,
+   "tags": [
+    "rc",
+    "car"
+   ],
+   "flashSale": false,
+   "imageKeyword": "toy car",
+   "lock": 1003
+  },
+  {
+   "id": 130,
+   "categoryId": 10,
+   "brand": {
+    "en": "PageRiver",
+    "zhHans": "页川",
+    "zhHant": "頁川"
+   },
+   "model": "ScienceKit Volcano",
+   "name": {
+    "en": "PageRiver ScienceKit Volcano STEM Science Kit",
+    "zhHans": "页川 ScienceKit Volcano STEM科学实验套装",
+    "zhHant": "頁川 ScienceKit Volcano STEM科學實驗套裝"
+   },
+   "subtitle": {
+    "en": "Twenty safe experiments with illustrated manual.",
+    "zhHans": "20 个安全小实验，图解说明书。",
+    "zhHant": "20 個安全小實驗，圖解說明書。"
+   },
+   "description": {
+    "en": "Twenty safe experiments with illustrated manual. A favorite pick from our stem science kit selection.",
+    "zhHans": "20 个安全小实验，图解说明书。来自页川的热销之选，品质与口碑双在线。",
+    "zhHant": "20 個安全小實驗，圖解說明書。來自頁川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 16900,
+   "stock": 74,
+   "sales": 30995,
+   "rating": 4.3,
+   "tags": [
+    "stem",
+    "science"
+   ],
+   "flashSale": false,
+   "imageKeyword": "science",
+   "lock": 1010
+  },
+  {
+   "id": 131,
+   "categoryId": 10,
+   "brand": {
+    "en": "PageRiver",
+    "zhHans": "页川",
+    "zhHant": "頁川"
+   },
+   "model": "KidsScooter",
+   "name": {
+    "en": "PageRiver KidsScooter Kick Scooter",
+    "zhHans": "页川 KidsScooter 儿童滑板车",
+    "zhHant": "頁川 KidsScooter 兒童滑板車"
+   },
+   "subtitle": {
+    "en": "Lean-to-steer with glow wheels.",
+    "zhHans": "重心转向+发光轮。",
+    "zhHant": "重心轉向+發光輪。"
+   },
+   "description": {
+    "en": "Lean-to-steer with glow wheels. A favorite pick from our kick scooter selection.",
+    "zhHans": "重心转向+发光轮。来自页川的热销之选，品质与口碑双在线。",
+    "zhHant": "重心轉向+發光輪。來自頁川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 22900,
+   "originalPriceCents": 28900,
+   "stock": 551,
+   "sales": 20787,
+   "rating": 4.3,
+   "tags": [
+    "scooter",
+    "kids"
+   ],
+   "flashSale": false,
+   "imageKeyword": "scooter",
+   "lock": 1017
+  },
+  {
+   "id": 132,
+   "categoryId": 10,
+   "brand": {
+    "en": "PageRiver",
+    "zhHans": "页川",
+    "zhHant": "頁川"
+   },
+   "model": "BabyMonitor 2K",
+   "name": {
+    "en": "PageRiver BabyMonitor 2K Baby Monitor",
+    "zhHans": "页川 BabyMonitor 2K 婴儿监护器",
+    "zhHant": "頁川 BabyMonitor 2K 嬰兒監視器"
+   },
+   "subtitle": {
+    "en": "2K night vision with cry alerts.",
+    "zhHans": "2K 夜视，哭声即时提醒。",
+    "zhHant": "2K 夜視，哭聲即時提醒。"
+   },
+   "description": {
+    "en": "2K night vision with cry alerts. A favorite pick from our baby monitor selection.",
+    "zhHans": "2K 夜视，哭声即时提醒。来自页川的热销之选，品质与口碑双在线。",
+    "zhHant": "2K 夜視，哭聲即時提醒。來自頁川的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 44900,
+   "originalPriceCents": 54900,
+   "stock": 192,
+   "sales": 47784,
+   "rating": 4.4,
+   "tags": [
+    "monitor",
+    "baby"
+   ],
+   "flashSale": false,
+   "imageKeyword": "camera",
+   "lock": 1024
+  },
+  {
+   "id": 133,
+   "categoryId": 11,
+   "brand": {
+    "en": "GlyphSpace",
+    "zhHans": "字间",
+    "zhHant": "字間"
+   },
+   "model": "",
+   "name": {
+    "en": "GlyphSpace Novel: Night Ferry",
+    "zhHans": "字间 小说《夜航渡》",
+    "zhHant": "字間 小說《夜航渡》"
+   },
+   "subtitle": {
+    "en": "Award-winning mystery set on a coastal line.",
+    "zhHans": "获奖悬疑长篇，海岸线上的迷案。",
+    "zhHant": "獲獎懸疑長篇，海岸線上的迷案。"
+   },
+   "description": {
+    "en": "Award-winning mystery set on a coastal line. A favorite pick from our novel: night ferry selection.",
+    "zhHans": "获奖悬疑长篇，海岸线上的迷案。来自字间的热销之选，品质与口碑双在线。",
+    "zhHant": "獲獎懸疑長篇，海岸線上的迷案。來自字間的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 5900,
+   "originalPriceCents": 6900,
+   "stock": 429,
+   "sales": 28262,
+   "rating": 4.7,
+   "tags": [
+    "novel",
+    "mystery"
+   ],
+   "flashSale": false,
+   "imageKeyword": "book",
+   "lock": 1031
+  },
+  {
+   "id": 134,
+   "categoryId": 11,
+   "brand": {
+    "en": "GlyphSpace",
+    "zhHans": "字间",
+    "zhHant": "字間"
+   },
+   "model": "",
+   "name": {
+    "en": "GlyphSpace Finance Basics",
+    "zhHans": "字间 理财入门书",
+    "zhHant": "字間 理財入門書"
+   },
+   "subtitle": {
+    "en": "Plain-language guide to compounding and ETFs.",
+    "zhHans": "大白话讲透复利与指数投资。",
+    "zhHant": "大白話講透複利與指數投資。"
+   },
+   "description": {
+    "en": "Plain-language guide to compounding and ETFs. A favorite pick from our finance basics selection.",
+    "zhHans": "大白话讲透复利与指数投资。来自字间的热销之选，品质与口碑双在线。",
+    "zhHant": "大白話講透複利與指數投資。來自字間的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 4900,
+   "originalPriceCents": 5900,
+   "stock": 654,
+   "sales": 14522,
+   "rating": 4.3,
+   "tags": [
+    "finance",
+    "book"
+   ],
+   "flashSale": false,
+   "imageKeyword": "book",
+   "lock": 1038
+  },
+  {
+   "id": 135,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Parenting Handbook",
+    "zhHans": "爪印 正面管教手册",
+    "zhHant": "爪印 正向教養手冊"
+   },
+   "subtitle": {
+    "en": "Age-by-age scripts for calm parenting.",
+    "zhHans": "分龄沟通脚本，温和而坚定。",
+    "zhHant": "分齡溝通腳本，溫和而堅定。"
+   },
+   "description": {
+    "en": "Age-by-age scripts for calm parenting. A favorite pick from our parenting handbook selection.",
+    "zhHans": "分龄沟通脚本，温和而坚定。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "分齡溝通腳本，溫和而堅定。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 5500,
+   "originalPriceCents": 6600,
+   "stock": 159,
+   "sales": 59003,
+   "rating": 4.4,
+   "tags": [
+    "parenting",
+    "book"
+   ],
+   "flashSale": false,
+   "imageKeyword": "books",
+   "lock": 1045
+  },
+  {
+   "id": 136,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Art Calendar 2026",
+    "zhHans": "爪印 2026艺术日历",
+    "zhHant": "爪印 2026藝術日曆"
+   },
+   "subtitle": {
+    "en": "365 museum-grade prints on your desk.",
+    "zhHans": "365 张馆藏级画作，桌面美术馆。",
+    "zhHant": "365 張館藏級畫作，桌面美術館。"
+   },
+   "description": {
+    "en": "365 museum-grade prints on your desk. A favorite pick from our art calendar 2026 selection.",
+    "zhHans": "365 张馆藏级画作，桌面美术馆。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "365 張館藏級畫作，桌面美術館。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 8900,
+   "originalPriceCents": 11900,
+   "stock": 721,
+   "sales": 5706,
+   "rating": 4.8,
+   "tags": [
+    "calendar",
+    "art"
+   ],
+   "flashSale": false,
+   "imageKeyword": "art",
+   "lock": 1052
+  },
+  {
+   "id": 137,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Sketchbook A5",
+    "zhHans": "爪印 素描本",
+    "zhHant": "爪印 素描本"
+   },
+   "subtitle": {
+    "en": "160gsm paper handles light watercolor.",
+    "zhHans": "160g 加厚纸面，可承受淡彩。",
+    "zhHant": "160g 加厚紙面，可承受淡彩。"
+   },
+   "description": {
+    "en": "160gsm paper handles light watercolor. A favorite pick from our sketchbook a5 selection.",
+    "zhHans": "160g 加厚纸面，可承受淡彩。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "160g 加厚紙面，可承受淡彩。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 3900,
+   "originalPriceCents": 4900,
+   "stock": 843,
+   "sales": 50215,
+   "rating": 4.6,
+   "tags": [
+    "sketchbook",
+    "drawing"
+   ],
+   "flashSale": false,
+   "imageKeyword": "notebook",
+   "lock": 1059
+  },
+  {
+   "id": 138,
+   "categoryId": 11,
+   "brand": {
+    "en": "GlyphSpace",
+    "zhHans": "字间",
+    "zhHant": "字間"
+   },
+   "model": "",
+   "name": {
+    "en": "GlyphSpace Fountain Pen F F尖",
+    "zhHans": "字间 钢笔 F尖 F尖",
+    "zhHant": "字間 鋼筆 F尖 F尖"
+   },
+   "subtitle": {
+    "en": "Brass body that ages into your grip.",
+    "zhHans": "黄铜笔身，越用越顺手。",
+    "zhHant": "黃銅筆身，越用越順手。"
+   },
+   "description": {
+    "en": "Brass body that ages into your grip. A favorite pick from our fountain pen f selection.",
+    "zhHans": "黄铜笔身，越用越顺手。来自字间的热销之选，品质与口碑双在线。",
+    "zhHant": "黃銅筆身，越用越順手。來自字間的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 618,
+   "sales": 9174,
+   "rating": 4.7,
+   "tags": [
+    "pen",
+    "fountain"
+   ],
+   "flashSale": false,
+   "imageKeyword": "fountain pen",
+   "lock": 1066
+  },
+  {
+   "id": 139,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Deck Poker Premium",
+    "zhHans": "爪印 花切扑克牌",
+    "zhHant": "爪印 花切撲克牌"
+   },
+   "subtitle": {
+    "en": "Air-cushion finish for smooth fans.",
+    "zhHans": "气垫纹纸面，展牌顺滑。",
+    "zhHant": "氣墊紋紙面，展牌順滑。"
+   },
+   "description": {
+    "en": "Air-cushion finish for smooth fans. A favorite pick from our deck poker premium selection.",
+    "zhHans": "气垫纹纸面，展牌顺滑。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "氣墊紋紙面，展牌順滑。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 4900,
+   "originalPriceCents": 5900,
+   "stock": 363,
+   "sales": 51076,
+   "rating": 4.8,
+   "tags": [
+    "cards",
+    "poker"
+   ],
+   "flashSale": false,
+   "imageKeyword": "playing cards",
+   "lock": 1073
+  },
+  {
+   "id": 140,
+   "categoryId": 11,
+   "brand": {
+    "en": "GlyphSpace",
+    "zhHans": "字间",
+    "zhHant": "字間"
+   },
+   "model": "",
+   "name": {
+    "en": "GlyphSpace Go Board Set",
+    "zhHans": "字间 围棋套装",
+    "zhHant": "字間 圍棋套裝"
+   },
+   "subtitle": {
+    "en": "Bamboo board with double-convex stones.",
+    "zhHans": "竹制棋盘+双凸棋子。",
+    "zhHant": "竹製棋盤+雙凸棋子。"
+   },
+   "description": {
+    "en": "Bamboo board with double-convex stones. A favorite pick from our go board set selection.",
+    "zhHans": "竹制棋盘+双凸棋子。来自字间的热销之选，品质与口碑双在线。",
+    "zhHant": "竹製棋盤+雙凸棋子。來自字間的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 654,
+   "sales": 1717,
+   "rating": 4.6,
+   "tags": [
+    "go",
+    "boardgame"
+   ],
+   "flashSale": false,
+   "imageKeyword": "board game",
+   "lock": 1080
+  },
+  {
+   "id": 141,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Party Card Game",
+    "zhHans": "爪印 聚会桌游卡牌",
+    "zhHant": "爪印 聚會桌遊卡牌"
+   },
+   "subtitle": {
+    "en": "Five-minute rules, endless laughs.",
+    "zhHans": "五分钟上手，笑点密度超标。",
+    "zhHant": "五分鐘上手，笑點密度超標。"
+   },
+   "description": {
+    "en": "Five-minute rules, endless laughs. A favorite pick from our party card game selection.",
+    "zhHans": "五分钟上手，笑点密度超标。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "五分鐘上手，笑點密度超標。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 6900,
+   "originalPriceCents": 8900,
+   "stock": 106,
+   "sales": 3276,
+   "rating": 4.5,
+   "tags": [
+    "party",
+    "boardgame"
+   ],
+   "flashSale": true,
+   "imageKeyword": "board game",
+   "lock": 1087
+  },
+  {
+   "id": 142,
+   "categoryId": 11,
+   "brand": {
+    "en": "GlyphSpace",
+    "zhHans": "字间",
+    "zhHant": "字間"
+   },
+   "model": "",
+   "name": {
+    "en": "GlyphSpace Model Ship Kit",
+    "zhHans": "字间 木质帆船模型",
+    "zhHant": "字間 木質帆船模型"
+   },
+   "subtitle": {
+    "en": "Laser-cut parts, weekend build project.",
+    "zhHans": "激光切割零件，周末手工首选。",
+    "zhHant": "雷射切割零件，週末手工首選。"
+   },
+   "description": {
+    "en": "Laser-cut parts, weekend build project. A favorite pick from our model ship kit selection.",
+    "zhHans": "激光切割零件，周末手工首选。来自字间的热销之选，品质与口碑双在线。",
+    "zhHant": "雷射切割零件，週末手工首選。來自字間的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 19900,
+   "originalPriceCents": 24900,
+   "stock": 323,
+   "sales": 18858,
+   "rating": 4.4,
+   "tags": [
+    "model",
+    "craft"
+   ],
+   "flashSale": false,
+   "imageKeyword": "model ship",
+   "lock": 1094
+  },
+  {
+   "id": 143,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Vinyl Record: City Lights",
+    "zhHans": "爪印 黑胶唱片《城市灯火》",
+    "zhHant": "爪印 黑膠唱片《城市燈火》"
+   },
+   "subtitle": {
+    "en": "180g pressing of the indie classic.",
+    "zhHans": "独立经典 180g 重磅压盘。",
+    "zhHant": "獨立經典 180g 重磅壓盤。"
+   },
+   "description": {
+    "en": "180g pressing of the indie classic. A favorite pick from our vinyl record: city lights selection.",
+    "zhHans": "独立经典 180g 重磅压盘。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "獨立經典 180g 重磅壓盤。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 18900,
+   "stock": 198,
+   "sales": 30494,
+   "rating": 4.5,
+   "tags": [
+    "vinyl",
+    "music"
+   ],
+   "flashSale": false,
+   "imageKeyword": "vinyl record",
+   "lock": 1101
+  },
+  {
+   "id": 144,
+   "categoryId": 11,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "",
+   "name": {
+    "en": "PawPrint Calligraphy Copybook",
+    "zhHans": "爪印 字帖临摹套装",
+    "zhHant": "爪印 字帖臨摹套裝"
+   },
+   "subtitle": {
+    "en": "Reusable grooved pages with pen included.",
+    "zhHans": "凹槽字模可反复写，附赠钢笔。",
+    "zhHant": "凹槽字模可反覆寫，附贈鋼筆。"
+   },
+   "description": {
+    "en": "Reusable grooved pages with pen included. A favorite pick from our calligraphy copybook selection.",
+    "zhHans": "凹槽字模可反复写，附赠钢笔。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "凹槽字模可反覆寫，附贈鋼筆。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 5900,
+   "originalPriceCents": 7900,
+   "stock": 834,
+   "sales": 5517,
+   "rating": 4.5,
+   "tags": [
+    "calligraphy",
+    "copybook"
+   ],
+   "flashSale": false,
+   "imageKeyword": "notebook",
+   "lock": 1108
+  },
+  {
+   "id": 145,
+   "categoryId": 12,
+   "brand": {
+    "en": "MeowPaw",
+    "zhHans": "喵汪",
+    "zhHant": "喵汪"
+   },
+   "model": "CatTower XXL",
+   "name": {
+    "en": "MeowPaw CatTower XXL Cat Tree",
+    "zhHans": "喵汪 CatTower XXL 猫爬架",
+    "zhHant": "喵汪 CatTower XXL 貓跳台"
+   },
+   "subtitle": {
+    "en": "Multi-level condo with sisal posts.",
+    "zhHans": "多层平台+剑麻猫抓柱。",
+    "zhHant": "多層平台+劍麻貓抓柱。"
+   },
+   "description": {
+    "en": "Multi-level condo with sisal posts. A favorite pick from our cat tree selection.",
+    "zhHans": "多层平台+剑麻猫抓柱。来自喵汪的热销之选，品质与口碑双在线。",
+    "zhHant": "多層平台+劍麻貓抓柱。來自喵汪的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 29900,
+   "originalPriceCents": 36900,
+   "stock": 328,
+   "sales": 17775,
+   "rating": 4.7,
+   "tags": [
+    "cattree",
+    "cat"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cat tree",
+   "lock": 1115
+  },
+  {
+   "id": 146,
+   "categoryId": 12,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "LitterRobot Lite",
+   "name": {
+    "en": "PawPrint LitterRobot Lite Self-cleaning Litter Box",
+    "zhHans": "爪印 LitterRobot Lite 自动猫砂盆",
+    "zhHant": "爪印 LitterRobot Lite 自動貓砂盆"
+   },
+   "subtitle": {
+    "en": "Auto-sifts waste into a sealed drawer.",
+    "zhHans": "自动分离排泄物，密封集便抽屉。",
+    "zhHant": "自動分離排泄物，密封集便抽屜。"
+   },
+   "description": {
+    "en": "Auto-sifts waste into a sealed drawer. A favorite pick from our self-cleaning litter box selection.",
+    "zhHans": "自动分离排泄物，密封集便抽屉。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "自動分離排泄物，密封集便抽屜。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 129900,
+   "originalPriceCents": 159900,
+   "stock": 628,
+   "sales": 42315,
+   "rating": 4.5,
+   "tags": [
+    "litterbox",
+    "smart"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cat",
+   "lock": 1122
+  },
+  {
+   "id": 147,
+   "categoryId": 12,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "DogFood Salmon",
+   "name": {
+    "en": "PawPrint DogFood Salmon Salmon Dog Food 7.5kg",
+    "zhHans": "爪印 DogFood Salmon 三文鱼狗粮 7.5kg",
+    "zhHant": "爪印 DogFood Salmon 鮭魚狗糧 7.5kg"
+   },
+   "subtitle": {
+    "en": "Grain-free formula for shiny coats.",
+    "zhHans": "无谷配方，吃出亮毛发。",
+    "zhHant": "無穀配方，吃出亮毛髮。"
+   },
+   "description": {
+    "en": "Grain-free formula for shiny coats. A favorite pick from our salmon dog food selection.",
+    "zhHans": "无谷配方，吃出亮毛发。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "無穀配方，吃出亮毛髮。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 34900,
+   "originalPriceCents": 42900,
+   "stock": 471,
+   "sales": 2407,
+   "rating": 4.6,
+   "tags": [
+    "dogfood",
+    "salmon"
+   ],
+   "flashSale": false,
+   "imageKeyword": "dog food",
+   "lock": 1129
+  },
+  {
+   "id": 148,
+   "categoryId": 12,
+   "brand": {
+    "en": "MeowPaw",
+    "zhHans": "喵汪",
+    "zhHant": "喵汪"
+   },
+   "model": "CatFood Tuna",
+   "name": {
+    "en": "MeowPaw CatFood Tuna Tuna Cat Food 12罐",
+    "zhHans": "喵汪 CatFood Tuna 金枪鱼猫罐头 12罐",
+    "zhHant": "喵汪 CatFood Tuna 鮪魚貓罐頭 12罐"
+   },
+   "subtitle": {
+    "en": "Human-grade chunks in natural broth.",
+    "zhHans": "人食用级大肉块，原汤慢炖。",
+    "zhHant": "人食用級大肉塊，原湯慢燉。"
+   },
+   "description": {
+    "en": "Human-grade chunks in natural broth. A favorite pick from our tuna cat food selection.",
+    "zhHans": "人食用级大肉块，原汤慢炖。来自喵汪的热销之选，品质与口碑双在线。",
+    "zhHant": "人食用級大肉塊，原湯慢燉。來自喵汪的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 15900,
+   "stock": 126,
+   "sales": 44550,
+   "rating": 4.5,
+   "tags": [
+    "catfood",
+    "canned"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cat food",
+   "lock": 1136
+  },
+  {
+   "id": 149,
+   "categoryId": 12,
+   "brand": {
+    "en": "MeowPaw",
+    "zhHans": "喵汪",
+    "zhHant": "喵汪"
+   },
+   "model": "PetFountain 2L",
+   "name": {
+    "en": "MeowPaw PetFountain 2L Pet Water Fountain",
+    "zhHans": "喵汪 PetFountain 2L 宠物饮水机",
+    "zhHant": "喵汪 PetFountain 2L 寵物飲水機"
+   },
+   "subtitle": {
+    "en": "Ultra-quiet pump encourages drinking.",
+    "zhHans": "超静音水泵，主子更爱喝水。",
+    "zhHant": "超靜音水泵，主子更愛喝水。"
+   },
+   "description": {
+    "en": "Ultra-quiet pump encourages drinking. A favorite pick from our pet water fountain selection.",
+    "zhHans": "超静音水泵，主子更爱喝水。来自喵汪的热销之选，品质与口碑双在线。",
+    "zhHant": "超靜音水泵，主子更愛喝水。來自喵汪的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 15900,
+   "originalPriceCents": 19900,
+   "stock": 398,
+   "sales": 13139,
+   "rating": 4.9,
+   "tags": [
+    "fountain",
+    "pet"
+   ],
+   "flashSale": false,
+   "imageKeyword": "pet fountain",
+   "lock": 1143
+  },
+  {
+   "id": 150,
+   "categoryId": 12,
+   "brand": {
+    "en": "MeowPaw",
+    "zhHans": "喵汪",
+    "zhHant": "喵汪"
+   },
+   "model": "DogLeash Reflect",
+   "name": {
+    "en": "MeowPaw DogLeash Reflect Reflective Leash",
+    "zhHans": "喵汪 DogLeash Reflect 反光牵引绳",
+    "zhHant": "喵汪 DogLeash Reflect 反光牽引繩"
+   },
+   "subtitle": {
+    "en": "Shock-absorbing bungee for pullers.",
+    "zhHans": "缓冲弹力段，爆冲也温柔。",
+    "zhHant": "緩衝彈力段，暴衝也溫柔。"
+   },
+   "description": {
+    "en": "Shock-absorbing bungee for pullers. A favorite pick from our reflective leash selection.",
+    "zhHans": "缓冲弹力段，爆冲也温柔。来自喵汪的热销之选，品质与口碑双在线。",
+    "zhHant": "緩衝彈力段，暴衝也溫柔。來自喵汪的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 6900,
+   "originalPriceCents": 8900,
+   "stock": 229,
+   "sales": 40415,
+   "rating": 4.4,
+   "tags": [
+    "leash",
+    "dog"
+   ],
+   "flashSale": false,
+   "imageKeyword": "dog leash",
+   "lock": 1150
+  },
+  {
+   "id": 151,
+   "categoryId": 12,
+   "brand": {
+    "en": "PawPrint",
+    "zhHans": "爪印",
+    "zhHant": "爪印"
+   },
+   "model": "CatnipFish",
+   "name": {
+    "en": "PawPrint CatnipFish Catnip Toys 3只装",
+    "zhHans": "爪印 CatnipFish 木天蓼玩具 3只装",
+    "zhHant": "爪印 CatnipFish 木天薊玩具 3只装"
+   },
+   "subtitle": {
+    "en": "Natural catnip-stuffed fish trio.",
+    "zhHans": "天然木天蓼填充，三条装。",
+    "zhHant": "天然木天薊填充，三條裝。"
+   },
+   "description": {
+    "en": "Natural catnip-stuffed fish trio. A favorite pick from our catnip toys selection.",
+    "zhHans": "天然木天蓼填充，三条装。来自爪印的热销之选，品质与口碑双在线。",
+    "zhHant": "天然木天薊填充，三條裝。來自爪印的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 3900,
+   "originalPriceCents": 4900,
+   "stock": 654,
+   "sales": 44894,
+   "rating": 4.3,
+   "tags": [
+    "toy",
+    "cat"
+   ],
+   "flashSale": false,
+   "imageKeyword": "cat toy",
+   "lock": 1157
+  },
+  {
+   "id": 152,
+   "categoryId": 12,
+   "brand": {
+    "en": "MeowPaw",
+    "zhHans": "喵汪",
+    "zhHant": "喵汪"
+   },
+   "model": "PetBed Oval",
+   "name": {
+    "en": "MeowPaw PetBed Oval Calming Pet Bed",
+    "zhHans": "喵汪 PetBed Oval 安抚宠物窝",
+    "zhHant": "喵汪 PetBed Oval 安撫寵物窩"
+   },
+   "subtitle": {
+    "en": "Raised rim supports head, washable cover.",
+    "zhHans": "环形护头设计，外套可拆洗。",
+    "zhHant": "環形護頭設計，外套可拆洗。"
+   },
+   "description": {
+    "en": "Raised rim supports head, washable cover. A favorite pick from our calming pet bed selection.",
+    "zhHans": "环形护头设计，外套可拆洗。来自喵汪的热销之选，品质与口碑双在线。",
+    "zhHant": "環形護頭設計，外套可拆洗。來自喵汪的熱銷之選，品質與口碑雙在線。"
+   },
+   "priceCents": 12900,
+   "originalPriceCents": 16900,
+   "stock": 345,
+   "sales": 55681,
+   "rating": 4.5,
+   "tags": [
+    "bed",
+    "pet"
+   ],
+   "flashSale": true,
+   "imageKeyword": "dog bed",
+   "lock": 1164
+  }
+ ]
+}
