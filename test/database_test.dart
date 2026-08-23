@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:impulsive_consumption/core/utils/localized_text.dart';
 import 'package:impulsive_consumption/data/database/database.dart';
 import 'package:impulsive_consumption/data/database/seed_loader.dart';
-import 'package:impulsive_consumption/data/database/tables.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

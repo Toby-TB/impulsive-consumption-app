@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:impulsive_consumption/data/database/database.dart';
 import 'package:impulsive_consumption/data/database/seed_loader.dart';
-import 'package:impulsive_consumption/data/database/tables.dart';
 import 'package:impulsive_consumption/data/repositories/cart_repository.dart';
 import 'package:impulsive_consumption/data/repositories/checkin_repository.dart';
 import 'package:impulsive_consumption/data/repositories/coupon_repository.dart';

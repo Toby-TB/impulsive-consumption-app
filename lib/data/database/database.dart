@@ -4,6 +4,8 @@ import 'package:drift_flutter/drift_flutter.dart';
 import '../../core/utils/localized_text.dart';
 import 'tables.dart';
 
+export 'tables.dart';
+
 part 'database.g.dart';
 
 @DriftDatabase(

@@ -69,4 +69,7 @@ AppLanguage currentLang(BuildContext context) =>
 /// l10n 快捷方式。
 extension L10nX on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this)!;
+
+  /// 当前地区币种。
+  FxCurrency watchRegion(WidgetRef ref) => ref.watch(regionProvider);
 }

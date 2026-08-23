@@ -5,7 +5,6 @@ import 'package:flutter/services.dart' show AssetBundle;
 
 import '../../core/utils/localized_text.dart';
 import 'database.dart';
-import 'tables.dart';
 
 const kInitialBalanceCents = 1000000; // ¥10,000
 const _kProductsAsset = 'assets/data/products.json';
