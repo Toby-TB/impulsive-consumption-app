@@ -12,7 +12,11 @@ void main() {
   late AppDatabase db;
 
   setUp(() {
-    db = AppDatabase.forTesting(NativeDatabase.memory());
+    db = AppDatabase.forTesting(
+      NativeDatabase.memory(
+        setup: (rawDb) => rawDb.execute('PRAGMA foreign_keys = ON'),
+      ),
+    );
   });
 
   tearDown(() async => db.close());

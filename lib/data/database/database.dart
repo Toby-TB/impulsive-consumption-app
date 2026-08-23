@@ -29,4 +29,10 @@ class AppDatabase extends _$AppDatabase {
   int get schemaVersion => 1;
 }
 
-QueryExecutor openConnection() => driftDatabase(name: 'impulsive_consumption');
+QueryExecutor openConnection() => driftDatabase(
+      name: 'impulsive_consumption',
+      // 闭包参数类型由上下文推断，无需导入 sqlite3 的具体类型
+      native: DriftNativeOptions(
+        setup: (db) => db.execute('PRAGMA foreign_keys = ON'),
+      ),
+    );
