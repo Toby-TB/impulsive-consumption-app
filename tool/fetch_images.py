@@ -119,6 +119,12 @@ def main():
         kw_counter[kw] = idx + 1
         jobs.append((pid, cands[idx % len(cands)]))
 
+    def work(job):
+        pid, url = job
+        if url is None:
+            return pid, "FAILED"
+        return grab_url(pid, url)
+
     results = {}
     consecutive_fail = 0
     for job in jobs:  # 严格串行 + 大间隔节流，避免触发 CDN 封禁
