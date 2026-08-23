@@ -7,8 +7,10 @@ import 'package:impulsive_consumption/data/repositories/cart_repository.dart';
 import 'package:impulsive_consumption/data/repositories/checkin_repository.dart';
 import 'package:impulsive_consumption/data/repositories/coupon_repository.dart';
 import 'package:impulsive_consumption/data/repositories/exceptions.dart';
+import 'package:impulsive_consumption/data/repositories/order_repository.dart';
 import 'package:impulsive_consumption/data/repositories/wallet_repository.dart';
 import 'package:impulsive_consumption/data/repositories/wishlist_repository.dart';
+import 'package:impulsive_consumption/data/services/checkout_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -173,6 +175,72 @@ void main() {
       expect(await db.select(db.checkins).get(), hasLength(1));
       // 初始流水 + 签到奖励一条
       expect(await db.select(db.walletTransactions).get(), hasLength(2));
+    });
+  });
+
+  group('OrderRepository', () {
+    test('buyAgain merges order items back into cart', () async {
+      final checkout = CheckoutService(db);
+      await cart.add(1, qty: 2);
+      var items = await cart.watchDetailed().first;
+      final result = await checkout.checkout(items: items);
+      expect(await db.select(db.cartItems).get(), isEmpty);
+
+      final repo = OrderRepository(db);
+      await repo.buyAgain(result.orderId, cart);
+
+      items = await cart.watchDetailed().first;
+      expect(items.single.product.id, 1);
+      expect(items.single.item.quantity, 2);
+    });
+
+    test('advanceStatuses moves orders along the timeline', () async {
+      final checkout = CheckoutService(db);
+      await cart.add(2, qty: 1);
+      final items = await cart.watchDetailed().first;
+      final result = await checkout.checkout(items: items);
+
+      final repo = OrderRepository(db);
+      final paidAt =
+          (await (db.select(db.orders)..where((t) => t.id.equals(result.orderId)))
+              .getSingle())
+          .paidAt!;
+
+      // 付款后 30s：仍待发货
+      await repo.advanceStatuses(paidAt.add(const Duration(seconds: 30)));
+      var o = await (db.select(db.orders)..where((t) => t.id.equals(result.orderId)))
+          .getSingle();
+      expect(o.status, OrderStatus.pendingShip);
+
+      // 120s：运输中
+      await repo.advanceStatuses(paidAt.add(const Duration(seconds: 120)));
+      o = await (db.select(db.orders)..where((t) => t.id.equals(result.orderId)))
+          .getSingle();
+      expect(o.status, OrderStatus.shipping);
+
+      // 400s：已签收
+      await repo.advanceStatuses(paidAt.add(const Duration(seconds: 400)));
+      o = await (db.select(db.orders)..where((t) => t.id.equals(result.orderId)))
+          .getSingle();
+      expect(o.status, OrderStatus.completed);
+    });
+
+    test('watchOrders returns newest first with items resolved', () async {
+      final checkout = CheckoutService(db);
+      await cart.add(1);
+      var items = await cart.watchDetailed().first;
+      final r1 = await checkout.checkout(items: items);
+
+      await cart.add(13); // Fly One ¥1699，两单合计 < 余额
+      items = await cart.watchDetailed().first;
+      await checkout.checkout(items: items);
+
+      final repo = OrderRepository(db);
+      final orders = await repo.watchOrders().first;
+      expect(orders, hasLength(2));
+      expect(orders.first.order.id, isNot(r1.orderId)); // 新订单在前
+      expect(orders.first.items, isNotEmpty);
+      expect(orders.first.items.first.product, isNotNull);
     });
   });
 }

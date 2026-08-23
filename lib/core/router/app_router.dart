@@ -14,6 +14,7 @@ import '../../features/profile/profile_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/wallet/wallet_screen.dart';
 import '../../features/wishlist/wishlist_screen.dart';
+import '../../features/catalog/catalog_providers.dart';
 import '../../l10n/app_localizations.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -87,6 +88,26 @@ StatefulShellBranch _branch(String path, Widget child) =>
       GoRoute(path: path, builder: (context, state) => child),
     ]);
 
+class _CartBadge extends StatelessWidget {
+  final int count;
+  final bool selected;
+
+  const _CartBadge({required this.count, required this.selected});
+
+  @override
+  Widget build(BuildContext context) {
+    final icon = selected
+        ? const Icon(Icons.shopping_cart)
+        : const Icon(Icons.shopping_cart_outlined);
+    if (count == 0) return icon;
+    return Badge(
+      label: Text('$count'),
+      isLabelVisible: true,
+      child: icon,
+    );
+  }
+}
+
 class _ShellScaffold extends ConsumerWidget {
   final StatefulNavigationShell shell;
   final GoRouterState state;
@@ -115,7 +136,11 @@ class _ShellScaffold extends ConsumerWidget {
         destinations: [
           NavigationDestination(icon: const Icon(Icons.storefront_outlined), selectedIcon: const Icon(Icons.storefront), label: l.navHome),
           NavigationDestination(icon: const Icon(Icons.grid_view_outlined), selectedIcon: const Icon(Icons.grid_view), label: l.navCategory),
-          NavigationDestination(icon: const Icon(Icons.shopping_cart_outlined), selectedIcon: const Icon(Icons.shopping_cart), label: l.navCart),
+          NavigationDestination(
+            icon: _CartBadge(count: ref.watch(cartCountProvider).value ?? 0, selected: false),
+            selectedIcon: _CartBadge(count: ref.watch(cartCountProvider).value ?? 0, selected: true),
+            label: l.navCart,
+          ),
           NavigationDestination(icon: const Icon(Icons.receipt_long_outlined), selectedIcon: const Icon(Icons.receipt_long), label: l.navOrders),
           NavigationDestination(icon: const Icon(Icons.person_outline), selectedIcon: const Icon(Icons.person), label: l.navProfile),
         ],
