@@ -1,6 +1,5 @@
 
 import '../database/database.dart';
-import '../database/tables.dart';
 import 'wallet_repository.dart';
 
 /// 签到页面状态。

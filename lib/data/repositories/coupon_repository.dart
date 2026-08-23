@@ -1,7 +1,6 @@
 import 'package:drift/drift.dart';
 
 import '../database/database.dart';
-import '../database/tables.dart';
 
 /// 券 + 实际可优惠金额。
 class CouponWithDiscount {

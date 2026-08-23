@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:drift/drift.dart';
 
 import '../database/database.dart';
-import '../database/tables.dart';
 import '../repositories/cart_repository.dart';
 import '../repositories/coupon_repository.dart';
 import '../repositories/exceptions.dart';

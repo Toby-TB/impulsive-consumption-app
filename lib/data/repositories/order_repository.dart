@@ -2,7 +2,6 @@ import 'package:drift/drift.dart';
 
 import '../../core/utils/stream_utils.dart';
 import '../database/database.dart';
-import '../database/tables.dart';
 import '../services/logistics_calculator.dart';
 import 'cart_repository.dart';
 
