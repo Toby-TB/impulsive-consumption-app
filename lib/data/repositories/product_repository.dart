@@ -2,7 +2,6 @@ import 'package:drift/drift.dart';
 
 import '../../core/utils/localized_text.dart';
 import '../database/database.dart';
-import '../database/tables.dart';
 
 enum ProductSortMode { best, sales, priceAsc, priceDesc }
 

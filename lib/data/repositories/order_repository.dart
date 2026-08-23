@@ -5,7 +5,6 @@ import '../database/database.dart';
 import '../database/tables.dart';
 import '../services/logistics_calculator.dart';
 import 'cart_repository.dart';
-import 'exceptions.dart';
 
 /// 订单 + 明细（明细动态关联当前语言商品名）。
 class OrderItemWithProduct {
@@ -77,7 +76,7 @@ class OrderRepository {
   Future<void> advanceStatuses(DateTime now) async {
     final rows = await (_db.select(_db.orders)
           ..where((t) => t.status.isNotIn([OrderStatus.completed.index]))
-          ..filter((t) => t.paidAt.isNotNull()))
+          ..where((t) => t.paidAt.isNotNull()))
         .get();
     for (final o in rows) {
       final target = LogisticsCalculator.statusAt(o.paidAt!, now);

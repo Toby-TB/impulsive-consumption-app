@@ -1,7 +1,5 @@
-import 'package:drift/drift.dart';
 
 import '../database/database.dart';
-import '../database/tables.dart';
 
 class WishlistRepository {
   final AppDatabase _db;

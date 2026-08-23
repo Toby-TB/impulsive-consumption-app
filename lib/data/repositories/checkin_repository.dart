@@ -1,4 +1,3 @@
-import 'package:drift/drift.dart';
 
 import '../database/database.dart';
 import '../database/tables.dart';

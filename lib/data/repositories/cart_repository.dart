@@ -1,7 +1,6 @@
 import 'package:drift/drift.dart';
 
 import '../database/database.dart';
-import '../database/tables.dart';
 
 /// 购物车行 + 商品信息聚合。
 class CartItemWithProduct {

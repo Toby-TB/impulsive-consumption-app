@@ -6,9 +6,7 @@ import 'package:impulsive_consumption/data/database/database.dart';
 import 'package:impulsive_consumption/data/database/seed_loader.dart';
 import 'package:impulsive_consumption/data/database/tables.dart';
 import 'package:impulsive_consumption/data/repositories/cart_repository.dart';
-import 'package:impulsive_consumption/data/repositories/coupon_repository.dart';
 import 'package:impulsive_consumption/data/repositories/exceptions.dart';
-import 'package:impulsive_consumption/data/repositories/wallet_repository.dart';
 import 'package:impulsive_consumption/data/services/checkout_service.dart';
 
 void main() {
