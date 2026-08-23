@@ -45,7 +45,10 @@ class OrderRepository {
       final list = [
         for (final o in orders)
           OrderWithItems(order: o, items: byOrder[o.id] ?? const []),
-      ]..sort((a, b) => b.order.createdAt.compareTo(a.order.createdAt));
+      ]..sort((a, b) {
+        final byTime = b.order.createdAt.compareTo(a.order.createdAt);
+        return byTime != 0 ? byTime : b.order.id.compareTo(a.order.id);
+      });
       return list;
     });
   }
