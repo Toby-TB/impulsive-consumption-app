@@ -788,6 +788,366 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'5% off over ¥100'**
   String get coupon95;
+
+  /// No description provided for @levelBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Lv.{n}'**
+  String levelBadge(int n);
+
+  /// No description provided for @expLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'EXP'**
+  String get expLabel;
+
+  /// No description provided for @impulseLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Impulse'**
+  String get impulseLabel;
+
+  /// No description provided for @achievementsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements'**
+  String get achievementsTitle;
+
+  /// No description provided for @achievementUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievement unlocked!'**
+  String get achievementUnlocked;
+
+  /// No description provided for @levelUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Level Up!'**
+  String get levelUp;
+
+  /// No description provided for @locked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get locked;
+
+  /// No description provided for @rewardFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'+{amount}'**
+  String rewardFormat(String amount);
+
+  /// No description provided for @paymentXpGain.
+  ///
+  /// In en, this message translates to:
+  /// **'+{n} EXP'**
+  String paymentXpGain(int n);
+
+  /// No description provided for @paymentImpulseGain.
+  ///
+  /// In en, this message translates to:
+  /// **'+{n} Impulse'**
+  String paymentImpulseGain(int n);
+
+  /// No description provided for @paymentContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get paymentContinue;
+
+  /// No description provided for @levelUpReward.
+  ///
+  /// In en, this message translates to:
+  /// **'Lv.{n} reward +{amount}'**
+  String levelUpReward(int n, Object amount);
+
+  /// No description provided for @titleRestrained.
+  ///
+  /// In en, this message translates to:
+  /// **'Rookie'**
+  String get titleRestrained;
+
+  /// No description provided for @titlePotential.
+  ///
+  /// In en, this message translates to:
+  /// **'Rising Star'**
+  String get titlePotential;
+
+  /// No description provided for @titleNoviceSplurger.
+  ///
+  /// In en, this message translates to:
+  /// **'Splurge Rookie'**
+  String get titleNoviceSplurger;
+
+  /// No description provided for @titleSplurger.
+  ///
+  /// In en, this message translates to:
+  /// **'Splurge Master'**
+  String get titleSplurger;
+
+  /// No description provided for @titleSilver.
+  ///
+  /// In en, this message translates to:
+  /// **'Silver Splurger'**
+  String get titleSilver;
+
+  /// No description provided for @titleGold.
+  ///
+  /// In en, this message translates to:
+  /// **'Gold Splurger'**
+  String get titleGold;
+
+  /// No description provided for @titleGod.
+  ///
+  /// In en, this message translates to:
+  /// **'Impulse God'**
+  String get titleGod;
+
+  /// No description provided for @achFirstOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'First Order'**
+  String get achFirstOrder;
+
+  /// No description provided for @achFirstOrderDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete your first order'**
+  String get achFirstOrderDesc;
+
+  /// No description provided for @achOrders5.
+  ///
+  /// In en, this message translates to:
+  /// **'Regular'**
+  String get achOrders5;
+
+  /// No description provided for @achOrders5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 5 orders'**
+  String get achOrders5Desc;
+
+  /// No description provided for @achSpend1k.
+  ///
+  /// In en, this message translates to:
+  /// **'¥1K Club'**
+  String get achSpend1k;
+
+  /// No description provided for @achSpend1kDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Spend over ¥1,000 in total'**
+  String get achSpend1kDesc;
+
+  /// No description provided for @achSpend10k.
+  ///
+  /// In en, this message translates to:
+  /// **'¥10K Whale'**
+  String get achSpend10k;
+
+  /// No description provided for @achSpend10kDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Spend over ¥10,000 in total'**
+  String get achSpend10kDesc;
+
+  /// No description provided for @achBigSpender.
+  ///
+  /// In en, this message translates to:
+  /// **'Big Spender'**
+  String get achBigSpender;
+
+  /// No description provided for @achBigSpenderDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'A single order over ¥5,000'**
+  String get achBigSpenderDesc;
+
+  /// No description provided for @achCart10.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart Hoarder'**
+  String get achCart10;
+
+  /// No description provided for @achCart10Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Have 10 items in cart at once'**
+  String get achCart10Desc;
+
+  /// No description provided for @achWishlist5.
+  ///
+  /// In en, this message translates to:
+  /// **'Curator'**
+  String get achWishlist5;
+
+  /// No description provided for @achWishlist5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Wishlist 5 products'**
+  String get achWishlist5Desc;
+
+  /// No description provided for @achStreak3.
+  ///
+  /// In en, this message translates to:
+  /// **'3-Day Streak'**
+  String get achStreak3;
+
+  /// No description provided for @achStreak3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Check in 3 days in a row'**
+  String get achStreak3Desc;
+
+  /// No description provided for @achStreak7.
+  ///
+  /// In en, this message translates to:
+  /// **'7-Day Streak'**
+  String get achStreak7;
+
+  /// No description provided for @achStreak7Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Check in 7 days in a row'**
+  String get achStreak7Desc;
+
+  /// No description provided for @achLevel5.
+  ///
+  /// In en, this message translates to:
+  /// **'Level 5'**
+  String get achLevel5;
+
+  /// No description provided for @achLevel5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach level 5'**
+  String get achLevel5Desc;
+
+  /// No description provided for @addressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shipping Address'**
+  String get addressTitle;
+
+  /// No description provided for @addAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'New Address'**
+  String get addAddress;
+
+  /// No description provided for @editAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Address'**
+  String get editAddress;
+
+  /// No description provided for @phoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phoneLabel;
+
+  /// No description provided for @regionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Region'**
+  String get regionLabel;
+
+  /// No description provided for @detailAddressLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get detailAddressLabel;
+
+  /// No description provided for @setDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Set as default'**
+  String get setDefault;
+
+  /// No description provided for @defaultAddressLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get defaultAddressLabel;
+
+  /// No description provided for @deleteAddressConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this address?'**
+  String get deleteAddressConfirm;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @paymentMethodLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Method'**
+  String get paymentMethodLabel;
+
+  /// No description provided for @payBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance'**
+  String get payBalance;
+
+  /// No description provided for @payCod.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash on Delivery'**
+  String get payCod;
+
+  /// No description provided for @payCodNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Charged on delivery'**
+  String get payCodNote;
+
+  /// No description provided for @payInstallment.
+  ///
+  /// In en, this message translates to:
+  /// **'3 installments, 0% interest'**
+  String get payInstallment;
+
+  /// No description provided for @payInstallmentNote.
+  ///
+  /// In en, this message translates to:
+  /// **'First {amount}, rest shown in order'**
+  String payInstallmentNote(String amount);
+
+  /// No description provided for @buyerMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Buyer Note'**
+  String get buyerMessage;
+
+  /// No description provided for @remarkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional, leave a note for seller'**
+  String get remarkHint;
+
+  /// No description provided for @addressRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please add a shipping address first'**
+  String get addressRequired;
+
+  /// No description provided for @installmentProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Installment · paid {paid}/3'**
+  String installmentProgress(int paid);
+
+  /// No description provided for @codNote.
+  ///
+  /// In en, this message translates to:
+  /// **'COD · charged when signed'**
+  String get codNote;
 }
 
 class _AppLocalizationsDelegate

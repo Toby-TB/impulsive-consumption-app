@@ -75,6 +75,7 @@ class OrderRepository {
   }
 
   /// 按付款时间推进订单状态（与物流推演一致）。
+  /// 货到付款订单在签收时结算扣款（模拟允许余额为负，视为赊账）。
   Future<void> advanceStatuses(DateTime now) async {
     final rows = await (_db.select(_db.orders)
           ..where((t) => t.status.isNotIn([OrderStatus.completed.index]))
@@ -86,7 +87,35 @@ class OrderRepository {
         await (_db.update(_db.orders)..where((t) => t.id.equals(o.id)))
             .write(OrdersCompanion(status: Value(target)));
       }
+      // COD 签收结算
+      if (target == OrderStatus.completed &&
+          !o.settled &&
+          o.paymentMethod == PaymentMethod.cod) {
+        await _settleCod(o);
+      }
     }
+  }
+
+  Future<void> _settleCod(Order o) async {
+    final wallet = await _db.select(_db.wallets).getSingle();
+    final balanceAfter = wallet.balanceCents - o.payableCents;
+    await (_db.update(_db.wallets)..where((t) => t.id.equals(wallet.id))).write(
+      WalletsCompanion(
+        balanceCents: Value(balanceAfter),
+        totalSpentCents: Value(wallet.totalSpentCents + o.payableCents),
+      ),
+    );
+    await _db.into(_db.walletTransactions).insert(
+          WalletTransactionsCompanion.insert(
+            type: TxType.spend,
+            amountCents: -o.payableCents,
+            balanceAfterCents: balanceAfter,
+            refText: const Value('cod'),
+            createdAt: DateTime.now(),
+          ),
+        );
+    await (_db.update(_db.orders)..where((t) => t.id.equals(o.id)))
+        .write(const OrdersCompanion(settled: Value(true)));
   }
 
   /// 再次购买：把订单内商品合并回购物车。

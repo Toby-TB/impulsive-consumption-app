@@ -375,6 +375,200 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get coupon95 => '满100打95折';
+
+  @override
+  String levelBadge(int n) {
+    return 'Lv.$n';
+  }
+
+  @override
+  String get expLabel => '经验';
+
+  @override
+  String get impulseLabel => '冲动值';
+
+  @override
+  String get achievementsTitle => '成就墙';
+
+  @override
+  String get achievementUnlocked => '成就解锁！';
+
+  @override
+  String get levelUp => '恭喜升级！';
+
+  @override
+  String get locked => '未解锁';
+
+  @override
+  String rewardFormat(String amount) {
+    return '+$amount';
+  }
+
+  @override
+  String paymentXpGain(int n) {
+    return '+$n 经验';
+  }
+
+  @override
+  String paymentImpulseGain(int n) {
+    return '+$n 冲动值';
+  }
+
+  @override
+  String get paymentContinue => '继续';
+
+  @override
+  String levelUpReward(int n, Object amount) {
+    return 'Lv.$n 奖励 +$amount';
+  }
+
+  @override
+  String get titleRestrained => '克制新人';
+
+  @override
+  String get titlePotential => '潜力股';
+
+  @override
+  String get titleNoviceSplurger => '剁手新秀';
+
+  @override
+  String get titleSplurger => '剁手达人';
+
+  @override
+  String get titleSilver => '白银剁手';
+
+  @override
+  String get titleGold => '黄金剁手';
+
+  @override
+  String get titleGod => '冲动之神';
+
+  @override
+  String get achFirstOrder => '首单达成';
+
+  @override
+  String get achFirstOrderDesc => '完成第一笔订单';
+
+  @override
+  String get achOrders5 => '五单老客';
+
+  @override
+  String get achOrders5Desc => '累计完成 5 笔订单';
+
+  @override
+  String get achSpend1k => '千元俱乐部';
+
+  @override
+  String get achSpend1kDesc => '累计消费满 ¥1,000';
+
+  @override
+  String get achSpend10k => '万元大户';
+
+  @override
+  String get achSpend10kDesc => '累计消费满 ¥10,000';
+
+  @override
+  String get achBigSpender => '一掷千金';
+
+  @override
+  String get achBigSpenderDesc => '单笔消费满 ¥5,000';
+
+  @override
+  String get achCart10 => '购物车满员';
+
+  @override
+  String get achCart10Desc => '购物车同时拥有 10 件商品';
+
+  @override
+  String get achWishlist5 => '种草达人';
+
+  @override
+  String get achWishlist5Desc => '收藏 5 件商品';
+
+  @override
+  String get achStreak3 => '坚持三日';
+
+  @override
+  String get achStreak3Desc => '连续签到 3 天';
+
+  @override
+  String get achStreak7 => '七日之约';
+
+  @override
+  String get achStreak7Desc => '连续签到 7 天';
+
+  @override
+  String get achLevel5 => '升级达人';
+
+  @override
+  String get achLevel5Desc => '达到等级 5';
+
+  @override
+  String get addressTitle => '收货地址';
+
+  @override
+  String get addAddress => '新增地址';
+
+  @override
+  String get editAddress => '编辑地址';
+
+  @override
+  String get phoneLabel => '手机号';
+
+  @override
+  String get regionLabel => '所在地';
+
+  @override
+  String get detailAddressLabel => '详细地址';
+
+  @override
+  String get setDefault => '设为默认';
+
+  @override
+  String get defaultAddressLabel => '默认';
+
+  @override
+  String get deleteAddressConfirm => '删除该地址？';
+
+  @override
+  String get save => '保存';
+
+  @override
+  String get paymentMethodLabel => '支付方式';
+
+  @override
+  String get payBalance => '余额支付';
+
+  @override
+  String get payCod => '货到付款';
+
+  @override
+  String get payCodNote => '签收时扣款';
+
+  @override
+  String get payInstallment => '3 期免息';
+
+  @override
+  String payInstallmentNote(String amount) {
+    return '首期 $amount，剩余期数在订单中展示';
+  }
+
+  @override
+  String get buyerMessage => '买家留言';
+
+  @override
+  String get remarkHint => '选填，给商家留言';
+
+  @override
+  String get addressRequired => '请先添加收货地址';
+
+  @override
+  String installmentProgress(int paid) {
+    return '分期 · 已付 $paid/3 期';
+  }
+
+  @override
+  String get codNote => '货到付款 · 签收时扣款';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -747,4 +941,198 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get coupon95 => '滿100享95折';
+
+  @override
+  String levelBadge(int n) {
+    return 'Lv.$n';
+  }
+
+  @override
+  String get expLabel => '經驗';
+
+  @override
+  String get impulseLabel => '衝動值';
+
+  @override
+  String get achievementsTitle => '成就牆';
+
+  @override
+  String get achievementUnlocked => '成就解鎖！';
+
+  @override
+  String get levelUp => '恭喜升級！';
+
+  @override
+  String get locked => '未解鎖';
+
+  @override
+  String rewardFormat(String amount) {
+    return '+$amount';
+  }
+
+  @override
+  String paymentXpGain(int n) {
+    return '+$n 經驗';
+  }
+
+  @override
+  String paymentImpulseGain(int n) {
+    return '+$n 衝動值';
+  }
+
+  @override
+  String get paymentContinue => '繼續';
+
+  @override
+  String levelUpReward(int n, Object amount) {
+    return 'Lv.$n 獎勵 +$amount';
+  }
+
+  @override
+  String get titleRestrained => '剋制新人';
+
+  @override
+  String get titlePotential => '潛力股';
+
+  @override
+  String get titleNoviceSplurger => '剁手新秀';
+
+  @override
+  String get titleSplurger => '剁手達人';
+
+  @override
+  String get titleSilver => '白銀剁手';
+
+  @override
+  String get titleGold => '黃金剁手';
+
+  @override
+  String get titleGod => '衝動之神';
+
+  @override
+  String get achFirstOrder => '首單達成';
+
+  @override
+  String get achFirstOrderDesc => '完成第一筆訂單';
+
+  @override
+  String get achOrders5 => '五單老客';
+
+  @override
+  String get achOrders5Desc => '累計完成 5 筆訂單';
+
+  @override
+  String get achSpend1k => '千元俱樂部';
+
+  @override
+  String get achSpend1kDesc => '累計消費滿 ¥1,000';
+
+  @override
+  String get achSpend10k => '萬元大戶';
+
+  @override
+  String get achSpend10kDesc => '累計消費滿 ¥10,000';
+
+  @override
+  String get achBigSpender => '一擲千金';
+
+  @override
+  String get achBigSpenderDesc => '單筆消費滿 ¥5,000';
+
+  @override
+  String get achCart10 => '購物車滿員';
+
+  @override
+  String get achCart10Desc => '購物車同時擁有 10 件商品';
+
+  @override
+  String get achWishlist5 => '種草達人';
+
+  @override
+  String get achWishlist5Desc => '收藏 5 件商品';
+
+  @override
+  String get achStreak3 => '堅持三日';
+
+  @override
+  String get achStreak3Desc => '連續簽到 3 天';
+
+  @override
+  String get achStreak7 => '七日之約';
+
+  @override
+  String get achStreak7Desc => '連續簽到 7 天';
+
+  @override
+  String get achLevel5 => '升級達人';
+
+  @override
+  String get achLevel5Desc => '達到等級 5';
+
+  @override
+  String get addressTitle => '收貨地址';
+
+  @override
+  String get addAddress => '新增地址';
+
+  @override
+  String get editAddress => '編輯地址';
+
+  @override
+  String get phoneLabel => '手機號';
+
+  @override
+  String get regionLabel => '所在地';
+
+  @override
+  String get detailAddressLabel => '詳細地址';
+
+  @override
+  String get setDefault => '設為預設';
+
+  @override
+  String get defaultAddressLabel => '預設';
+
+  @override
+  String get deleteAddressConfirm => '刪除該地址？';
+
+  @override
+  String get save => '儲存';
+
+  @override
+  String get paymentMethodLabel => '付款方式';
+
+  @override
+  String get payBalance => '餘額付款';
+
+  @override
+  String get payCod => '貨到付款';
+
+  @override
+  String get payCodNote => '簽收時扣款';
+
+  @override
+  String get payInstallment => '3 期零利率';
+
+  @override
+  String payInstallmentNote(String amount) {
+    return '首期 $amount，剩餘期數於訂單展示';
+  }
+
+  @override
+  String get buyerMessage => '買家留言';
+
+  @override
+  String get remarkHint => '選填，給賣家留言';
+
+  @override
+  String get addressRequired => '請先新增收貨地址';
+
+  @override
+  String installmentProgress(int paid) {
+    return '分期 · 已付 $paid/3 期';
+  }
+
+  @override
+  String get codNote => '貨到付款 · 簽收時扣款';
 }

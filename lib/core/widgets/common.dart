@@ -67,6 +67,24 @@ AppLanguage currentLang(BuildContext context) =>
     AppLanguageX.fromLocale(Localizations.localeOf(context));
 
 /// l10n 快捷方式。
+/// 成就 key → 本地化标题。
+String achievementL10n(BuildContext context, String key) {
+  final l = AppLocalizations.of(context)!;
+  return switch (key) {
+    'first_order' => l.achFirstOrder,
+    'orders_5' => l.achOrders5,
+    'spend_1k' => l.achSpend1k,
+    'spend_10k' => l.achSpend10k,
+    'big_spender' => l.achBigSpender,
+    'cart_10' => l.achCart10,
+    'wishlist_5' => l.achWishlist5,
+    'streak_3' => l.achStreak3,
+    'streak_7' => l.achStreak7,
+    'level_5' => l.achLevel5,
+    _ => key,
+  };
+}
+
 extension L10nX on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this)!;
 

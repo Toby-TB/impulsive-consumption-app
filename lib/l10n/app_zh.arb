@@ -10,11 +10,29 @@
   "flashSale": "限时秒杀",
   "guessYouLike": "猜你喜欢",
   "soldCount": "已售 {count}",
-  "@soldCount": {"placeholders": {"count": {"type": "int"}}},
+  "@soldCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "stockLeft": "库存 {count}",
-  "@stockLeft": {"placeholders": {"count": {"type": "int"}}},
+  "@stockLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "onlyLeft": "仅剩 {count} 件",
-  "@onlyLeft": {"placeholders": {"count": {"type": "int"}}},
+  "@onlyLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "addToCart": "加入购物车",
   "buyNow": "立即购买",
   "addedToCart": "已加入购物车",
@@ -26,7 +44,13 @@
   "selectAll": "全选",
   "total": "合计",
   "checkoutWithCount": "去结算 ({count})",
-  "@checkoutWithCount": {"placeholders": {"count": {"type": "int"}}},
+  "@checkoutWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "clearCart": "清空购物车",
   "clearCartConfirm": "确定要清空购物车吗？",
   "cancel": "取消",
@@ -35,7 +59,13 @@
   "itemRemoved": "已删除",
   "cleared": "购物车已清空",
   "maxPerItem": "最多 {count}",
-  "@maxPerItem": {"placeholders": {"count": {"type": "int"}}},
+  "@maxPerItem": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "walletTitle": "我的钱包",
   "balance": "余额",
   "totalRecharged": "累计充值",
@@ -48,10 +78,25 @@
   "txSpend": "消费",
   "txCheckin": "签到奖励",
   "txBalanceAfter": "结余 {amount}",
-  "@txBalanceAfter": {"placeholders": {"amount": {"type": "String"}}},
+  "@txBalanceAfter": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "insufficientTitle": "余额不足",
   "insufficientMsg": "当前余额 {balance}，还差 {missing}，快去充值吧！",
-  "@insufficientMsg": {"placeholders": {"balance": {"type": "String"}, "missing": {"type": "String"}}},
+  "@insufficientMsg": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      },
+      "missing": {
+        "type": "String"
+      }
+    }
+  },
   "goRecharge": "去充值",
   "paymentSuccess": "支付成功！",
   "payNow": "立即支付",
@@ -65,9 +110,21 @@
   "couponAvailable": "可用优惠券",
   "couponUnavailable": "不可用",
   "couponThreshold": "满 {amount} 可用",
-  "@couponThreshold": {"placeholders": {"amount": {"type": "String"}}},
+  "@couponThreshold": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "savedAmount": "已优惠 {amount}",
-  "@savedAmount": {"placeholders": {"amount": {"type": "String"}}},
+  "@savedAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "itemsTotal": "商品总额",
   "discount": "优惠",
   "payable": "实付款",
@@ -93,9 +150,21 @@
   "checkinNow": "签到",
   "checkedToday": "今日已签到",
   "checkinDay": "第{n}天",
-  "@checkinDay": {"placeholders": {"n": {"type": "int"}}},
+  "@checkinDay": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "streakDays": "连签 {count} 天",
-  "@streakDays": {"placeholders": {"count": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "settings": "设置",
   "language": "语言",
   "regionCurrency": "地区与货币",
@@ -125,5 +194,114 @@
   "couponNewcomer": "新人专享券",
   "couponOff30Over300": "满300减30",
   "couponOff120Over1000": "满1000减120",
-  "coupon95": "满100打95折"
+  "coupon95": "满100打95折",
+  "levelBadge": "Lv.{n}",
+  "@levelBadge": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "expLabel": "经验",
+  "impulseLabel": "冲动值",
+  "achievementsTitle": "成就墙",
+  "achievementUnlocked": "成就解锁！",
+  "levelUp": "恭喜升级！",
+  "locked": "未解锁",
+  "rewardFormat": "+{amount}",
+  "@rewardFormat": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentXpGain": "+{n} 经验",
+  "@paymentXpGain": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "paymentImpulseGain": "+{n} 冲动值",
+  "@paymentImpulseGain": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "paymentContinue": "继续",
+  "levelUpReward": "Lv.{n} 奖励 +{amount}",
+  "@levelUpReward": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "titleRestrained": "克制新人",
+  "titlePotential": "潜力股",
+  "titleNoviceSplurger": "剁手新秀",
+  "titleSplurger": "剁手达人",
+  "titleSilver": "白银剁手",
+  "titleGold": "黄金剁手",
+  "titleGod": "冲动之神",
+  "achFirstOrder": "首单达成",
+  "achFirstOrderDesc": "完成第一笔订单",
+  "achOrders5": "五单老客",
+  "achOrders5Desc": "累计完成 5 笔订单",
+  "achSpend1k": "千元俱乐部",
+  "achSpend1kDesc": "累计消费满 ¥1,000",
+  "achSpend10k": "万元大户",
+  "achSpend10kDesc": "累计消费满 ¥10,000",
+  "achBigSpender": "一掷千金",
+  "achBigSpenderDesc": "单笔消费满 ¥5,000",
+  "achCart10": "购物车满员",
+  "achCart10Desc": "购物车同时拥有 10 件商品",
+  "achWishlist5": "种草达人",
+  "achWishlist5Desc": "收藏 5 件商品",
+  "achStreak3": "坚持三日",
+  "achStreak3Desc": "连续签到 3 天",
+  "achStreak7": "七日之约",
+  "achStreak7Desc": "连续签到 7 天",
+  "achLevel5": "升级达人",
+  "achLevel5Desc": "达到等级 5",
+  "addressTitle": "收货地址",
+  "addAddress": "新增地址",
+  "editAddress": "编辑地址",
+  "phoneLabel": "手机号",
+  "regionLabel": "所在地",
+  "detailAddressLabel": "详细地址",
+  "setDefault": "设为默认",
+  "defaultAddressLabel": "默认",
+  "deleteAddressConfirm": "删除该地址？",
+  "save": "保存",
+  "paymentMethodLabel": "支付方式",
+  "payBalance": "余额支付",
+  "payCod": "货到付款",
+  "payCodNote": "签收时扣款",
+  "payInstallment": "3 期免息",
+  "payInstallmentNote": "首期 {amount}，剩余期数在订单中展示",
+  "@payInstallmentNote": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "buyerMessage": "买家留言",
+  "remarkHint": "选填，给商家留言",
+  "addressRequired": "请先添加收货地址",
+  "installmentProgress": "分期 · 已付 {paid}/3 期",
+  "@installmentProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      }
+    }
+  },
+  "codNote": "货到付款 · 签收时扣款"
 }

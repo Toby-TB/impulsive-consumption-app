@@ -7,6 +7,7 @@ import '../../../core/providers/preferences_provider.dart';
 import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
 import '../../../data/repositories/checkin_repository.dart';
+import '../../../data/services/gamification_service.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -72,6 +73,10 @@ class ProfileScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 12),
 
+          // 游戏化等级卡
+          const _GamificationCard(),
+          const SizedBox(height: 12),
+
           // 签到卡
           const _CheckinCard(),
           const SizedBox(height: 12),
@@ -96,6 +101,12 @@ class ProfileScreen extends ConsumerWidget {
                   icon: Icons.favorite_border,
                   title: l.wishlistTitle,
                   onTap: () => context.push('/wishlist'),
+                ),
+                _divider(context),
+                _MenuTile(
+                  icon: Icons.emoji_events_outlined,
+                  title: l.achievementsTitle,
+                  onTap: () => context.push('/achievements'),
                 ),
                 _divider(context),
                 _MenuTile(
@@ -146,6 +157,105 @@ class ProfileScreen extends ConsumerWidget {
     );
   }
 }
+
+/// 等级/经验/冲动值/称号卡。
+class _GamificationCard extends ConsumerWidget {
+  const _GamificationCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final theme = Theme.of(context);
+    final state = ref.watch(_gameStateProvider).value;
+    if (state == null) return const SizedBox.shrink();
+
+    final (start, next) = GamificationMath.levelRange(state.xp);
+    final progress = next == null
+        ? 1.0
+        : ((state.xp - start) / (next - start)).clamp(0.0, 1.0);
+    final titleKey = GamificationMath.titleFor(state.impulsePoints);
+    final title = switch (titleKey) {
+      'titleRestrained' => l.titleRestrained,
+      'titlePotential' => l.titlePotential,
+      'titleNoviceSplurger' => l.titleNoviceSplurger,
+      'titleSplurger' => l.titleSplurger,
+      'titleSilver' => l.titleSilver,
+      'titleGold' => l.titleGold,
+      _ => l.titleGod,
+    };
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFFFFD54F), Color(0xFFFF9A44)]),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    l.levelBadge(state.level),
+                    style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w800,
+                        color: Color(0xFF4A2800)),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Text(title,
+                    style: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.bold)),
+                const Spacer(),
+                Text(titleKey == 'titleGod' ? '👑' : '⚡${state.impulsePoints}',
+                    style: const TextStyle(fontSize: 12)),
+              ],
+            ),
+            const SizedBox(height: 12),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: LinearProgressIndicator(
+                value: progress,
+                minHeight: 8,
+                backgroundColor:
+                    theme.colorScheme.surfaceContainerHighest.withValues(alpha: .6),
+                valueColor: AlwaysStoppedAnimation(theme.colorScheme.primary),
+              ),
+            ),
+            const SizedBox(height: 6),
+            Row(
+              children: [
+                Text(l.expLabel,
+                    style:
+                        TextStyle(fontSize: 11, color: theme.hintColor)),
+                const Spacer(),
+                Text(
+                  next == null
+                      ? '${state.xp} MAX'
+                      : '${state.xp} / \$next',
+                  style: TextStyle(fontSize: 11, color: theme.hintColor),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text('${l.impulseLabel}: ${state.impulsePoints}',
+                style: TextStyle(fontSize: 11, color: theme.hintColor)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+final _gameStateProvider = StreamProvider(
+  (ref) => ref.watch(gamificationServiceProvider).watchState(),
+);
 
 final _balanceProvider = StreamProvider(
   (ref) => ref.watch(walletRepositoryProvider).watchAccount().map(
@@ -214,6 +324,25 @@ class _CheckinCard extends ConsumerWidget {
     final l = context.l10n;
     final reward = await ref.read(checkinRepositoryProvider).checkIn();
     if (!context.mounted || reward == null) return;
+
+    // 游戏化：签到经验 + 连签成就
+    final streak = await _currentStreak(ref);
+    final game = await ref
+        .read(gamificationServiceProvider)
+        .onCheckin(streak: streak);
+    if (!context.mounted) return;
+
+    // 成就解锁提示
+    if (game.unlocked.isNotEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            '${l.achievementUnlocked} ${game.unlocked.map((a) => achievementL10n(context, a.key)).join(' · ')}',
+          ),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
 
     // 领取成功动画弹窗
     showDialog<void>(
@@ -302,6 +431,17 @@ class _DayCell extends StatelessWidget {
 final _checkinStateProvider = StreamProvider(
   (ref) => ref.watch(checkinRepositoryProvider).watchState(),
 );
+
+Future<int> _currentStreak(WidgetRef ref) async {
+  final db = ref.read(appDatabaseProvider);
+  final rows = await db.select(db.checkins).get();
+  if (rows.isEmpty) return 1;
+  rows.sort((a, b) => b.dateKey.compareTo(a.dateKey));
+  final now = DateTime.now();
+  final todayKey = CheckinRepository.dateKey(now);
+  if (rows.first.dateKey == todayKey) return rows.first.streak;
+  return 1;
+}
 
 class _MenuTile extends StatelessWidget {
   final IconData icon;

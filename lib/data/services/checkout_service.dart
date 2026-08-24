@@ -12,15 +12,23 @@ class CheckoutResult {
   final int orderId;
   final int payableCents;
   final int discountCents;
+  final PaymentMethod paymentMethod;
+  final int firstInstallmentCents;
 
   const CheckoutResult({
     required this.orderId,
     required this.payableCents,
     required this.discountCents,
+    required this.paymentMethod,
+    this.firstInstallmentCents = 0,
   });
 }
 
-/// 单事务原子结算：校验余额 → 扣款写流水 → 生成订单+明细快照 → 清已勾选购物车。
+/// 单事务原子结算：
+/// 余额支付：校验余额 → 扣款写流水；
+/// 货到付款：不扣款，签收时结算；
+/// 分期(3期)：扣首期（向上取整）。
+/// 同时生成订单+明细快照、地址快照、清已勾选购物车。
 class CheckoutService {
   final AppDatabase _db;
 
@@ -28,8 +36,10 @@ class CheckoutService {
 
   Future<CheckoutResult> checkout({
     required List<CartItemWithProduct> items,
-    String? couponIdKeyHint, // 预留：按 id 选择
     int? couponId,
+    AddressesData? address,
+    PaymentMethod method = PaymentMethod.balance,
+    String? remark,
   }) async {
     assert(items.isNotEmpty, 'checkout requires non-empty items');
     final selected = items.where((e) => e.item.selected).toList();
@@ -44,14 +54,12 @@ class CheckoutService {
 
       // 2. 优惠券校验
       var discount = 0;
-      Coupon? usedCoupon;
       if (couponId != null) {
-        usedCoupon = await (_db.select(_db.coupons)
+        final usedCoupon = await (_db.select(_db.coupons)
               ..where((t) => t.id.equals(couponId)))
             .getSingleOrNull();
         if (usedCoupon == null ||
-            !CouponRepository.isUsable(
-                usedCoupon, DateTime.now())) {
+            !CouponRepository.isUsable(usedCoupon, DateTime.now())) {
           throw const CouponNotApplicableException('unavailable or expired');
         }
         discount = CouponRepository.discountFor(usedCoupon, total);
@@ -61,29 +69,45 @@ class CheckoutService {
       }
       final payable = total - discount;
 
-      // 3. 扣款（含余额校验，失败即整体回滚）
+      // 3. 按支付方式处理资金流
       final wallet = await _db.select(_db.wallets).getSingle();
-      final balanceAfter = wallet.balanceCents - payable;
-      if (balanceAfter < 0) {
-        throw InsufficientBalanceException(-balanceAfter);
-      }
-      await (_db.update(_db.wallets)..where((t) => t.id.equals(wallet.id))).write(
-        WalletsCompanion(
-          balanceCents: Value(balanceAfter),
-          totalSpentCents: Value(wallet.totalSpentCents + payable),
-        ),
-      );
-      await _db.into(_db.walletTransactions).insert(
-            WalletTransactionsCompanion.insert(
-              type: TxType.spend,
-              amountCents: -payable,
-              balanceAfterCents: balanceAfter,
-              refText: Value('order'),
-              createdAt: DateTime.now(),
-            ),
+      var settled = true;
+      var installmentsPaid = 0;
+      var firstInstallment = 0;
+
+      switch (method) {
+        case PaymentMethod.balance:
+          final balanceAfter = wallet.balanceCents - payable;
+          if (balanceAfter < 0) {
+            throw InsufficientBalanceException(-balanceAfter);
+          }
+          await _deduct(
+            wallet: wallet,
+            balanceAfter: balanceAfter,
+            amount: payable,
+            ref: 'order',
           );
 
-      // 4. 订单落库
+        case PaymentMethod.cod:
+          // 签收时扣款
+          settled = false;
+
+        case PaymentMethod.installment3:
+          firstInstallment = (payable / 3).ceil();
+          final balanceAfter = wallet.balanceCents - firstInstallment;
+          if (balanceAfter < 0) {
+            throw InsufficientBalanceException(-balanceAfter);
+          }
+          installmentsPaid = 1;
+          await _deduct(
+            wallet: wallet,
+            balanceAfter: balanceAfter,
+            amount: firstInstallment,
+            ref: 'installment 1/3',
+          );
+      }
+
+      // 4. 订单落库（含地址快照）
       final now = DateTime.now();
       final orderNo = _generateOrderNo(now);
       final orderId = await _db.into(_db.orders).insert(
@@ -96,6 +120,15 @@ class CheckoutService {
               couponId: Value(couponId),
               createdAt: now,
               paidAt: Value(now),
+              paymentMethod: Value(method),
+              receiverName: Value(address?.name ?? ''),
+              receiverPhone: Value(address?.phone ?? ''),
+              receiverAddress: Value(
+                address == null ? '' : '${address.region} ${address.detail}',
+              ),
+              remark: Value(remark),
+              settled: Value(settled),
+              installmentsPaid: Value(installmentsPaid),
             ),
           );
       for (final e in selected) {
@@ -124,8 +157,7 @@ class CheckoutService {
             .write(const CouponsCompanion(status: Value(CouponStatus.used)));
       }
       for (final e in selected) {
-        await (_db.delete(_db.cartItems)
-              ..where((t) => t.id.equals(e.item.id)))
+        await (_db.delete(_db.cartItems)..where((t) => t.id.equals(e.item.id)))
             .go();
       }
 
@@ -133,8 +165,33 @@ class CheckoutService {
         orderId: orderId,
         payableCents: payable,
         discountCents: discount,
+        paymentMethod: method,
+        firstInstallmentCents: firstInstallment,
       );
     });
+  }
+
+  Future<void> _deduct({
+    required Wallet wallet,
+    required int balanceAfter,
+    required int amount,
+    required String ref,
+  }) async {
+    await (_db.update(_db.wallets)..where((t) => t.id.equals(wallet.id))).write(
+      WalletsCompanion(
+        balanceCents: Value(balanceAfter),
+        totalSpentCents: Value(wallet.totalSpentCents + amount),
+      ),
+    );
+    await _db.into(_db.walletTransactions).insert(
+          WalletTransactionsCompanion.insert(
+            type: TxType.spend,
+            amountCents: -amount,
+            balanceAfterCents: balanceAfter,
+            refText: Value(ref),
+            createdAt: DateTime.now(),
+          ),
+        );
   }
 
   static String _generateOrderNo(DateTime t) {

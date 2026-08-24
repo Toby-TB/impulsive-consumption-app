@@ -223,7 +223,20 @@ class ProductDetailScreen extends ConsumerWidget {
     Product product,
   ) async {
     await ref.read(cartRepositoryProvider).add(product.id);
+    // 活动类成就（如购物车满员）
+    final unlocked =
+        await ref.read(gamificationServiceProvider).evaluateActivity();
     if (!context.mounted) return;
+    if (unlocked.isNotEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            '${context.l10n.achievementUnlocked} ${unlocked.map((a) => achievementL10n(context, a.key)).join(' · ')}',
+          ),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(context.l10n.addedToCart),

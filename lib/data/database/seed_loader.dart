@@ -7,6 +7,11 @@ import '../../core/utils/localized_text.dart';
 import 'database.dart';
 
 const kInitialBalanceCents = 1000000; // ¥10,000
+
+// 默认地址三语种子（首启按当前系统语言写入）
+const contextLangSeedName = '冲冲';
+const contextLangSeedRegion = '广东省 深圳市';
+const contextLangSeedDetail = '幸福小区 2 栋 888 室';
 const _kProductsAsset = 'assets/data/products.json';
 
 /// 库为空时灌入种子数据（幂等，可重复调用）。
@@ -36,6 +41,28 @@ Future<void> seedIfEmpty(AppDatabase db, AssetBundle bundle) async {
             refText: const Value('initial'),
             createdAt: now,
           ),
+        );
+  }
+
+  // v2：默认收货地址（仅首启）
+  final addresses = await db.select(db.addresses).get();
+  if (addresses.isEmpty) {
+    await db.into(db.addresses).insert(
+          AddressesCompanion.insert(
+            name: contextLangSeedName,
+            phone: '138****8888',
+            region: contextLangSeedRegion,
+            detail: contextLangSeedDetail,
+            isDefault: const Value(true),
+          ),
+        );
+  }
+
+  // v2：游戏化状态行
+  final game = await db.select(db.gamificationState).get();
+  if (game.isEmpty) {
+    await db.into(db.gamificationState).insertOnConflictUpdate(
+          GamificationStateCompanion.insert(id: const Value(1)),
         );
   }
 

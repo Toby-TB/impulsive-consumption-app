@@ -10,6 +10,7 @@ import '../../features/catalog/screens/search_screen.dart';
 import '../../features/checkout/checkout_screen.dart';
 import '../../features/orders/order_detail_screen.dart';
 import '../../features/orders/orders_screen.dart';
+import '../../features/profile/achievements_screen.dart';
 import '../../features/profile/profile_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/wallet/wallet_screen.dart';
@@ -78,6 +79,11 @@ GoRouter buildRouter() {
         path: '/settings',
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/achievements',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const AchievementsScreen(),
       ),
     ],
   );

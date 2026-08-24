@@ -377,4 +377,198 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get coupon95 => '5% off over ¥100';
+
+  @override
+  String levelBadge(int n) {
+    return 'Lv.$n';
+  }
+
+  @override
+  String get expLabel => 'EXP';
+
+  @override
+  String get impulseLabel => 'Impulse';
+
+  @override
+  String get achievementsTitle => 'Achievements';
+
+  @override
+  String get achievementUnlocked => 'Achievement unlocked!';
+
+  @override
+  String get levelUp => 'Level Up!';
+
+  @override
+  String get locked => 'Locked';
+
+  @override
+  String rewardFormat(String amount) {
+    return '+$amount';
+  }
+
+  @override
+  String paymentXpGain(int n) {
+    return '+$n EXP';
+  }
+
+  @override
+  String paymentImpulseGain(int n) {
+    return '+$n Impulse';
+  }
+
+  @override
+  String get paymentContinue => 'Continue';
+
+  @override
+  String levelUpReward(int n, Object amount) {
+    return 'Lv.$n reward +$amount';
+  }
+
+  @override
+  String get titleRestrained => 'Rookie';
+
+  @override
+  String get titlePotential => 'Rising Star';
+
+  @override
+  String get titleNoviceSplurger => 'Splurge Rookie';
+
+  @override
+  String get titleSplurger => 'Splurge Master';
+
+  @override
+  String get titleSilver => 'Silver Splurger';
+
+  @override
+  String get titleGold => 'Gold Splurger';
+
+  @override
+  String get titleGod => 'Impulse God';
+
+  @override
+  String get achFirstOrder => 'First Order';
+
+  @override
+  String get achFirstOrderDesc => 'Complete your first order';
+
+  @override
+  String get achOrders5 => 'Regular';
+
+  @override
+  String get achOrders5Desc => 'Complete 5 orders';
+
+  @override
+  String get achSpend1k => '¥1K Club';
+
+  @override
+  String get achSpend1kDesc => 'Spend over ¥1,000 in total';
+
+  @override
+  String get achSpend10k => '¥10K Whale';
+
+  @override
+  String get achSpend10kDesc => 'Spend over ¥10,000 in total';
+
+  @override
+  String get achBigSpender => 'Big Spender';
+
+  @override
+  String get achBigSpenderDesc => 'A single order over ¥5,000';
+
+  @override
+  String get achCart10 => 'Cart Hoarder';
+
+  @override
+  String get achCart10Desc => 'Have 10 items in cart at once';
+
+  @override
+  String get achWishlist5 => 'Curator';
+
+  @override
+  String get achWishlist5Desc => 'Wishlist 5 products';
+
+  @override
+  String get achStreak3 => '3-Day Streak';
+
+  @override
+  String get achStreak3Desc => 'Check in 3 days in a row';
+
+  @override
+  String get achStreak7 => '7-Day Streak';
+
+  @override
+  String get achStreak7Desc => 'Check in 7 days in a row';
+
+  @override
+  String get achLevel5 => 'Level 5';
+
+  @override
+  String get achLevel5Desc => 'Reach level 5';
+
+  @override
+  String get addressTitle => 'Shipping Address';
+
+  @override
+  String get addAddress => 'New Address';
+
+  @override
+  String get editAddress => 'Edit Address';
+
+  @override
+  String get phoneLabel => 'Phone';
+
+  @override
+  String get regionLabel => 'Region';
+
+  @override
+  String get detailAddressLabel => 'Address';
+
+  @override
+  String get setDefault => 'Set as default';
+
+  @override
+  String get defaultAddressLabel => 'Default';
+
+  @override
+  String get deleteAddressConfirm => 'Delete this address?';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get paymentMethodLabel => 'Payment Method';
+
+  @override
+  String get payBalance => 'Balance';
+
+  @override
+  String get payCod => 'Cash on Delivery';
+
+  @override
+  String get payCodNote => 'Charged on delivery';
+
+  @override
+  String get payInstallment => '3 installments, 0% interest';
+
+  @override
+  String payInstallmentNote(String amount) {
+    return 'First $amount, rest shown in order';
+  }
+
+  @override
+  String get buyerMessage => 'Buyer Note';
+
+  @override
+  String get remarkHint => 'Optional, leave a note for seller';
+
+  @override
+  String get addressRequired => 'Please add a shipping address first';
+
+  @override
+  String installmentProgress(int paid) {
+    return 'Installment · paid $paid/3';
+  }
+
+  @override
+  String get codNote => 'COD · charged when signed';
 }

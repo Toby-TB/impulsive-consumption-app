@@ -20,6 +20,9 @@ part 'database.g.dart';
     Coupons,
     WishlistItems,
     Checkins,
+    Addresses,
+    GamificationState,
+    Achievements,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -28,7 +31,25 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.e);
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+        onUpgrade: (m, from, to) async {
+          if (from < 2) {
+            await m.createTable(addresses);
+            await m.createTable(gamificationState);
+            await m.createTable(achievements);
+            await m.addColumn(orders, orders.paymentMethod);
+            await m.addColumn(orders, orders.receiverName);
+            await m.addColumn(orders, orders.receiverPhone);
+            await m.addColumn(orders, orders.receiverAddress);
+            await m.addColumn(orders, orders.remark);
+            await m.addColumn(orders, orders.settled);
+            await m.addColumn(orders, orders.installmentsPaid);
+          }
+        },
+      );
 }
 
 QueryExecutor openConnection() => driftDatabase(

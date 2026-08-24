@@ -7,9 +7,11 @@ import '../../../core/providers/preferences_provider.dart';
 import '../../../core/utils/localized_text.dart';
 import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
+import '../../../data/database/database.dart';
 import '../../../data/repositories/coupon_repository.dart';
 import '../../../data/repositories/exceptions.dart';
 import 'checkout_providers.dart';
+import 'widgets/address_sheets.dart';
 import 'widgets/insufficient_dialog.dart';
 import 'widgets/payment_success_overlay.dart';
 
@@ -22,6 +24,24 @@ class CheckoutScreen extends ConsumerStatefulWidget {
 
 class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
   bool _couponInited = false;
+  AddressesData? _address;
+  PaymentMethod _method = PaymentMethod.balance;
+  final _remarkController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final addr = await ref.read(addressRepositoryProvider).defaultAddress();
+      if (mounted) setState(() => _address = addr);
+    });
+  }
+
+  @override
+  void dispose() {
+    _remarkController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +49,8 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
     final lang = currentLang(context);
     final theme = Theme.of(context);
     final items = ref.watch(selectedItemsProvider).value ?? const [];
-    final total =
-        items.fold<int>(0, (sum, e) => sum + e.lineTotalCents);
+    final total = items.fold<int>(0, (sum, e) => sum + e.lineTotalCents);
 
-    // 首次构建时默认带出最优券
     if (!_couponInited && items.isNotEmpty) {
       _couponInited = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -52,6 +70,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
             total,
           );
     final payable = total - discount;
+    final firstInstallment = (payable / 3).ceil();
 
     return Scaffold(
       appBar: AppBar(title: Text(l.checkoutTitle)),
@@ -60,7 +79,21 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
           : ListView(
               padding: const EdgeInsets.all(12),
               children: [
-                _AddressCard(),
+                _AddressCard(
+                  address: _address,
+                  onTap: () async {
+                    final picked = await showAddressPicker(context);
+                    if (picked != null) {
+                      setState(() => _address = picked);
+                    } else {
+                      // 可能刚新增了默认地址，刷新
+                      final def = await ref
+                          .read(addressRepositoryProvider)
+                          .defaultAddress();
+                      if (mounted) setState(() => _address = def);
+                    }
+                  },
+                ),
                 const SizedBox(height: 10),
                 _ItemsCard(items: items, lang: lang),
                 const SizedBox(height: 10),
@@ -69,6 +102,28 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
                   discount: discount,
                   couponId: couponId,
                   onTap: () => _openCouponSheet(total),
+                ),
+                const SizedBox(height: 10),
+                _PaymentMethodCard(
+                  method: _method,
+                  firstInstallment: firstInstallment,
+                  onSelect: (m) => setState(() => _method = m),
+                ),
+                const SizedBox(height: 10),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: TextField(
+                      controller: _remarkController,
+                      maxLines: 2,
+                      decoration: InputDecoration(
+                        hintText: l.remarkHint,
+                        border: InputBorder.none,
+                        icon: const Icon(Icons.sticky_note_2_outlined,
+                            size: 18),
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 10),
                 _PriceBreakdownCard(
@@ -83,9 +138,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
           decoration: BoxDecoration(
             color: theme.cardColor,
-            border: Border(
-              top: BorderSide(color: theme.dividerColor),
-            ),
+            border: Border(top: BorderSide(color: theme.dividerColor)),
           ),
           child: items.isEmpty
               ? const SizedBox(height: 44)
@@ -121,34 +174,80 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
     final items = ref.read(selectedItemsProvider).value ?? const [];
     if (items.isEmpty) return;
 
-    // 余额预检（真实校验在事务内）
+    // 地址校验
+    if (_address == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l.addressRequired)),
+      );
+      final picked = await showAddressPicker(context);
+      if (picked != null) setState(() => _address = picked);
+      return;
+    }
+
+    // 资金预检（真实校验在事务内）
     final wallet = await ref.read(walletRepositoryProvider).account();
-    if (wallet.balanceCents < payable) {
+    final required = _method == PaymentMethod.installment3
+        ? (payable / 3).ceil()
+        : payable;
+    if (_method != PaymentMethod.cod && wallet.balanceCents < required) {
       if (!mounted) return;
       await showInsufficientBalanceDialog(context, ref,
-          missingCents: payable - wallet.balanceCents);
+          missingCents: required - wallet.balanceCents);
       return;
     }
 
     try {
-      final result = await ref
-          .read(checkoutServiceProvider)
-          .checkout(items: items, couponId: couponId);
+      final result = await ref.read(checkoutServiceProvider).checkout(
+            items: items,
+            couponId: couponId,
+            address: _address,
+            method: _method,
+            remark: _remarkController.text.trim().isEmpty
+                ? null
+                : _remarkController.text.trim(),
+          );
+
+      // 游戏化结算（COD 也给经验：先体验后付款）
+      final celebrationData = await ref
+          .read(gamificationServiceProvider)
+          .onOrderPaid(
+            payableCents: result.payableCents,
+            itemCount: items.fold<int>(0, (s, e) => s + e.item.quantity),
+          );
 
       if (!mounted) return;
-      showPaymentSuccess(context, onFinished: () {
-        if (!mounted) return;
-        context.pushReplacement('/order/${result.orderId}');
-      });
+      final region = ref.read(regionProvider);
+      final locale = Localizations.localeOf(context).toString();
+      showPaymentSuccess(
+        context,
+        celebration: PaymentCelebration(
+          payableCents: result.payableCents,
+          xpGained: celebrationData.xpGained,
+          impulseGained: celebrationData.impulseGained,
+          oldLevel: celebrationData.oldLevel,
+          newLevel: celebrationData.newLevel,
+          levelUpRewardCents: celebrationData.levelUpRewardCents,
+          achievementKeys:
+              celebrationData.unlocked.map((a) => a.key).toList(),
+        ),
+        region: region,
+        locale: locale,
+        localizeAchievement: (key) => achievementL10n(context, key),
+        continueLabel: l.paymentContinue,
+        onFinished: () {
+          if (!mounted) return;
+          context.pushReplacement('/order/${result.orderId}');
+        },
+      );
     } on InsufficientBalanceException catch (e) {
       if (!mounted) return;
-      await showInsufficientBalanceDialog(context, ref, missingCents: e.missingCents);
+      await showInsufficientBalanceDialog(context, ref,
+          missingCents: e.missingCents);
     } on CouponNotApplicableException {
       if (!mounted) return;
       ref.read(selectedCouponProvider.notifier).state = null;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l.couponUnavailable)),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l.couponUnavailable)));
     }
   }
 
@@ -156,47 +255,59 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
     showModalBottomSheet<void>(
       context: context,
       builder: (_) => const _CouponSheet(),
-      // 传入当前合计供门槛判断
     );
   }
 }
 
 class _AddressCard extends StatelessWidget {
+  final AddressesData? address;
+  final VoidCallback onTap;
+
+  const _AddressCard({required this.address, required this.onTap});
+
   @override
   Widget build(BuildContext context) {
     final l = context.l10n;
     final theme = Theme.of(context);
+    final a = address;
 
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Row(
-          children: [
-            Icon(Icons.location_on_outlined, color: theme.colorScheme.primary),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text('${l.recipientLabel}: ${l.recipientName}',
-                          style: const TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w600)),
-                      const SizedBox(width: 10),
-                      Text(l.addressPhone,
-                          style: TextStyle(
-                              fontSize: 12, color: theme.hintColor)),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  Text(l.addressDetail,
-                      style:
-                          TextStyle(fontSize: 12, color: theme.hintColor)),
-                ],
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(14),
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Row(
+            children: [
+              Icon(Icons.location_on_outlined,
+                  color: theme.colorScheme.primary),
+              const SizedBox(width: 10),
+              Expanded(
+                child: a == null
+                    ? Text(l.addressRequired,
+                        style: TextStyle(
+                            fontSize: 13, color: theme.hintColor))
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text('${a.name}  ${a.phone}',
+                                  style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600)),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          Text('${a.region} ${a.detail}',
+                              style: TextStyle(
+                                  fontSize: 12, color: theme.hintColor)),
+                        ],
+                      ),
               ),
-            ),
-          ],
+              const Icon(Icons.chevron_right, size: 18),
+            ],
+          ),
         ),
       ),
     );
@@ -296,15 +407,14 @@ class _CouponCard extends ConsumerWidget {
               const Spacer(),
               Text(
                 discount > 0
-                    ? l.savedAmount(
-                        formatMoney(discount,
-                            cur: ref.watch(regionProvider),
-                            locale:
-                                Localizations.localeOf(context).toString()))
+                    ? l.savedAmount(formatMoney(discount,
+                        cur: ref.watch(regionProvider),
+                        locale: Localizations.localeOf(context).toString()))
                     : title,
                 style: TextStyle(
                   fontSize: 13,
-                  color: discount > 0 ? const Color(0xFFE02020) : theme.hintColor,
+                  color:
+                      discount > 0 ? const Color(0xFFE02020) : theme.hintColor,
                 ),
               ),
               const Icon(Icons.chevron_right, size: 18),
@@ -326,6 +436,93 @@ String _couponTitle(BuildContext context, dynamic coupon) {
   };
 }
 
+class _PaymentMethodCard extends ConsumerWidget {
+  final PaymentMethod method;
+  final int firstInstallment;
+  final ValueChanged<PaymentMethod> onSelect;
+
+  const _PaymentMethodCard({
+    required this.method,
+    required this.firstInstallment,
+    required this.onSelect,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final theme = Theme.of(context);
+    final locale = Localizations.localeOf(context).toString();
+    final region = ref.watch(regionProvider);
+
+    Widget row(PaymentMethod value, IconData icon, String title, String note) {
+      final selected = method == value;
+      return InkWell(
+        onTap: () => onSelect(value),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            children: [
+              Icon(icon, size: 20, color: theme.colorScheme.primary),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title,
+                        style: const TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.w500)),
+                    if (note.isNotEmpty)
+                      Text(note,
+                          style: TextStyle(
+                              fontSize: 11, color: theme.hintColor)),
+                  ],
+                ),
+              ),
+              Icon(
+                selected
+                    ? Icons.radio_button_checked
+                    : Icons.radio_button_unchecked,
+                size: 20,
+                color: selected
+                    ? theme.colorScheme.primary
+                    : theme.hintColor,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 8, 14, 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(l.paymentMethodLabel,
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.bold)),
+            ),
+            row(PaymentMethod.balance, Icons.account_balance_wallet_outlined,
+                l.payBalance, ''),
+            row(PaymentMethod.cod, Icons.local_shipping_outlined, l.payCod,
+                l.payCodNote),
+            row(
+              PaymentMethod.installment3,
+              Icons.calendar_month_outlined,
+              l.payInstallment,
+              l.payInstallmentNote(formatMoney(firstInstallment,
+                  cur: region, locale: locale)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _CouponSheet extends ConsumerWidget {
   const _CouponSheet();
 
@@ -345,10 +542,9 @@ class _CouponSheet extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(l.couponAvailable,
-                style:
-                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                style: const TextStyle(
+                    fontSize: 16, fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
-            // 不使用优惠券
             _CouponTile(
               title: l.noCoupon,
               subtitle: '',
@@ -364,8 +560,7 @@ class _CouponSheet extends ConsumerWidget {
                 return _CouponTile(
                   title: _couponTitle(context, c),
                   subtitle: c.minSpendCents > 0
-                      ? l.couponThreshold(formatMoney(
-                          c.minSpendCents,
+                      ? l.couponThreshold(formatMoney(c.minSpendCents,
                           cur: ref.watch(regionProvider),
                           locale:
                               Localizations.localeOf(context).toString()))
@@ -417,9 +612,7 @@ class _CouponTile extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(
               width: 1.5,
-              color: selected
-                  ? theme.colorScheme.primary
-                  : theme.dividerColor,
+              color: selected ? theme.colorScheme.primary : theme.dividerColor,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
@@ -469,8 +662,7 @@ class _PriceBreakdownCard extends ConsumerWidget {
     final l = context.l10n;
     final theme = Theme.of(context);
 
-    Widget row(String label, int cents,
-        {bool bold = false, Color? color}) {
+    Widget row(String label, int cents, {bool bold = false, Color? color}) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(
@@ -494,8 +686,7 @@ class _PriceBreakdownCard extends ConsumerWidget {
         child: Column(
           children: [
             row(l.itemsTotal, total),
-            row(l.discount, -discount,
-                color: const Color(0xFFE02020)),
+            row(l.discount, -discount, color: const Color(0xFFE02020)),
             const Divider(),
             row(l.payable, payable, bold: true),
           ],

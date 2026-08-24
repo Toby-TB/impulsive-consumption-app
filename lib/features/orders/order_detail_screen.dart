@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/providers/app_providers.dart';
+import '../../../data/database/database.dart';
 import '../../../core/providers/preferences_provider.dart';
 import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
@@ -83,6 +84,79 @@ class _OrderDetailScreenState extends ConsumerState<OrderDetailScreen> {
                   ),
                   const SizedBox(height: 18),
                   LogisticsTimeline(paidAt: paidAt, now: _now),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+
+          // 收货信息 + 支付方式
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.local_shipping_outlined,
+                          size: 16, color: theme.colorScheme.primary),
+                      const SizedBox(width: 6),
+                      Text(l.addressTitle,
+                          style: const TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  if (o.receiverName.isEmpty)
+                    Text('—',
+                        style: TextStyle(
+                            fontSize: 12, color: theme.hintColor))
+                  else ...[
+                    Text('${o.receiverName}  ${o.receiverPhone}',
+                        style: const TextStyle(fontSize: 13)),
+                    const SizedBox(height: 2),
+                    Text(o.receiverAddress,
+                        style: TextStyle(
+                            fontSize: 12, color: theme.hintColor)),
+                  ],
+                  if (o.remark != null && o.remark!.isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    Text('${l.buyerMessage}: ${o.remark}',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontStyle: FontStyle.italic,
+                            color: theme.hintColor)),
+                  ],
+                  const Divider(height: 18),
+                  Row(
+                    children: [
+                      Text(
+                        switch (o.paymentMethod) {
+                          PaymentMethod.balance => l.payBalance,
+                          PaymentMethod.cod => l.payCod,
+                          PaymentMethod.installment3 => l.payInstallment,
+                        },
+                        style: const TextStyle(fontSize: 12),
+                      ),
+                      const Spacer(),
+                      if (o.paymentMethod == PaymentMethod.cod && !o.settled)
+                        Text(l.codNote,
+                            style: TextStyle(
+                                fontSize: 11,
+                                color: theme.colorScheme.primary))
+                      else if (o.paymentMethod ==
+                              PaymentMethod.installment3 &&
+                          o.installmentsPaid < 3)
+                        Text(
+                          l.installmentProgress(o.installmentsPaid),
+                          style: TextStyle(
+                              fontSize: 11,
+                              color: theme.colorScheme.primary),
+                        ),
+                    ],
+                  ),
                 ],
               ),
             ),

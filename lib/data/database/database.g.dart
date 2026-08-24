@@ -2656,7 +2656,6 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
     false,
     type: DriftSqlType.string,
     requiredDuringInsert: true,
-    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
   );
   @override
   late final GeneratedColumnWithTypeConverter<OrderStatus, int> status =
@@ -2735,6 +2734,88 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
     requiredDuringInsert: false,
   );
   @override
+  late final GeneratedColumnWithTypeConverter<PaymentMethod, int>
+  paymentMethod = GeneratedColumn<int>(
+    'payment_method',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  ).withConverter<PaymentMethod>($OrdersTable.$converterpaymentMethod);
+  static const VerificationMeta _receiverNameMeta = const VerificationMeta(
+    'receiverName',
+  );
+  @override
+  late final GeneratedColumn<String> receiverName = GeneratedColumn<String>(
+    'receiver_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _receiverPhoneMeta = const VerificationMeta(
+    'receiverPhone',
+  );
+  @override
+  late final GeneratedColumn<String> receiverPhone = GeneratedColumn<String>(
+    'receiver_phone',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _receiverAddressMeta = const VerificationMeta(
+    'receiverAddress',
+  );
+  @override
+  late final GeneratedColumn<String> receiverAddress = GeneratedColumn<String>(
+    'receiver_address',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(''),
+  );
+  static const VerificationMeta _remarkMeta = const VerificationMeta('remark');
+  @override
+  late final GeneratedColumn<String> remark = GeneratedColumn<String>(
+    'remark',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _settledMeta = const VerificationMeta(
+    'settled',
+  );
+  @override
+  late final GeneratedColumn<bool> settled = GeneratedColumn<bool>(
+    'settled',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("settled" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _installmentsPaidMeta = const VerificationMeta(
+    'installmentsPaid',
+  );
+  @override
+  late final GeneratedColumn<int> installmentsPaid = GeneratedColumn<int>(
+    'installments_paid',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  @override
   List<GeneratedColumn> get $columns => [
     id,
     orderNo,
@@ -2745,6 +2826,13 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
     couponId,
     createdAt,
     paidAt,
+    paymentMethod,
+    receiverName,
+    receiverPhone,
+    receiverAddress,
+    remark,
+    settled,
+    installmentsPaid,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -2822,6 +2910,54 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
         paidAt.isAcceptableOrUnknown(data['paid_at']!, _paidAtMeta),
       );
     }
+    if (data.containsKey('receiver_name')) {
+      context.handle(
+        _receiverNameMeta,
+        receiverName.isAcceptableOrUnknown(
+          data['receiver_name']!,
+          _receiverNameMeta,
+        ),
+      );
+    }
+    if (data.containsKey('receiver_phone')) {
+      context.handle(
+        _receiverPhoneMeta,
+        receiverPhone.isAcceptableOrUnknown(
+          data['receiver_phone']!,
+          _receiverPhoneMeta,
+        ),
+      );
+    }
+    if (data.containsKey('receiver_address')) {
+      context.handle(
+        _receiverAddressMeta,
+        receiverAddress.isAcceptableOrUnknown(
+          data['receiver_address']!,
+          _receiverAddressMeta,
+        ),
+      );
+    }
+    if (data.containsKey('remark')) {
+      context.handle(
+        _remarkMeta,
+        remark.isAcceptableOrUnknown(data['remark']!, _remarkMeta),
+      );
+    }
+    if (data.containsKey('settled')) {
+      context.handle(
+        _settledMeta,
+        settled.isAcceptableOrUnknown(data['settled']!, _settledMeta),
+      );
+    }
+    if (data.containsKey('installments_paid')) {
+      context.handle(
+        _installmentsPaidMeta,
+        installmentsPaid.isAcceptableOrUnknown(
+          data['installments_paid']!,
+          _installmentsPaidMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -2869,6 +3005,36 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
         DriftSqlType.dateTime,
         data['${effectivePrefix}paid_at'],
       ),
+      paymentMethod: $OrdersTable.$converterpaymentMethod.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.int,
+          data['${effectivePrefix}payment_method'],
+        )!,
+      ),
+      receiverName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}receiver_name'],
+      )!,
+      receiverPhone: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}receiver_phone'],
+      )!,
+      receiverAddress: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}receiver_address'],
+      )!,
+      remark: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}remark'],
+      ),
+      settled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}settled'],
+      )!,
+      installmentsPaid: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}installments_paid'],
+      )!,
     );
   }
 
@@ -2879,6 +3045,8 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
 
   static JsonTypeConverter2<OrderStatus, int, int> $converterstatus =
       const EnumIndexConverter<OrderStatus>(OrderStatus.values);
+  static JsonTypeConverter2<PaymentMethod, int, int> $converterpaymentMethod =
+      const EnumIndexConverter<PaymentMethod>(PaymentMethod.values);
 }
 
 class Order extends DataClass implements Insertable<Order> {
@@ -2891,6 +3059,13 @@ class Order extends DataClass implements Insertable<Order> {
   final int? couponId;
   final DateTime createdAt;
   final DateTime? paidAt;
+  final PaymentMethod paymentMethod;
+  final String receiverName;
+  final String receiverPhone;
+  final String receiverAddress;
+  final String? remark;
+  final bool settled;
+  final int installmentsPaid;
   const Order({
     required this.id,
     required this.orderNo,
@@ -2901,6 +3076,13 @@ class Order extends DataClass implements Insertable<Order> {
     this.couponId,
     required this.createdAt,
     this.paidAt,
+    required this.paymentMethod,
+    required this.receiverName,
+    required this.receiverPhone,
+    required this.receiverAddress,
+    this.remark,
+    required this.settled,
+    required this.installmentsPaid,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -2922,6 +3104,19 @@ class Order extends DataClass implements Insertable<Order> {
     if (!nullToAbsent || paidAt != null) {
       map['paid_at'] = Variable<DateTime>(paidAt);
     }
+    {
+      map['payment_method'] = Variable<int>(
+        $OrdersTable.$converterpaymentMethod.toSql(paymentMethod),
+      );
+    }
+    map['receiver_name'] = Variable<String>(receiverName);
+    map['receiver_phone'] = Variable<String>(receiverPhone);
+    map['receiver_address'] = Variable<String>(receiverAddress);
+    if (!nullToAbsent || remark != null) {
+      map['remark'] = Variable<String>(remark);
+    }
+    map['settled'] = Variable<bool>(settled);
+    map['installments_paid'] = Variable<int>(installmentsPaid);
     return map;
   }
 
@@ -2940,6 +3135,15 @@ class Order extends DataClass implements Insertable<Order> {
       paidAt: paidAt == null && nullToAbsent
           ? const Value.absent()
           : Value(paidAt),
+      paymentMethod: Value(paymentMethod),
+      receiverName: Value(receiverName),
+      receiverPhone: Value(receiverPhone),
+      receiverAddress: Value(receiverAddress),
+      remark: remark == null && nullToAbsent
+          ? const Value.absent()
+          : Value(remark),
+      settled: Value(settled),
+      installmentsPaid: Value(installmentsPaid),
     );
   }
 
@@ -2960,6 +3164,15 @@ class Order extends DataClass implements Insertable<Order> {
       couponId: serializer.fromJson<int?>(json['couponId']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       paidAt: serializer.fromJson<DateTime?>(json['paidAt']),
+      paymentMethod: $OrdersTable.$converterpaymentMethod.fromJson(
+        serializer.fromJson<int>(json['paymentMethod']),
+      ),
+      receiverName: serializer.fromJson<String>(json['receiverName']),
+      receiverPhone: serializer.fromJson<String>(json['receiverPhone']),
+      receiverAddress: serializer.fromJson<String>(json['receiverAddress']),
+      remark: serializer.fromJson<String?>(json['remark']),
+      settled: serializer.fromJson<bool>(json['settled']),
+      installmentsPaid: serializer.fromJson<int>(json['installmentsPaid']),
     );
   }
   @override
@@ -2977,6 +3190,15 @@ class Order extends DataClass implements Insertable<Order> {
       'couponId': serializer.toJson<int?>(couponId),
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'paidAt': serializer.toJson<DateTime?>(paidAt),
+      'paymentMethod': serializer.toJson<int>(
+        $OrdersTable.$converterpaymentMethod.toJson(paymentMethod),
+      ),
+      'receiverName': serializer.toJson<String>(receiverName),
+      'receiverPhone': serializer.toJson<String>(receiverPhone),
+      'receiverAddress': serializer.toJson<String>(receiverAddress),
+      'remark': serializer.toJson<String?>(remark),
+      'settled': serializer.toJson<bool>(settled),
+      'installmentsPaid': serializer.toJson<int>(installmentsPaid),
     };
   }
 
@@ -2990,6 +3212,13 @@ class Order extends DataClass implements Insertable<Order> {
     Value<int?> couponId = const Value.absent(),
     DateTime? createdAt,
     Value<DateTime?> paidAt = const Value.absent(),
+    PaymentMethod? paymentMethod,
+    String? receiverName,
+    String? receiverPhone,
+    String? receiverAddress,
+    Value<String?> remark = const Value.absent(),
+    bool? settled,
+    int? installmentsPaid,
   }) => Order(
     id: id ?? this.id,
     orderNo: orderNo ?? this.orderNo,
@@ -3000,6 +3229,13 @@ class Order extends DataClass implements Insertable<Order> {
     couponId: couponId.present ? couponId.value : this.couponId,
     createdAt: createdAt ?? this.createdAt,
     paidAt: paidAt.present ? paidAt.value : this.paidAt,
+    paymentMethod: paymentMethod ?? this.paymentMethod,
+    receiverName: receiverName ?? this.receiverName,
+    receiverPhone: receiverPhone ?? this.receiverPhone,
+    receiverAddress: receiverAddress ?? this.receiverAddress,
+    remark: remark.present ? remark.value : this.remark,
+    settled: settled ?? this.settled,
+    installmentsPaid: installmentsPaid ?? this.installmentsPaid,
   );
   Order copyWithCompanion(OrdersCompanion data) {
     return Order(
@@ -3018,6 +3254,23 @@ class Order extends DataClass implements Insertable<Order> {
       couponId: data.couponId.present ? data.couponId.value : this.couponId,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
       paidAt: data.paidAt.present ? data.paidAt.value : this.paidAt,
+      paymentMethod: data.paymentMethod.present
+          ? data.paymentMethod.value
+          : this.paymentMethod,
+      receiverName: data.receiverName.present
+          ? data.receiverName.value
+          : this.receiverName,
+      receiverPhone: data.receiverPhone.present
+          ? data.receiverPhone.value
+          : this.receiverPhone,
+      receiverAddress: data.receiverAddress.present
+          ? data.receiverAddress.value
+          : this.receiverAddress,
+      remark: data.remark.present ? data.remark.value : this.remark,
+      settled: data.settled.present ? data.settled.value : this.settled,
+      installmentsPaid: data.installmentsPaid.present
+          ? data.installmentsPaid.value
+          : this.installmentsPaid,
     );
   }
 
@@ -3032,7 +3285,14 @@ class Order extends DataClass implements Insertable<Order> {
           ..write('payableCents: $payableCents, ')
           ..write('couponId: $couponId, ')
           ..write('createdAt: $createdAt, ')
-          ..write('paidAt: $paidAt')
+          ..write('paidAt: $paidAt, ')
+          ..write('paymentMethod: $paymentMethod, ')
+          ..write('receiverName: $receiverName, ')
+          ..write('receiverPhone: $receiverPhone, ')
+          ..write('receiverAddress: $receiverAddress, ')
+          ..write('remark: $remark, ')
+          ..write('settled: $settled, ')
+          ..write('installmentsPaid: $installmentsPaid')
           ..write(')'))
         .toString();
   }
@@ -3048,6 +3308,13 @@ class Order extends DataClass implements Insertable<Order> {
     couponId,
     createdAt,
     paidAt,
+    paymentMethod,
+    receiverName,
+    receiverPhone,
+    receiverAddress,
+    remark,
+    settled,
+    installmentsPaid,
   );
   @override
   bool operator ==(Object other) =>
@@ -3061,7 +3328,14 @@ class Order extends DataClass implements Insertable<Order> {
           other.payableCents == this.payableCents &&
           other.couponId == this.couponId &&
           other.createdAt == this.createdAt &&
-          other.paidAt == this.paidAt);
+          other.paidAt == this.paidAt &&
+          other.paymentMethod == this.paymentMethod &&
+          other.receiverName == this.receiverName &&
+          other.receiverPhone == this.receiverPhone &&
+          other.receiverAddress == this.receiverAddress &&
+          other.remark == this.remark &&
+          other.settled == this.settled &&
+          other.installmentsPaid == this.installmentsPaid);
 }
 
 class OrdersCompanion extends UpdateCompanion<Order> {
@@ -3074,6 +3348,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
   final Value<int?> couponId;
   final Value<DateTime> createdAt;
   final Value<DateTime?> paidAt;
+  final Value<PaymentMethod> paymentMethod;
+  final Value<String> receiverName;
+  final Value<String> receiverPhone;
+  final Value<String> receiverAddress;
+  final Value<String?> remark;
+  final Value<bool> settled;
+  final Value<int> installmentsPaid;
   const OrdersCompanion({
     this.id = const Value.absent(),
     this.orderNo = const Value.absent(),
@@ -3084,6 +3365,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
     this.couponId = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.paidAt = const Value.absent(),
+    this.paymentMethod = const Value.absent(),
+    this.receiverName = const Value.absent(),
+    this.receiverPhone = const Value.absent(),
+    this.receiverAddress = const Value.absent(),
+    this.remark = const Value.absent(),
+    this.settled = const Value.absent(),
+    this.installmentsPaid = const Value.absent(),
   });
   OrdersCompanion.insert({
     this.id = const Value.absent(),
@@ -3095,6 +3383,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
     this.couponId = const Value.absent(),
     required DateTime createdAt,
     this.paidAt = const Value.absent(),
+    this.paymentMethod = const Value.absent(),
+    this.receiverName = const Value.absent(),
+    this.receiverPhone = const Value.absent(),
+    this.receiverAddress = const Value.absent(),
+    this.remark = const Value.absent(),
+    this.settled = const Value.absent(),
+    this.installmentsPaid = const Value.absent(),
   }) : orderNo = Value(orderNo),
        status = Value(status),
        totalAmountCents = Value(totalAmountCents),
@@ -3111,6 +3406,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
     Expression<int>? couponId,
     Expression<DateTime>? createdAt,
     Expression<DateTime>? paidAt,
+    Expression<int>? paymentMethod,
+    Expression<String>? receiverName,
+    Expression<String>? receiverPhone,
+    Expression<String>? receiverAddress,
+    Expression<String>? remark,
+    Expression<bool>? settled,
+    Expression<int>? installmentsPaid,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -3122,6 +3424,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
       if (couponId != null) 'coupon_id': couponId,
       if (createdAt != null) 'created_at': createdAt,
       if (paidAt != null) 'paid_at': paidAt,
+      if (paymentMethod != null) 'payment_method': paymentMethod,
+      if (receiverName != null) 'receiver_name': receiverName,
+      if (receiverPhone != null) 'receiver_phone': receiverPhone,
+      if (receiverAddress != null) 'receiver_address': receiverAddress,
+      if (remark != null) 'remark': remark,
+      if (settled != null) 'settled': settled,
+      if (installmentsPaid != null) 'installments_paid': installmentsPaid,
     });
   }
 
@@ -3135,6 +3444,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
     Value<int?>? couponId,
     Value<DateTime>? createdAt,
     Value<DateTime?>? paidAt,
+    Value<PaymentMethod>? paymentMethod,
+    Value<String>? receiverName,
+    Value<String>? receiverPhone,
+    Value<String>? receiverAddress,
+    Value<String?>? remark,
+    Value<bool>? settled,
+    Value<int>? installmentsPaid,
   }) {
     return OrdersCompanion(
       id: id ?? this.id,
@@ -3146,6 +3462,13 @@ class OrdersCompanion extends UpdateCompanion<Order> {
       couponId: couponId ?? this.couponId,
       createdAt: createdAt ?? this.createdAt,
       paidAt: paidAt ?? this.paidAt,
+      paymentMethod: paymentMethod ?? this.paymentMethod,
+      receiverName: receiverName ?? this.receiverName,
+      receiverPhone: receiverPhone ?? this.receiverPhone,
+      receiverAddress: receiverAddress ?? this.receiverAddress,
+      remark: remark ?? this.remark,
+      settled: settled ?? this.settled,
+      installmentsPaid: installmentsPaid ?? this.installmentsPaid,
     );
   }
 
@@ -3181,6 +3504,29 @@ class OrdersCompanion extends UpdateCompanion<Order> {
     if (paidAt.present) {
       map['paid_at'] = Variable<DateTime>(paidAt.value);
     }
+    if (paymentMethod.present) {
+      map['payment_method'] = Variable<int>(
+        $OrdersTable.$converterpaymentMethod.toSql(paymentMethod.value),
+      );
+    }
+    if (receiverName.present) {
+      map['receiver_name'] = Variable<String>(receiverName.value);
+    }
+    if (receiverPhone.present) {
+      map['receiver_phone'] = Variable<String>(receiverPhone.value);
+    }
+    if (receiverAddress.present) {
+      map['receiver_address'] = Variable<String>(receiverAddress.value);
+    }
+    if (remark.present) {
+      map['remark'] = Variable<String>(remark.value);
+    }
+    if (settled.present) {
+      map['settled'] = Variable<bool>(settled.value);
+    }
+    if (installmentsPaid.present) {
+      map['installments_paid'] = Variable<int>(installmentsPaid.value);
+    }
     return map;
   }
 
@@ -3195,7 +3541,14 @@ class OrdersCompanion extends UpdateCompanion<Order> {
           ..write('payableCents: $payableCents, ')
           ..write('couponId: $couponId, ')
           ..write('createdAt: $createdAt, ')
-          ..write('paidAt: $paidAt')
+          ..write('paidAt: $paidAt, ')
+          ..write('paymentMethod: $paymentMethod, ')
+          ..write('receiverName: $receiverName, ')
+          ..write('receiverPhone: $receiverPhone, ')
+          ..write('receiverAddress: $receiverAddress, ')
+          ..write('remark: $remark, ')
+          ..write('settled: $settled, ')
+          ..write('installmentsPaid: $installmentsPaid')
           ..write(')'))
         .toString();
   }
@@ -4124,6 +4477,994 @@ class CheckinsCompanion extends UpdateCompanion<Checkin> {
   }
 }
 
+class $AddressesTable extends Addresses
+    with TableInfo<$AddressesTable, AddressesData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AddressesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _phoneMeta = const VerificationMeta('phone');
+  @override
+  late final GeneratedColumn<String> phone = GeneratedColumn<String>(
+    'phone',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _regionMeta = const VerificationMeta('region');
+  @override
+  late final GeneratedColumn<String> region = GeneratedColumn<String>(
+    'region',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _detailMeta = const VerificationMeta('detail');
+  @override
+  late final GeneratedColumn<String> detail = GeneratedColumn<String>(
+    'detail',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _isDefaultMeta = const VerificationMeta(
+    'isDefault',
+  );
+  @override
+  late final GeneratedColumn<bool> isDefault = GeneratedColumn<bool>(
+    'is_default',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_default" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    name,
+    phone,
+    region,
+    detail,
+    isDefault,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'addresses';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<AddressesData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('phone')) {
+      context.handle(
+        _phoneMeta,
+        phone.isAcceptableOrUnknown(data['phone']!, _phoneMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_phoneMeta);
+    }
+    if (data.containsKey('region')) {
+      context.handle(
+        _regionMeta,
+        region.isAcceptableOrUnknown(data['region']!, _regionMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_regionMeta);
+    }
+    if (data.containsKey('detail')) {
+      context.handle(
+        _detailMeta,
+        detail.isAcceptableOrUnknown(data['detail']!, _detailMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_detailMeta);
+    }
+    if (data.containsKey('is_default')) {
+      context.handle(
+        _isDefaultMeta,
+        isDefault.isAcceptableOrUnknown(data['is_default']!, _isDefaultMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  AddressesData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AddressesData(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      phone: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}phone'],
+      )!,
+      region: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}region'],
+      )!,
+      detail: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}detail'],
+      )!,
+      isDefault: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_default'],
+      )!,
+    );
+  }
+
+  @override
+  $AddressesTable createAlias(String alias) {
+    return $AddressesTable(attachedDatabase, alias);
+  }
+}
+
+class AddressesData extends DataClass implements Insertable<AddressesData> {
+  final int id;
+  final String name;
+  final String phone;
+  final String region;
+  final String detail;
+  final bool isDefault;
+  const AddressesData({
+    required this.id,
+    required this.name,
+    required this.phone,
+    required this.region,
+    required this.detail,
+    required this.isDefault,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['name'] = Variable<String>(name);
+    map['phone'] = Variable<String>(phone);
+    map['region'] = Variable<String>(region);
+    map['detail'] = Variable<String>(detail);
+    map['is_default'] = Variable<bool>(isDefault);
+    return map;
+  }
+
+  AddressesCompanion toCompanion(bool nullToAbsent) {
+    return AddressesCompanion(
+      id: Value(id),
+      name: Value(name),
+      phone: Value(phone),
+      region: Value(region),
+      detail: Value(detail),
+      isDefault: Value(isDefault),
+    );
+  }
+
+  factory AddressesData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AddressesData(
+      id: serializer.fromJson<int>(json['id']),
+      name: serializer.fromJson<String>(json['name']),
+      phone: serializer.fromJson<String>(json['phone']),
+      region: serializer.fromJson<String>(json['region']),
+      detail: serializer.fromJson<String>(json['detail']),
+      isDefault: serializer.fromJson<bool>(json['isDefault']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'name': serializer.toJson<String>(name),
+      'phone': serializer.toJson<String>(phone),
+      'region': serializer.toJson<String>(region),
+      'detail': serializer.toJson<String>(detail),
+      'isDefault': serializer.toJson<bool>(isDefault),
+    };
+  }
+
+  AddressesData copyWith({
+    int? id,
+    String? name,
+    String? phone,
+    String? region,
+    String? detail,
+    bool? isDefault,
+  }) => AddressesData(
+    id: id ?? this.id,
+    name: name ?? this.name,
+    phone: phone ?? this.phone,
+    region: region ?? this.region,
+    detail: detail ?? this.detail,
+    isDefault: isDefault ?? this.isDefault,
+  );
+  AddressesData copyWithCompanion(AddressesCompanion data) {
+    return AddressesData(
+      id: data.id.present ? data.id.value : this.id,
+      name: data.name.present ? data.name.value : this.name,
+      phone: data.phone.present ? data.phone.value : this.phone,
+      region: data.region.present ? data.region.value : this.region,
+      detail: data.detail.present ? data.detail.value : this.detail,
+      isDefault: data.isDefault.present ? data.isDefault.value : this.isDefault,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AddressesData(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('phone: $phone, ')
+          ..write('region: $region, ')
+          ..write('detail: $detail, ')
+          ..write('isDefault: $isDefault')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, name, phone, region, detail, isDefault);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AddressesData &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.phone == this.phone &&
+          other.region == this.region &&
+          other.detail == this.detail &&
+          other.isDefault == this.isDefault);
+}
+
+class AddressesCompanion extends UpdateCompanion<AddressesData> {
+  final Value<int> id;
+  final Value<String> name;
+  final Value<String> phone;
+  final Value<String> region;
+  final Value<String> detail;
+  final Value<bool> isDefault;
+  const AddressesCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.phone = const Value.absent(),
+    this.region = const Value.absent(),
+    this.detail = const Value.absent(),
+    this.isDefault = const Value.absent(),
+  });
+  AddressesCompanion.insert({
+    this.id = const Value.absent(),
+    required String name,
+    required String phone,
+    required String region,
+    required String detail,
+    this.isDefault = const Value.absent(),
+  }) : name = Value(name),
+       phone = Value(phone),
+       region = Value(region),
+       detail = Value(detail);
+  static Insertable<AddressesData> custom({
+    Expression<int>? id,
+    Expression<String>? name,
+    Expression<String>? phone,
+    Expression<String>? region,
+    Expression<String>? detail,
+    Expression<bool>? isDefault,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (phone != null) 'phone': phone,
+      if (region != null) 'region': region,
+      if (detail != null) 'detail': detail,
+      if (isDefault != null) 'is_default': isDefault,
+    });
+  }
+
+  AddressesCompanion copyWith({
+    Value<int>? id,
+    Value<String>? name,
+    Value<String>? phone,
+    Value<String>? region,
+    Value<String>? detail,
+    Value<bool>? isDefault,
+  }) {
+    return AddressesCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      region: region ?? this.region,
+      detail: detail ?? this.detail,
+      isDefault: isDefault ?? this.isDefault,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (phone.present) {
+      map['phone'] = Variable<String>(phone.value);
+    }
+    if (region.present) {
+      map['region'] = Variable<String>(region.value);
+    }
+    if (detail.present) {
+      map['detail'] = Variable<String>(detail.value);
+    }
+    if (isDefault.present) {
+      map['is_default'] = Variable<bool>(isDefault.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AddressesCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('phone: $phone, ')
+          ..write('region: $region, ')
+          ..write('detail: $detail, ')
+          ..write('isDefault: $isDefault')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $GamificationStateTable extends GamificationState
+    with TableInfo<$GamificationStateTable, GamificationStateData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $GamificationStateTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _xpMeta = const VerificationMeta('xp');
+  @override
+  late final GeneratedColumn<int> xp = GeneratedColumn<int>(
+    'xp',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _levelMeta = const VerificationMeta('level');
+  @override
+  late final GeneratedColumn<int> level = GeneratedColumn<int>(
+    'level',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(1),
+  );
+  static const VerificationMeta _impulsePointsMeta = const VerificationMeta(
+    'impulsePoints',
+  );
+  @override
+  late final GeneratedColumn<int> impulsePoints = GeneratedColumn<int>(
+    'impulse_points',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [id, xp, level, impulsePoints];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'gamification_state';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<GamificationStateData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('xp')) {
+      context.handle(_xpMeta, xp.isAcceptableOrUnknown(data['xp']!, _xpMeta));
+    }
+    if (data.containsKey('level')) {
+      context.handle(
+        _levelMeta,
+        level.isAcceptableOrUnknown(data['level']!, _levelMeta),
+      );
+    }
+    if (data.containsKey('impulse_points')) {
+      context.handle(
+        _impulsePointsMeta,
+        impulsePoints.isAcceptableOrUnknown(
+          data['impulse_points']!,
+          _impulsePointsMeta,
+        ),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  GamificationStateData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return GamificationStateData(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      xp: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}xp'],
+      )!,
+      level: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}level'],
+      )!,
+      impulsePoints: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}impulse_points'],
+      )!,
+    );
+  }
+
+  @override
+  $GamificationStateTable createAlias(String alias) {
+    return $GamificationStateTable(attachedDatabase, alias);
+  }
+}
+
+class GamificationStateData extends DataClass
+    implements Insertable<GamificationStateData> {
+  final int id;
+  final int xp;
+  final int level;
+  final int impulsePoints;
+  const GamificationStateData({
+    required this.id,
+    required this.xp,
+    required this.level,
+    required this.impulsePoints,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['xp'] = Variable<int>(xp);
+    map['level'] = Variable<int>(level);
+    map['impulse_points'] = Variable<int>(impulsePoints);
+    return map;
+  }
+
+  GamificationStateCompanion toCompanion(bool nullToAbsent) {
+    return GamificationStateCompanion(
+      id: Value(id),
+      xp: Value(xp),
+      level: Value(level),
+      impulsePoints: Value(impulsePoints),
+    );
+  }
+
+  factory GamificationStateData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return GamificationStateData(
+      id: serializer.fromJson<int>(json['id']),
+      xp: serializer.fromJson<int>(json['xp']),
+      level: serializer.fromJson<int>(json['level']),
+      impulsePoints: serializer.fromJson<int>(json['impulsePoints']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'xp': serializer.toJson<int>(xp),
+      'level': serializer.toJson<int>(level),
+      'impulsePoints': serializer.toJson<int>(impulsePoints),
+    };
+  }
+
+  GamificationStateData copyWith({
+    int? id,
+    int? xp,
+    int? level,
+    int? impulsePoints,
+  }) => GamificationStateData(
+    id: id ?? this.id,
+    xp: xp ?? this.xp,
+    level: level ?? this.level,
+    impulsePoints: impulsePoints ?? this.impulsePoints,
+  );
+  GamificationStateData copyWithCompanion(GamificationStateCompanion data) {
+    return GamificationStateData(
+      id: data.id.present ? data.id.value : this.id,
+      xp: data.xp.present ? data.xp.value : this.xp,
+      level: data.level.present ? data.level.value : this.level,
+      impulsePoints: data.impulsePoints.present
+          ? data.impulsePoints.value
+          : this.impulsePoints,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('GamificationStateData(')
+          ..write('id: $id, ')
+          ..write('xp: $xp, ')
+          ..write('level: $level, ')
+          ..write('impulsePoints: $impulsePoints')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, xp, level, impulsePoints);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is GamificationStateData &&
+          other.id == this.id &&
+          other.xp == this.xp &&
+          other.level == this.level &&
+          other.impulsePoints == this.impulsePoints);
+}
+
+class GamificationStateCompanion
+    extends UpdateCompanion<GamificationStateData> {
+  final Value<int> id;
+  final Value<int> xp;
+  final Value<int> level;
+  final Value<int> impulsePoints;
+  const GamificationStateCompanion({
+    this.id = const Value.absent(),
+    this.xp = const Value.absent(),
+    this.level = const Value.absent(),
+    this.impulsePoints = const Value.absent(),
+  });
+  GamificationStateCompanion.insert({
+    this.id = const Value.absent(),
+    this.xp = const Value.absent(),
+    this.level = const Value.absent(),
+    this.impulsePoints = const Value.absent(),
+  });
+  static Insertable<GamificationStateData> custom({
+    Expression<int>? id,
+    Expression<int>? xp,
+    Expression<int>? level,
+    Expression<int>? impulsePoints,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (xp != null) 'xp': xp,
+      if (level != null) 'level': level,
+      if (impulsePoints != null) 'impulse_points': impulsePoints,
+    });
+  }
+
+  GamificationStateCompanion copyWith({
+    Value<int>? id,
+    Value<int>? xp,
+    Value<int>? level,
+    Value<int>? impulsePoints,
+  }) {
+    return GamificationStateCompanion(
+      id: id ?? this.id,
+      xp: xp ?? this.xp,
+      level: level ?? this.level,
+      impulsePoints: impulsePoints ?? this.impulsePoints,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (xp.present) {
+      map['xp'] = Variable<int>(xp.value);
+    }
+    if (level.present) {
+      map['level'] = Variable<int>(level.value);
+    }
+    if (impulsePoints.present) {
+      map['impulse_points'] = Variable<int>(impulsePoints.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('GamificationStateCompanion(')
+          ..write('id: $id, ')
+          ..write('xp: $xp, ')
+          ..write('level: $level, ')
+          ..write('impulsePoints: $impulsePoints')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $AchievementsTable extends Achievements
+    with TableInfo<$AchievementsTable, Achievement> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AchievementsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _keyMeta = const VerificationMeta('key');
+  @override
+  late final GeneratedColumn<String> key = GeneratedColumn<String>(
+    'key',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _unlockedAtMeta = const VerificationMeta(
+    'unlockedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> unlockedAt = GeneratedColumn<DateTime>(
+    'unlocked_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _rewardCentsMeta = const VerificationMeta(
+    'rewardCents',
+  );
+  @override
+  late final GeneratedColumn<int> rewardCents = GeneratedColumn<int>(
+    'reward_cents',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [id, key, unlockedAt, rewardCents];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'achievements';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<Achievement> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('key')) {
+      context.handle(
+        _keyMeta,
+        key.isAcceptableOrUnknown(data['key']!, _keyMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_keyMeta);
+    }
+    if (data.containsKey('unlocked_at')) {
+      context.handle(
+        _unlockedAtMeta,
+        unlockedAt.isAcceptableOrUnknown(data['unlocked_at']!, _unlockedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_unlockedAtMeta);
+    }
+    if (data.containsKey('reward_cents')) {
+      context.handle(
+        _rewardCentsMeta,
+        rewardCents.isAcceptableOrUnknown(
+          data['reward_cents']!,
+          _rewardCentsMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_rewardCentsMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Achievement map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return Achievement(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      key: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}key'],
+      )!,
+      unlockedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}unlocked_at'],
+      )!,
+      rewardCents: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}reward_cents'],
+      )!,
+    );
+  }
+
+  @override
+  $AchievementsTable createAlias(String alias) {
+    return $AchievementsTable(attachedDatabase, alias);
+  }
+}
+
+class Achievement extends DataClass implements Insertable<Achievement> {
+  final int id;
+  final String key;
+  final DateTime unlockedAt;
+  final int rewardCents;
+  const Achievement({
+    required this.id,
+    required this.key,
+    required this.unlockedAt,
+    required this.rewardCents,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['key'] = Variable<String>(key);
+    map['unlocked_at'] = Variable<DateTime>(unlockedAt);
+    map['reward_cents'] = Variable<int>(rewardCents);
+    return map;
+  }
+
+  AchievementsCompanion toCompanion(bool nullToAbsent) {
+    return AchievementsCompanion(
+      id: Value(id),
+      key: Value(key),
+      unlockedAt: Value(unlockedAt),
+      rewardCents: Value(rewardCents),
+    );
+  }
+
+  factory Achievement.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return Achievement(
+      id: serializer.fromJson<int>(json['id']),
+      key: serializer.fromJson<String>(json['key']),
+      unlockedAt: serializer.fromJson<DateTime>(json['unlockedAt']),
+      rewardCents: serializer.fromJson<int>(json['rewardCents']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'key': serializer.toJson<String>(key),
+      'unlockedAt': serializer.toJson<DateTime>(unlockedAt),
+      'rewardCents': serializer.toJson<int>(rewardCents),
+    };
+  }
+
+  Achievement copyWith({
+    int? id,
+    String? key,
+    DateTime? unlockedAt,
+    int? rewardCents,
+  }) => Achievement(
+    id: id ?? this.id,
+    key: key ?? this.key,
+    unlockedAt: unlockedAt ?? this.unlockedAt,
+    rewardCents: rewardCents ?? this.rewardCents,
+  );
+  Achievement copyWithCompanion(AchievementsCompanion data) {
+    return Achievement(
+      id: data.id.present ? data.id.value : this.id,
+      key: data.key.present ? data.key.value : this.key,
+      unlockedAt: data.unlockedAt.present
+          ? data.unlockedAt.value
+          : this.unlockedAt,
+      rewardCents: data.rewardCents.present
+          ? data.rewardCents.value
+          : this.rewardCents,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('Achievement(')
+          ..write('id: $id, ')
+          ..write('key: $key, ')
+          ..write('unlockedAt: $unlockedAt, ')
+          ..write('rewardCents: $rewardCents')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, key, unlockedAt, rewardCents);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is Achievement &&
+          other.id == this.id &&
+          other.key == this.key &&
+          other.unlockedAt == this.unlockedAt &&
+          other.rewardCents == this.rewardCents);
+}
+
+class AchievementsCompanion extends UpdateCompanion<Achievement> {
+  final Value<int> id;
+  final Value<String> key;
+  final Value<DateTime> unlockedAt;
+  final Value<int> rewardCents;
+  const AchievementsCompanion({
+    this.id = const Value.absent(),
+    this.key = const Value.absent(),
+    this.unlockedAt = const Value.absent(),
+    this.rewardCents = const Value.absent(),
+  });
+  AchievementsCompanion.insert({
+    this.id = const Value.absent(),
+    required String key,
+    required DateTime unlockedAt,
+    required int rewardCents,
+  }) : key = Value(key),
+       unlockedAt = Value(unlockedAt),
+       rewardCents = Value(rewardCents);
+  static Insertable<Achievement> custom({
+    Expression<int>? id,
+    Expression<String>? key,
+    Expression<DateTime>? unlockedAt,
+    Expression<int>? rewardCents,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (key != null) 'key': key,
+      if (unlockedAt != null) 'unlocked_at': unlockedAt,
+      if (rewardCents != null) 'reward_cents': rewardCents,
+    });
+  }
+
+  AchievementsCompanion copyWith({
+    Value<int>? id,
+    Value<String>? key,
+    Value<DateTime>? unlockedAt,
+    Value<int>? rewardCents,
+  }) {
+    return AchievementsCompanion(
+      id: id ?? this.id,
+      key: key ?? this.key,
+      unlockedAt: unlockedAt ?? this.unlockedAt,
+      rewardCents: rewardCents ?? this.rewardCents,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (key.present) {
+      map['key'] = Variable<String>(key.value);
+    }
+    if (unlockedAt.present) {
+      map['unlocked_at'] = Variable<DateTime>(unlockedAt.value);
+    }
+    if (rewardCents.present) {
+      map['reward_cents'] = Variable<int>(rewardCents.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AchievementsCompanion(')
+          ..write('id: $id, ')
+          ..write('key: $key, ')
+          ..write('unlockedAt: $unlockedAt, ')
+          ..write('rewardCents: $rewardCents')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -4138,6 +5479,10 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $OrderItemsTable orderItems = $OrderItemsTable(this);
   late final $WishlistItemsTable wishlistItems = $WishlistItemsTable(this);
   late final $CheckinsTable checkins = $CheckinsTable(this);
+  late final $AddressesTable addresses = $AddressesTable(this);
+  late final $GamificationStateTable gamificationState =
+      $GamificationStateTable(this);
+  late final $AchievementsTable achievements = $AchievementsTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -4153,6 +5498,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     orderItems,
     wishlistItems,
     checkins,
+    addresses,
+    gamificationState,
+    achievements,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -6268,6 +7616,13 @@ typedef $$OrdersTableCreateCompanionBuilder = OrdersCompanion Function({
   Value<int?> couponId,
   required DateTime createdAt,
   Value<DateTime?> paidAt,
+  Value<PaymentMethod> paymentMethod,
+  Value<String> receiverName,
+  Value<String> receiverPhone,
+  Value<String> receiverAddress,
+  Value<String?> remark,
+  Value<bool> settled,
+  Value<int> installmentsPaid,
 });
 typedef $$OrdersTableUpdateCompanionBuilder = OrdersCompanion Function({
   Value<int> id,
@@ -6279,6 +7634,13 @@ typedef $$OrdersTableUpdateCompanionBuilder = OrdersCompanion Function({
   Value<int?> couponId,
   Value<DateTime> createdAt,
   Value<DateTime?> paidAt,
+  Value<PaymentMethod> paymentMethod,
+  Value<String> receiverName,
+  Value<String> receiverPhone,
+  Value<String> receiverAddress,
+  Value<String?> remark,
+  Value<bool> settled,
+  Value<int> installmentsPaid,
 });
 
 final class $$OrdersTableReferences
@@ -6368,6 +7730,42 @@ class $$OrdersTableFilterComposer
 
   ColumnFilters<DateTime> get paidAt => $composableBuilder(
     column: $table.paidAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnWithTypeConverterFilters<PaymentMethod, PaymentMethod, int>
+  get paymentMethod => $composableBuilder(
+    column: $table.paymentMethod,
+    builder: (column) => ColumnWithTypeConverterFilters(column),
+  );
+
+  ColumnFilters<String> get receiverName => $composableBuilder(
+    column: $table.receiverName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get receiverPhone => $composableBuilder(
+    column: $table.receiverPhone,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get receiverAddress => $composableBuilder(
+    column: $table.receiverAddress,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get remark => $composableBuilder(
+    column: $table.remark,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get settled => $composableBuilder(
+    column: $table.settled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get installmentsPaid => $composableBuilder(
+    column: $table.installmentsPaid,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -6469,6 +7867,41 @@ class $$OrdersTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<int> get paymentMethod => $composableBuilder(
+    column: $table.paymentMethod,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get receiverName => $composableBuilder(
+    column: $table.receiverName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get receiverPhone => $composableBuilder(
+    column: $table.receiverPhone,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get receiverAddress => $composableBuilder(
+    column: $table.receiverAddress,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get remark => $composableBuilder(
+    column: $table.remark,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get settled => $composableBuilder(
+    column: $table.settled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get installmentsPaid => $composableBuilder(
+    column: $table.installmentsPaid,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$CouponsTableOrderingComposer get couponId {
     final $$CouponsTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -6531,6 +7964,38 @@ class $$OrdersTableAnnotationComposer
 
   GeneratedColumn<DateTime> get paidAt =>
       $composableBuilder(column: $table.paidAt, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<PaymentMethod, int> get paymentMethod =>
+      $composableBuilder(
+        column: $table.paymentMethod,
+        builder: (column) => column,
+      );
+
+  GeneratedColumn<String> get receiverName => $composableBuilder(
+    column: $table.receiverName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get receiverPhone => $composableBuilder(
+    column: $table.receiverPhone,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get receiverAddress => $composableBuilder(
+    column: $table.receiverAddress,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get remark =>
+      $composableBuilder(column: $table.remark, builder: (column) => column);
+
+  GeneratedColumn<bool> get settled =>
+      $composableBuilder(column: $table.settled, builder: (column) => column);
+
+  GeneratedColumn<int> get installmentsPaid => $composableBuilder(
+    column: $table.installmentsPaid,
+    builder: (column) => column,
+  );
 
   $$CouponsTableAnnotationComposer get couponId {
     final $$CouponsTableAnnotationComposer composer = $composerBuilder(
@@ -6618,6 +8083,13 @@ class $$OrdersTableTableManager
                 Value<int?> couponId = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<DateTime?> paidAt = const Value.absent(),
+                Value<PaymentMethod> paymentMethod = const Value.absent(),
+                Value<String> receiverName = const Value.absent(),
+                Value<String> receiverPhone = const Value.absent(),
+                Value<String> receiverAddress = const Value.absent(),
+                Value<String?> remark = const Value.absent(),
+                Value<bool> settled = const Value.absent(),
+                Value<int> installmentsPaid = const Value.absent(),
               }) => OrdersCompanion(
                 id: id,
                 orderNo: orderNo,
@@ -6628,6 +8100,13 @@ class $$OrdersTableTableManager
                 couponId: couponId,
                 createdAt: createdAt,
                 paidAt: paidAt,
+                paymentMethod: paymentMethod,
+                receiverName: receiverName,
+                receiverPhone: receiverPhone,
+                receiverAddress: receiverAddress,
+                remark: remark,
+                settled: settled,
+                installmentsPaid: installmentsPaid,
               ),
           createCompanionCallback:
               ({
@@ -6640,6 +8119,13 @@ class $$OrdersTableTableManager
                 Value<int?> couponId = const Value.absent(),
                 required DateTime createdAt,
                 Value<DateTime?> paidAt = const Value.absent(),
+                Value<PaymentMethod> paymentMethod = const Value.absent(),
+                Value<String> receiverName = const Value.absent(),
+                Value<String> receiverPhone = const Value.absent(),
+                Value<String> receiverAddress = const Value.absent(),
+                Value<String?> remark = const Value.absent(),
+                Value<bool> settled = const Value.absent(),
+                Value<int> installmentsPaid = const Value.absent(),
               }) => OrdersCompanion.insert(
                 id: id,
                 orderNo: orderNo,
@@ -6650,6 +8136,13 @@ class $$OrdersTableTableManager
                 couponId: couponId,
                 createdAt: createdAt,
                 paidAt: paidAt,
+                paymentMethod: paymentMethod,
+                receiverName: receiverName,
+                receiverPhone: receiverPhone,
+                receiverAddress: receiverAddress,
+                remark: remark,
+                settled: settled,
+                installmentsPaid: installmentsPaid,
               ),
           withReferenceMapper: (p0) => p0
               .map(
@@ -7564,6 +9057,586 @@ typedef $$CheckinsTableProcessedTableManager =
       Checkin,
       PrefetchHooks Function()
     >;
+typedef $$AddressesTableCreateCompanionBuilder = AddressesCompanion Function({
+  Value<int> id,
+  required String name,
+  required String phone,
+  required String region,
+  required String detail,
+  Value<bool> isDefault,
+});
+typedef $$AddressesTableUpdateCompanionBuilder = AddressesCompanion Function({
+  Value<int> id,
+  Value<String> name,
+  Value<String> phone,
+  Value<String> region,
+  Value<String> detail,
+  Value<bool> isDefault,
+});
+
+class $$AddressesTableFilterComposer
+    extends Composer<_$AppDatabase, $AddressesTable> {
+  $$AddressesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get phone => $composableBuilder(
+    column: $table.phone,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get region => $composableBuilder(
+    column: $table.region,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get detail => $composableBuilder(
+    column: $table.detail,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isDefault => $composableBuilder(
+    column: $table.isDefault,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$AddressesTableOrderingComposer
+    extends Composer<_$AppDatabase, $AddressesTable> {
+  $$AddressesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get phone => $composableBuilder(
+    column: $table.phone,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get region => $composableBuilder(
+    column: $table.region,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get detail => $composableBuilder(
+    column: $table.detail,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isDefault => $composableBuilder(
+    column: $table.isDefault,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$AddressesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AddressesTable> {
+  $$AddressesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get phone =>
+      $composableBuilder(column: $table.phone, builder: (column) => column);
+
+  GeneratedColumn<String> get region =>
+      $composableBuilder(column: $table.region, builder: (column) => column);
+
+  GeneratedColumn<String> get detail =>
+      $composableBuilder(column: $table.detail, builder: (column) => column);
+
+  GeneratedColumn<bool> get isDefault =>
+      $composableBuilder(column: $table.isDefault, builder: (column) => column);
+}
+
+class $$AddressesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AddressesTable,
+          AddressesData,
+          $$AddressesTableFilterComposer,
+          $$AddressesTableOrderingComposer,
+          $$AddressesTableAnnotationComposer,
+          $$AddressesTableCreateCompanionBuilder,
+          $$AddressesTableUpdateCompanionBuilder,
+          (
+            AddressesData,
+            BaseReferences<_$AppDatabase, $AddressesTable, AddressesData>,
+          ),
+          AddressesData,
+          PrefetchHooks Function()
+        > {
+  $$AddressesTableTableManager(_$AppDatabase db, $AddressesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AddressesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AddressesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AddressesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                Value<String> phone = const Value.absent(),
+                Value<String> region = const Value.absent(),
+                Value<String> detail = const Value.absent(),
+                Value<bool> isDefault = const Value.absent(),
+              }) => AddressesCompanion(
+                id: id,
+                name: name,
+                phone: phone,
+                region: region,
+                detail: detail,
+                isDefault: isDefault,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String name,
+                required String phone,
+                required String region,
+                required String detail,
+                Value<bool> isDefault = const Value.absent(),
+              }) => AddressesCompanion.insert(
+                id: id,
+                name: name,
+                phone: phone,
+                region: region,
+                detail: detail,
+                isDefault: isDefault,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$AddressesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AddressesTable,
+      AddressesData,
+      $$AddressesTableFilterComposer,
+      $$AddressesTableOrderingComposer,
+      $$AddressesTableAnnotationComposer,
+      $$AddressesTableCreateCompanionBuilder,
+      $$AddressesTableUpdateCompanionBuilder,
+      (
+        AddressesData,
+        BaseReferences<_$AppDatabase, $AddressesTable, AddressesData>,
+      ),
+      AddressesData,
+      PrefetchHooks Function()
+    >;
+typedef $$GamificationStateTableCreateCompanionBuilder =
+    GamificationStateCompanion Function({
+      Value<int> id,
+      Value<int> xp,
+      Value<int> level,
+      Value<int> impulsePoints,
+    });
+typedef $$GamificationStateTableUpdateCompanionBuilder =
+    GamificationStateCompanion Function({
+      Value<int> id,
+      Value<int> xp,
+      Value<int> level,
+      Value<int> impulsePoints,
+    });
+
+class $$GamificationStateTableFilterComposer
+    extends Composer<_$AppDatabase, $GamificationStateTable> {
+  $$GamificationStateTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get xp => $composableBuilder(
+    column: $table.xp,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get level => $composableBuilder(
+    column: $table.level,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get impulsePoints => $composableBuilder(
+    column: $table.impulsePoints,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$GamificationStateTableOrderingComposer
+    extends Composer<_$AppDatabase, $GamificationStateTable> {
+  $$GamificationStateTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get xp => $composableBuilder(
+    column: $table.xp,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get level => $composableBuilder(
+    column: $table.level,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get impulsePoints => $composableBuilder(
+    column: $table.impulsePoints,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$GamificationStateTableAnnotationComposer
+    extends Composer<_$AppDatabase, $GamificationStateTable> {
+  $$GamificationStateTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<int> get xp =>
+      $composableBuilder(column: $table.xp, builder: (column) => column);
+
+  GeneratedColumn<int> get level =>
+      $composableBuilder(column: $table.level, builder: (column) => column);
+
+  GeneratedColumn<int> get impulsePoints => $composableBuilder(
+    column: $table.impulsePoints,
+    builder: (column) => column,
+  );
+}
+
+class $$GamificationStateTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $GamificationStateTable,
+          GamificationStateData,
+          $$GamificationStateTableFilterComposer,
+          $$GamificationStateTableOrderingComposer,
+          $$GamificationStateTableAnnotationComposer,
+          $$GamificationStateTableCreateCompanionBuilder,
+          $$GamificationStateTableUpdateCompanionBuilder,
+          (
+            GamificationStateData,
+            BaseReferences<
+              _$AppDatabase,
+              $GamificationStateTable,
+              GamificationStateData
+            >,
+          ),
+          GamificationStateData,
+          PrefetchHooks Function()
+        > {
+  $$GamificationStateTableTableManager(
+    _$AppDatabase db,
+    $GamificationStateTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$GamificationStateTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$GamificationStateTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$GamificationStateTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<int> xp = const Value.absent(),
+                Value<int> level = const Value.absent(),
+                Value<int> impulsePoints = const Value.absent(),
+              }) => GamificationStateCompanion(
+                id: id,
+                xp: xp,
+                level: level,
+                impulsePoints: impulsePoints,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<int> xp = const Value.absent(),
+                Value<int> level = const Value.absent(),
+                Value<int> impulsePoints = const Value.absent(),
+              }) => GamificationStateCompanion.insert(
+                id: id,
+                xp: xp,
+                level: level,
+                impulsePoints: impulsePoints,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$GamificationStateTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $GamificationStateTable,
+      GamificationStateData,
+      $$GamificationStateTableFilterComposer,
+      $$GamificationStateTableOrderingComposer,
+      $$GamificationStateTableAnnotationComposer,
+      $$GamificationStateTableCreateCompanionBuilder,
+      $$GamificationStateTableUpdateCompanionBuilder,
+      (
+        GamificationStateData,
+        BaseReferences<
+          _$AppDatabase,
+          $GamificationStateTable,
+          GamificationStateData
+        >,
+      ),
+      GamificationStateData,
+      PrefetchHooks Function()
+    >;
+typedef $$AchievementsTableCreateCompanionBuilder =
+    AchievementsCompanion Function({
+      Value<int> id,
+      required String key,
+      required DateTime unlockedAt,
+      required int rewardCents,
+    });
+typedef $$AchievementsTableUpdateCompanionBuilder =
+    AchievementsCompanion Function({
+      Value<int> id,
+      Value<String> key,
+      Value<DateTime> unlockedAt,
+      Value<int> rewardCents,
+    });
+
+class $$AchievementsTableFilterComposer
+    extends Composer<_$AppDatabase, $AchievementsTable> {
+  $$AchievementsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get key => $composableBuilder(
+    column: $table.key,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get unlockedAt => $composableBuilder(
+    column: $table.unlockedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get rewardCents => $composableBuilder(
+    column: $table.rewardCents,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$AchievementsTableOrderingComposer
+    extends Composer<_$AppDatabase, $AchievementsTable> {
+  $$AchievementsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get key => $composableBuilder(
+    column: $table.key,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get unlockedAt => $composableBuilder(
+    column: $table.unlockedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get rewardCents => $composableBuilder(
+    column: $table.rewardCents,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$AchievementsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AchievementsTable> {
+  $$AchievementsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get key =>
+      $composableBuilder(column: $table.key, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get unlockedAt => $composableBuilder(
+    column: $table.unlockedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get rewardCents => $composableBuilder(
+    column: $table.rewardCents,
+    builder: (column) => column,
+  );
+}
+
+class $$AchievementsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AchievementsTable,
+          Achievement,
+          $$AchievementsTableFilterComposer,
+          $$AchievementsTableOrderingComposer,
+          $$AchievementsTableAnnotationComposer,
+          $$AchievementsTableCreateCompanionBuilder,
+          $$AchievementsTableUpdateCompanionBuilder,
+          (
+            Achievement,
+            BaseReferences<_$AppDatabase, $AchievementsTable, Achievement>,
+          ),
+          Achievement,
+          PrefetchHooks Function()
+        > {
+  $$AchievementsTableTableManager(_$AppDatabase db, $AchievementsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AchievementsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AchievementsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AchievementsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> key = const Value.absent(),
+                Value<DateTime> unlockedAt = const Value.absent(),
+                Value<int> rewardCents = const Value.absent(),
+              }) => AchievementsCompanion(
+                id: id,
+                key: key,
+                unlockedAt: unlockedAt,
+                rewardCents: rewardCents,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String key,
+                required DateTime unlockedAt,
+                required int rewardCents,
+              }) => AchievementsCompanion.insert(
+                id: id,
+                key: key,
+                unlockedAt: unlockedAt,
+                rewardCents: rewardCents,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$AchievementsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AchievementsTable,
+      Achievement,
+      $$AchievementsTableFilterComposer,
+      $$AchievementsTableOrderingComposer,
+      $$AchievementsTableAnnotationComposer,
+      $$AchievementsTableCreateCompanionBuilder,
+      $$AchievementsTableUpdateCompanionBuilder,
+      (
+        Achievement,
+        BaseReferences<_$AppDatabase, $AchievementsTable, Achievement>,
+      ),
+      Achievement,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -7588,4 +9661,10 @@ class $AppDatabaseManager {
       $$WishlistItemsTableTableManager(_db, _db.wishlistItems);
   $$CheckinsTableTableManager get checkins =>
       $$CheckinsTableTableManager(_db, _db.checkins);
+  $$AddressesTableTableManager get addresses =>
+      $$AddressesTableTableManager(_db, _db.addresses);
+  $$GamificationStateTableTableManager get gamificationState =>
+      $$GamificationStateTableTableManager(_db, _db.gamificationState);
+  $$AchievementsTableTableManager get achievements =>
+      $$AchievementsTableTableManager(_db, _db.achievements);
 }

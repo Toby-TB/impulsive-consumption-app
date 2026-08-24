@@ -23,11 +23,13 @@ class StringListConverter extends TypeConverter<StringList, String> {
   String toSql(StringList value) => value.toJsonString();
 }
 
-enum TxType { recharge, spend, refund, checkin }
+enum TxType { recharge, spend, refund, checkin, achievement }
 
 enum OrderStatus { pendingShip, shipping, delivering, completed }
 
 enum CouponStatus { available, used, expired }
+
+enum PaymentMethod { balance, cod, installment3 }
 
 class Categories extends Table {
   IntColumn get id => integer()();
@@ -99,6 +101,47 @@ class Orders extends Table {
       .references(Coupons, #id)();
   DateTimeColumn get createdAt => dateTime()();
   DateTimeColumn get paidAt => dateTime().nullable()();
+
+  // v2：支付方式与收货快照
+  IntColumn get paymentMethod =>
+      intEnum<PaymentMethod>().withDefault(const Constant(0))();
+  TextColumn get receiverName => text().withDefault(const Constant(''))();
+  TextColumn get receiverPhone => text().withDefault(const Constant(''))();
+  TextColumn get receiverAddress => text().withDefault(const Constant(''))();
+  TextColumn get remark => text().nullable()();
+  // 货到付款：false 表示签收时才扣款
+  BoolColumn get settled => boolean().withDefault(const Constant(true))();
+  // 分期：已付期数
+  IntColumn get installmentsPaid =>
+      integer().withDefault(const Constant(0))();
+}
+
+class Addresses extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get name => text()();
+  TextColumn get phone => text()();
+  TextColumn get region => text()();
+  TextColumn get detail => text()();
+  BoolColumn get isDefault => boolean().withDefault(const Constant(false))();
+}
+
+/// 游戏化：单行状态（id=1）。
+class GamificationState extends Table {
+  IntColumn get id => integer()();
+  IntColumn get xp => integer().withDefault(const Constant(0))();
+  IntColumn get level => integer().withDefault(const Constant(1))();
+  IntColumn get impulsePoints => integer().withDefault(const Constant(0))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+/// 已解锁成就。
+class Achievements extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get key => text().unique()();
+  DateTimeColumn get unlockedAt => dateTime()();
+  IntColumn get rewardCents => integer()();
 }
 
 class OrderItems extends Table {

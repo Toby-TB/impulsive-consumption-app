@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/database/database.dart';
+import '../../data/repositories/address_repository.dart';
 import '../../data/repositories/cart_repository.dart';
 import '../../data/repositories/checkin_repository.dart';
 import '../../data/repositories/coupon_repository.dart';
@@ -9,6 +10,7 @@ import '../../data/repositories/product_repository.dart';
 import '../../data/repositories/wallet_repository.dart';
 import '../../data/repositories/wishlist_repository.dart';
 import '../../data/services/checkout_service.dart';
+import '../../data/services/gamification_service.dart';
 
 /// 由 main() 注入已种子化的数据库实例。
 final appDatabaseProvider = Provider<AppDatabase>((ref) {
@@ -42,3 +44,13 @@ final checkinRepositoryProvider = Provider(
 
 final checkoutServiceProvider =
     Provider((ref) => CheckoutService(ref.watch(appDatabaseProvider)));
+
+final addressRepositoryProvider =
+    Provider((ref) => AddressRepository(ref.watch(appDatabaseProvider)));
+
+final gamificationServiceProvider = Provider(
+  (ref) => GamificationService(
+    ref.watch(appDatabaseProvider),
+    ref.watch(walletRepositoryProvider),
+  ),
+);

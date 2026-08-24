@@ -10,11 +10,29 @@
   "flashSale": "Flash Sale",
   "guessYouLike": "Picked for You",
   "soldCount": "{count} sold",
-  "@soldCount": {"placeholders": {"count": {"type": "int"}}},
+  "@soldCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "stockLeft": "{count} in stock",
-  "@stockLeft": {"placeholders": {"count": {"type": "int"}}},
+  "@stockLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "onlyLeft": "Only {count} left",
-  "@onlyLeft": {"placeholders": {"count": {"type": "int"}}},
+  "@onlyLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "addToCart": "Add to Cart",
   "buyNow": "Buy Now",
   "addedToCart": "Added to cart",
@@ -26,7 +44,13 @@
   "selectAll": "Select All",
   "total": "Total",
   "checkoutWithCount": "Checkout ({count})",
-  "@checkoutWithCount": {"placeholders": {"count": {"type": "int"}}},
+  "@checkoutWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "clearCart": "Clear Cart",
   "clearCartConfirm": "Clear all items from your cart?",
   "cancel": "Cancel",
@@ -35,7 +59,13 @@
   "itemRemoved": "Removed",
   "cleared": "Cart cleared",
   "maxPerItem": "Max {count}",
-  "@maxPerItem": {"placeholders": {"count": {"type": "int"}}},
+  "@maxPerItem": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "walletTitle": "My Wallet",
   "balance": "Balance",
   "totalRecharged": "Recharged",
@@ -48,10 +78,25 @@
   "txSpend": "Purchase",
   "txCheckin": "Check-in reward",
   "txBalanceAfter": "Balance {amount}",
-  "@txBalanceAfter": {"placeholders": {"amount": {"type": "String"}}},
+  "@txBalanceAfter": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "insufficientTitle": "Insufficient balance",
   "insufficientMsg": "Your balance is {balance}, but you need {missing} more.",
-  "@insufficientMsg": {"placeholders": {"balance": {"type": "String"}, "missing": {"type": "String"}}},
+  "@insufficientMsg": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      },
+      "missing": {
+        "type": "String"
+      }
+    }
+  },
   "goRecharge": "Recharge Now",
   "paymentSuccess": "Payment Successful!",
   "payNow": "Pay Now",
@@ -65,9 +110,21 @@
   "couponAvailable": "Available",
   "couponUnavailable": "Unavailable",
   "couponThreshold": "Over {amount}",
-  "@couponThreshold": {"placeholders": {"amount": {"type": "String"}}},
+  "@couponThreshold": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "savedAmount": "Saved {amount}",
-  "@savedAmount": {"placeholders": {"amount": {"type": "String"}}},
+  "@savedAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "itemsTotal": "Items total",
   "discount": "Discount",
   "payable": "Payable",
@@ -93,9 +150,21 @@
   "checkinNow": "Check In",
   "checkedToday": "Checked in today",
   "checkinDay": "D{n}",
-  "@checkinDay": {"placeholders": {"n": {"type": "int"}}},
+  "@checkinDay": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "streakDays": "{count}-day streak",
-  "@streakDays": {"placeholders": {"count": {"type": "int"}}},
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "settings": "Settings",
   "language": "Language",
   "regionCurrency": "Region & Currency",
@@ -125,5 +194,114 @@
   "couponNewcomer": "Newcomer Coupon",
   "couponOff30Over300": "¥30 off over ¥300",
   "couponOff120Over1000": "¥120 off over ¥1000",
-  "coupon95": "5% off over ¥100"
+  "coupon95": "5% off over ¥100",
+  "levelBadge": "Lv.{n}",
+  "@levelBadge": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "expLabel": "EXP",
+  "impulseLabel": "Impulse",
+  "achievementsTitle": "Achievements",
+  "achievementUnlocked": "Achievement unlocked!",
+  "levelUp": "Level Up!",
+  "locked": "Locked",
+  "rewardFormat": "+{amount}",
+  "@rewardFormat": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentXpGain": "+{n} EXP",
+  "@paymentXpGain": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "paymentImpulseGain": "+{n} Impulse",
+  "@paymentImpulseGain": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "paymentContinue": "Continue",
+  "levelUpReward": "Lv.{n} reward +{amount}",
+  "@levelUpReward": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "titleRestrained": "Rookie",
+  "titlePotential": "Rising Star",
+  "titleNoviceSplurger": "Splurge Rookie",
+  "titleSplurger": "Splurge Master",
+  "titleSilver": "Silver Splurger",
+  "titleGold": "Gold Splurger",
+  "titleGod": "Impulse God",
+  "achFirstOrder": "First Order",
+  "achFirstOrderDesc": "Complete your first order",
+  "achOrders5": "Regular",
+  "achOrders5Desc": "Complete 5 orders",
+  "achSpend1k": "¥1K Club",
+  "achSpend1kDesc": "Spend over ¥1,000 in total",
+  "achSpend10k": "¥10K Whale",
+  "achSpend10kDesc": "Spend over ¥10,000 in total",
+  "achBigSpender": "Big Spender",
+  "achBigSpenderDesc": "A single order over ¥5,000",
+  "achCart10": "Cart Hoarder",
+  "achCart10Desc": "Have 10 items in cart at once",
+  "achWishlist5": "Curator",
+  "achWishlist5Desc": "Wishlist 5 products",
+  "achStreak3": "3-Day Streak",
+  "achStreak3Desc": "Check in 3 days in a row",
+  "achStreak7": "7-Day Streak",
+  "achStreak7Desc": "Check in 7 days in a row",
+  "achLevel5": "Level 5",
+  "achLevel5Desc": "Reach level 5",
+  "addressTitle": "Shipping Address",
+  "addAddress": "New Address",
+  "editAddress": "Edit Address",
+  "phoneLabel": "Phone",
+  "regionLabel": "Region",
+  "detailAddressLabel": "Address",
+  "setDefault": "Set as default",
+  "defaultAddressLabel": "Default",
+  "deleteAddressConfirm": "Delete this address?",
+  "save": "Save",
+  "paymentMethodLabel": "Payment Method",
+  "payBalance": "Balance",
+  "payCod": "Cash on Delivery",
+  "payCodNote": "Charged on delivery",
+  "payInstallment": "3 installments, 0% interest",
+  "payInstallmentNote": "First {amount}, rest shown in order",
+  "@payInstallmentNote": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "buyerMessage": "Buyer Note",
+  "remarkHint": "Optional, leave a note for seller",
+  "addressRequired": "Please add a shipping address first",
+  "installmentProgress": "Installment · paid {paid}/3",
+  "@installmentProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      }
+    }
+  },
+  "codNote": "COD · charged when signed"
 }

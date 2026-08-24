@@ -98,6 +98,19 @@ class _WishlistCard extends ConsumerWidget {
                       await ref
                           .read(wishlistRepositoryProvider)
                           .toggle(product.id);
+                      final unlocked = await ref
+                          .read(gamificationServiceProvider)
+                          .evaluateActivity();
+                      if (unlocked.isNotEmpty && context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              '${context.l10n.achievementUnlocked} ${unlocked.map((a) => achievementL10n(context, a.key)).join(' · ')}',
+                            ),
+                            duration: const Duration(seconds: 2),
+                          ),
+                        );
+                      }
                     },
                     style: OutlinedButton.styleFrom(
                       minimumSize: const Size.fromHeight(32),
@@ -112,6 +125,9 @@ class _WishlistCard extends ConsumerWidget {
                   child: FilledButton(
                     onPressed: () async {
                       await ref.read(cartRepositoryProvider).add(product.id);
+                      await ref
+                          .read(gamificationServiceProvider)
+                          .evaluateActivity();
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
