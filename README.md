@@ -1,9 +1,35 @@
 # 冲动消费 · Impulsive Consumption
 
 一款**纯本地**的模拟购物 App —— 完整还原「逛 → 加购 → 支付 → 物流 → 订单」的网购闭环，
+并叠加全套**游戏化爽感系统**（Combo 连击 / 折扣暴击 / 满减充能 / 金币经济 / 开箱购）。
 不涉及任何真实支付与网络请求，所有数据仅保存在设备本地。
 
-> A purely local mock shopping app. No real payments, no network requests — all data stays on your device.
+> 🌐 **在线体验**：https://toby-tb.github.io/impulsive-consumption-app/
+
+> A purely local mock shopping app with full gamification juice. No real payments, no network requests.
+
+## 🎮 游戏化系统（v1.2）
+
+| 机制 | 说明 |
+|---|---|
+| 🔥 **Combo 连击** | 2.5 秒内连续加购触发 COMBO xN 浮标，连击越高金币奖励越多 |
+| ⚡ **折扣暴击** | 结算时 25% 概率触发「暴击」，优惠券力度 ×2 |
+| 📊 **满减充能条** | 购物车底栏实时显示距下一档满减的进度，达标爆金币 |
+| 🪙 **金币经济** | 消费/签到/连击/成就赚金币，1000 金币可兑 ¥10 余额 |
+| 🎁 **幸运盲盒** | 500 金币/抽，N/R/SR/SSR 四档稀有度，10 抽保底 SR+（金币/红包/优惠券） |
+| 🏆 **成就 & 等级** | 10 项成就勋章 + XP 等级 + 冲动值称号体系 |
+| 🔊 **音效触感** | 金币/连击/暴击/升级全套合成音效 + 震动反馈（可关闭） |
+
+## 🖼️ 图文质量工作流（多模态审计）
+
+- `tool/fetch_images.py`：按商品关键词从 Wikimedia Commons 抓取可商用真实照片
+- `tool/generate_image_prompts.py`：为 152 件商品生成统一风格的 **Midjourney / SD 提示词**（`docs/ai-image-prompts.md`）
+- **图文匹配审计**：使用多模态模型逐件比对图片与商品元数据，输出 OK/WEAK/MISMATCH 三档判定与关键词修复建议，自动重抓不合格图片（本项目已全量审计一轮：152 件，修复 112 处关键词并重抓）
+
+## 📦 下载
+
+- Android APK：见 [Releases](https://github.com/Toby-TB/impulsive-consumption-app/releases)
+- Web：见上方在线体验链接（数据存浏览器本地存储）
 
 ## 功能 Features
 

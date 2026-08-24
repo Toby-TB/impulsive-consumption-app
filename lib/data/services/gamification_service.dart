@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:drift/drift.dart';
 
 import '../database/database.dart';
@@ -108,6 +110,26 @@ class GameStats {
   });
 }
 
+enum GachaType { coins, credit, coupon }
+
+enum GachaRarity { n, r, sr, ssr }
+
+class GachaPrize {
+  final GachaType type;
+  final int amount;
+  final GachaRarity rarity;
+  final String key;
+
+  const GachaPrize(this.type, this.amount, this.rarity, {required this.key});
+}
+
+class InsufficientCoinsException implements Exception {
+  final int missing;
+  const InsufficientCoinsException(this.missing);
+  @override
+  String toString() => 'InsufficientCoinsException(missing: \$missing)';
+}
+
 /// 一次游戏化事件的结果，用于支付成功动画展示。
 class GamificationResult {
   final int xpGained;
@@ -116,6 +138,7 @@ class GamificationResult {
   final int impulseGained;
   final List<AchievementDef> unlocked;
   final int levelUpRewardCents;
+  final int coinsGained;
 
   const GamificationResult({
     required this.xpGained,
@@ -124,6 +147,7 @@ class GamificationResult {
     required this.impulseGained,
     required this.unlocked,
     required this.levelUpRewardCents,
+    this.coinsGained = 0,
   });
 
   bool get leveledUp => newLevel > oldLevel;
@@ -218,6 +242,7 @@ class GamificationService {
     return _apply(
       xpGain: payableCents ~/ 100, // 每 ¥1 = 1 XP
       impulseGain: payableCents ~/ 5000 + (itemCount >= 5 ? 5 : 0),
+      coinsGain: payableCents ~/ 1000 + 10, // 消费返金币：每 ¥10 +1，保底 10
       stats: GameStats(
         orderCount: -1, // -1 = 内部查询
         totalSpentCents: -1,
@@ -235,6 +260,7 @@ class GamificationService {
     return _apply(
       xpGain: _kCheckinXp,
       impulseGain: 0,
+      coinsGain: 30,
       stats: GameStats(
         orderCount: 0,
         totalSpentCents: 0,
@@ -267,6 +293,137 @@ class GamificationService {
     );
   }
 
+  // ---- 金币经济 ----
+
+  Stream<int> watchCoins() =>
+      watchState().map((s) => s.coins);
+
+  Future<int> addCoins(int amount, {String? reason}) async {
+    assert(amount > 0);
+    final state = await currentState();
+    final after = state.coins + amount;
+    await (_db.update(_db.gamificationState)
+          ..where((t) => t.id.equals(state.id)))
+        .write(GamificationStateCompanion(coins: Value(after)));
+    return after;
+  }
+
+  /// 余额不足返回 false。
+  Future<bool> spendCoins(int amount) async {
+    assert(amount > 0);
+    return _db.transaction(() async {
+      final state = await currentState();
+      if (state.coins < amount) return false;
+      await (_db.update(_db.gamificationState)
+            ..where((t) => t.id.equals(state.id)))
+          .write(GamificationStateCompanion(
+        coins: Value(state.coins - amount),
+      ));
+      return true;
+    });
+  }
+
+  static const kCoinsPerCny = 100; // 100 金币 = ¥1
+
+  /// 金币兑换余额。返回兑换到的分数；金币不足返回 null。
+  Future<int?> exchangeCoinsToBalance(int coins) async {
+    if (coins <= 0 || coins % kCoinsPerCny != 0) return null;
+    final ok = await spendCoins(coins);
+    if (!ok) return null;
+    final cny = coins ~/ kCoinsPerCny;
+    await _wallet.credit(
+      type: TxType.recharge,
+      amountCents: cny * 100,
+      ref: 'coin_exchange',
+    );
+    return cny * 100;
+  }
+
+  /// 连击奖励金币。
+  Future<int> awardComboCoins(int comboCount) {
+    return addCoins(comboCount * 10, reason: 'combo');
+  }
+
+  // ---- 开箱购 ----
+
+  static const kGachaCost = 500;
+  static const _kPityEvery = 10;
+
+  /// 开箱：扣金币 → 按权重 roll → 保底 → 发奖。返回奖品类与数值。
+  Future<GachaPrize> openGacha() async {
+    final state = await currentState();
+    if (state.coins < kGachaCost) {
+      throw InsufficientCoinsException(kGachaCost - state.coins);
+    }
+    await spendCoins(kGachaCost);
+
+    final pityCount = state.gachaPity + 1;
+    final forceHigh = pityCount >= _kPityEvery;
+    final prize = _roll(forceHigh: forceHigh);
+    await _applyPrize(prize);
+    await (_db.update(_db.gamificationState)
+          ..where((t) => t.id.equals(1)))
+        .write(GamificationStateCompanion(
+      gachaPity: Value(pityCount >= _kPityEvery ? 0 : pityCount),
+    ));
+    return prize;
+  }
+
+  Future<int> gachaPityCount() async => (await currentState()).gachaPity;
+
+  GachaPrize _roll({required bool forceHigh}) {
+    final rng = Random();
+    final roll = rng.nextDouble() * 100;
+    if (forceHigh) {
+      // 保底：SSR 红包 或 大额金币
+      return rng.nextBool()
+          ? const GachaPrize(GachaType.credit, 5000, GachaRarity.ssr,
+              key: 'prizeCredit50')
+          : const GachaPrize(GachaType.coins, 2000, GachaRarity.sr,
+              key: 'prizeCoins2000');
+    }
+    if (roll < 30) {
+      return const GachaPrize(GachaType.coins, 150, GachaRarity.n,
+          key: 'prizeCoins150');
+    } else if (roll < 55) {
+      return const GachaPrize(GachaType.coins, 400, GachaRarity.r,
+          key: 'prizeCoins400');
+    } else if (roll < 75) {
+      return const GachaPrize(GachaType.credit, 100, GachaRarity.r,
+          key: 'prizeCredit1');
+    } else if (roll < 92) {
+      return const GachaPrize(GachaType.coupon, 1000, GachaRarity.sr,
+          key: 'prizeCoupon');
+    } else {
+      return const GachaPrize(GachaType.credit, 2000, GachaRarity.sr,
+          key: 'prizeCredit20');
+    }
+  }
+
+  Future<void> _applyPrize(GachaPrize prize) async {
+    switch (prize.type) {
+      case GachaType.coins:
+        await addCoins(prize.amount, reason: 'gacha');
+      case GachaType.credit:
+        await _wallet.credit(
+          type: TxType.recharge,
+          amountCents: prize.amount,
+          ref: 'gacha',
+        );
+      case GachaType.coupon:
+        await _db.into(_db.coupons).insert(
+              CouponsCompanion.insert(
+                titleKey: 'couponGacha',
+                isRate: false,
+                valueInt: prize.amount, // 满 ¥50 减 ¥10
+                minSpendCents: 5000,
+                expiresAt: DateTime.now().add(const Duration(days: 7)),
+                status: CouponStatus.available,
+              ),
+            );
+    }
+  }
+
   /// 内部统计购物车/心愿单后评估活动类成就，返回新解锁列表。
   Future<List<AchievementDef>> evaluateActivity() async {
     final c = _db.cartItems.quantity.sum();
@@ -296,6 +453,7 @@ class GamificationService {
   Future<GamificationResult> _apply({
     required int xpGain,
     required int impulseGain,
+    int coinsGain = 0,
     required GameStats stats,
   }) async {
     return _db.transaction(() async {
@@ -311,6 +469,7 @@ class GamificationService {
         xp: Value(xp),
         level: Value(level),
         impulsePoints: Value(impulse),
+        coins: coinsGain > 0 ? Value(state.coins + coinsGain) : const Value.absent(),
       ));
 
       final unlocked = <AchievementDef>[];
@@ -382,6 +541,7 @@ class GamificationService {
         impulseGained: impulseGain,
         unlocked: unlocked,
         levelUpRewardCents: levelUpReward,
+        coinsGained: coinsGain,
       );
     });
   }

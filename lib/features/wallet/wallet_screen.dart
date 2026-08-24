@@ -26,6 +26,8 @@ class WalletScreen extends ConsumerWidget {
               children: [
                 _BalanceCard(account: account),
                 const SizedBox(height: 12),
+                _CoinsCard(),
+                const SizedBox(height: 12),
                 FilledButton(
                   onPressed: () => _showRechargeSheet(context, ref),
                   child: Text(l.recharge),
@@ -52,6 +54,87 @@ class WalletScreen extends ConsumerWidget {
 
 final _accountProvider = StreamProvider(
   (ref) => ref.watch(walletRepositoryProvider).watchAccount(),
+);
+
+/// 金币余额 + 兑换。
+class _CoinsCard extends ConsumerWidget {
+  const _CoinsCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final coins = ref.watch(_coinsProvider).value ?? 0;
+    final theme = Theme.of(context);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        child: Row(
+          children: [
+            const Icon(Icons.monetization_on, color: Color(0xFFFFB300)),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(l.coinsLabel,
+                    style:
+                        TextStyle(fontSize: 11, color: theme.hintColor)),
+                Text('$coins',
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.w800)),
+              ],
+            ),
+            const Spacer(),
+            FilledButton.tonal(
+              onPressed: coins < 1000
+                  ? null
+                  : () async {
+                      final confirmed = await showDialog<bool>(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          title: Text(l.exchangeCoins),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(ctx, false),
+                              child: Text(l.cancel),
+                            ),
+                            FilledButton(
+                              onPressed: () => Navigator.pop(ctx, true),
+                              child: Text(l.confirm),
+                            ),
+                          ],
+                        ),
+                      );
+                      if (confirmed != true) return;
+                      final got = await ref
+                          .read(gamificationServiceProvider)
+                          .exchangeCoinsToBalance(1000);
+                      if (!context.mounted) return;
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(got == null
+                              ? l.notEnoughCoins
+                              : l.exchangeSuccess),
+                          duration: const Duration(milliseconds: 900),
+                        ),
+                      );
+                    },
+              style: FilledButton.styleFrom(
+                minimumSize: const Size(0, 38),
+                padding: const EdgeInsets.symmetric(horizontal: 14),
+              ),
+              child: Text(l.exchangeCoins,
+                  style: const TextStyle(fontSize: 12)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+final _coinsProvider = StreamProvider(
+  (ref) => ref.watch(gamificationServiceProvider).watchCoins(),
 );
 
 class _BalanceCard extends ConsumerWidget {

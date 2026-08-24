@@ -303,5 +303,61 @@
       }
     }
   },
-  "codNote": "货到付款 · 签收时扣款"
+  "codNote": "货到付款 · 签收时扣款",
+  "chargeHint": "再买 {amount} 解锁满减券",
+  "@chargeHint": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "chargeFull": "已达到满减门槛！",
+  "critActive": "暴击！优惠券 ×2",
+  "gachaTitle": "幸运盲盒",
+  "gachaOpen": "开箱 ({cost} 金币)",
+  "gachaNeedCoins": "还差 {amount} 金币",
+  "@gachaNeedCoins": {
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "gachaPity": "还有 {n} 次保底",
+  "@gachaPity": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "coinsLabel": "金币",
+  "exchangeCoins": "1000 金币兑 ¥10",
+  "exchangeSuccess": "兑换成功！",
+  "coinEarned": "+{n} 金币",
+  "@coinEarned": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "notEnoughCoins": "金币不足",
+  "banner4Title": "幸运盲盒开启！",
+  "banner4Sub": "金币开箱，赢大额红包",
+  "prizeCoins150": "150 金币",
+  "prizeCoins400": "400 金币",
+  "prizeCoins2000": "2000 金币",
+  "prizeCredit1": "¥1 红包",
+  "prizeCredit20": "¥20 红包",
+  "prizeCredit50": "¥50 超级红包",
+  "prizeCoupon": "满50减10券",
+  "rarityN": "N",
+  "rarityR": "R",
+  "raritySR": "SR",
+  "raritySSR": "SSR",
+  "tapToSkip": "点击跳过",
+  "sfxLabel": "音效",
+  "sfxDesc": "金币、连击与升级提示音"
 }

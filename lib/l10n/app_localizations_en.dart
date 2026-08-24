@@ -571,4 +571,98 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get codNote => 'COD · charged when signed';
+
+  @override
+  String chargeHint(String amount) {
+    return 'Spend $amount more to unlock coupon';
+  }
+
+  @override
+  String get chargeFull => 'Coupon threshold reached!';
+
+  @override
+  String get critActive => 'CRIT! Coupon ×2';
+
+  @override
+  String get gachaTitle => 'Lucky Box';
+
+  @override
+  String gachaOpen(Object cost) {
+    return 'Open ($cost coins)';
+  }
+
+  @override
+  String gachaNeedCoins(int amount) {
+    return 'Need $amount more coins';
+  }
+
+  @override
+  String gachaPity(int n) {
+    return 'Guaranteed in $n';
+  }
+
+  @override
+  String get coinsLabel => 'Coins';
+
+  @override
+  String get exchangeCoins => 'Exchange 1000 → ¥10';
+
+  @override
+  String get exchangeSuccess => 'Exchanged!';
+
+  @override
+  String coinEarned(int n) {
+    return '+$n coins';
+  }
+
+  @override
+  String get notEnoughCoins => 'Not enough coins';
+
+  @override
+  String get banner4Title => 'Lucky Box Open!';
+
+  @override
+  String get banner4Sub => 'Spend coins, win big red packets';
+
+  @override
+  String get prizeCoins150 => '150 Coins';
+
+  @override
+  String get prizeCoins400 => '400 Coins';
+
+  @override
+  String get prizeCoins2000 => '2,000 Coins';
+
+  @override
+  String get prizeCredit1 => '¥1 Red Packet';
+
+  @override
+  String get prizeCredit20 => '¥20 Red Packet';
+
+  @override
+  String get prizeCredit50 => '¥50 Mega Red Packet';
+
+  @override
+  String get prizeCoupon => '¥10 off ¥50 Coupon';
+
+  @override
+  String get rarityN => 'N';
+
+  @override
+  String get rarityR => 'R';
+
+  @override
+  String get raritySR => 'SR';
+
+  @override
+  String get raritySSR => 'SSR';
+
+  @override
+  String get tapToSkip => 'Tap to skip';
+
+  @override
+  String get sfxLabel => 'Sound Effects';
+
+  @override
+  String get sfxDesc => 'Coin, combo and level-up sounds';
 }

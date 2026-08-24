@@ -569,6 +569,100 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get codNote => '货到付款 · 签收时扣款';
+
+  @override
+  String chargeHint(String amount) {
+    return '再买 $amount 解锁满减券';
+  }
+
+  @override
+  String get chargeFull => '已达到满减门槛！';
+
+  @override
+  String get critActive => '暴击！优惠券 ×2';
+
+  @override
+  String get gachaTitle => '幸运盲盒';
+
+  @override
+  String gachaOpen(Object cost) {
+    return '开箱 ($cost 金币)';
+  }
+
+  @override
+  String gachaNeedCoins(int amount) {
+    return '还差 $amount 金币';
+  }
+
+  @override
+  String gachaPity(int n) {
+    return '还有 $n 次保底';
+  }
+
+  @override
+  String get coinsLabel => '金币';
+
+  @override
+  String get exchangeCoins => '1000 金币兑 ¥10';
+
+  @override
+  String get exchangeSuccess => '兑换成功！';
+
+  @override
+  String coinEarned(int n) {
+    return '+$n 金币';
+  }
+
+  @override
+  String get notEnoughCoins => '金币不足';
+
+  @override
+  String get banner4Title => '幸运盲盒开启！';
+
+  @override
+  String get banner4Sub => '金币开箱，赢大额红包';
+
+  @override
+  String get prizeCoins150 => '150 金币';
+
+  @override
+  String get prizeCoins400 => '400 金币';
+
+  @override
+  String get prizeCoins2000 => '2000 金币';
+
+  @override
+  String get prizeCredit1 => '¥1 红包';
+
+  @override
+  String get prizeCredit20 => '¥20 红包';
+
+  @override
+  String get prizeCredit50 => '¥50 超级红包';
+
+  @override
+  String get prizeCoupon => '满50减10券';
+
+  @override
+  String get rarityN => 'N';
+
+  @override
+  String get rarityR => 'R';
+
+  @override
+  String get raritySR => 'SR';
+
+  @override
+  String get raritySSR => 'SSR';
+
+  @override
+  String get tapToSkip => '点击跳过';
+
+  @override
+  String get sfxLabel => '音效';
+
+  @override
+  String get sfxDesc => '金币、连击与升级提示音';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -1135,4 +1229,98 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get codNote => '貨到付款 · 簽收時扣款';
+
+  @override
+  String chargeHint(String amount) {
+    return '再買 $amount 解鎖滿減券';
+  }
+
+  @override
+  String get chargeFull => '已達到滿減門檻！';
+
+  @override
+  String get critActive => '暴擊！優惠券 ×2';
+
+  @override
+  String get gachaTitle => '幸運盲盒';
+
+  @override
+  String gachaOpen(Object cost) {
+    return '開箱 ($cost 金幣)';
+  }
+
+  @override
+  String gachaNeedCoins(int amount) {
+    return '還差 $amount 金幣';
+  }
+
+  @override
+  String gachaPity(int n) {
+    return '還有 $n 次保底';
+  }
+
+  @override
+  String get coinsLabel => '金幣';
+
+  @override
+  String get exchangeCoins => '1000 金幣兌 ¥10';
+
+  @override
+  String get exchangeSuccess => '兌換成功！';
+
+  @override
+  String coinEarned(int n) {
+    return '+$n 金幣';
+  }
+
+  @override
+  String get notEnoughCoins => '金幣不足';
+
+  @override
+  String get banner4Title => '幸運盲盒開啟！';
+
+  @override
+  String get banner4Sub => '金幣開箱，贏大額紅包';
+
+  @override
+  String get prizeCoins150 => '150 金幣';
+
+  @override
+  String get prizeCoins400 => '400 金幣';
+
+  @override
+  String get prizeCoins2000 => '2000 金幣';
+
+  @override
+  String get prizeCredit1 => '¥1 紅包';
+
+  @override
+  String get prizeCredit20 => '¥20 紅包';
+
+  @override
+  String get prizeCredit50 => '¥50 超級紅包';
+
+  @override
+  String get prizeCoupon => '滿50折10券';
+
+  @override
+  String get rarityN => 'N';
+
+  @override
+  String get rarityR => 'R';
+
+  @override
+  String get raritySR => 'SR';
+
+  @override
+  String get raritySSR => 'SSR';
+
+  @override
+  String get tapToSkip => '點擊跳過';
+
+  @override
+  String get sfxLabel => '音效';
+
+  @override
+  String get sfxDesc => '金幣、連擊與升級提示音';
 }

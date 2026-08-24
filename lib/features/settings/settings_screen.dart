@@ -100,6 +100,19 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 16),
 
+          _SectionHeader(title: l.sfxLabel),
+          Card(
+            child: SwitchListTile(
+              title: Text(l.sfxLabel, style: const TextStyle(fontSize: 14)),
+              subtitle: Text(l.sfxDesc,
+                  style: const TextStyle(fontSize: 11)),
+              value: ref.watch(sfxEnabledProvider),
+              onChanged: (v) =>
+                  ref.read(sfxEnabledProvider.notifier).state = v,
+            ),
+          ),
+          const SizedBox(height: 16),
+
           _SectionHeader(title: l.about),
           Card(
             child: Padding(

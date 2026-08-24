@@ -62,7 +62,10 @@ Future<void> seedIfEmpty(AppDatabase db, AssetBundle bundle) async {
   final game = await db.select(db.gamificationState).get();
   if (game.isEmpty) {
     await db.into(db.gamificationState).insertOnConflictUpdate(
-          GamificationStateCompanion.insert(id: const Value(1)),
+          GamificationStateCompanion.insert(
+              id: const Value(1),
+              coins: const Value(2000),
+            ),
         );
   }
 

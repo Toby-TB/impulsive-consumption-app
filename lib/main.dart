@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';
+import 'core/juice/juice_fx.dart';
 import 'core/providers/app_providers.dart';
 import 'core/providers/preferences_provider.dart';
 import 'data/database/database.dart';
@@ -12,7 +15,12 @@ import 'data/database/seed_loader.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  if (!kIsWeb) {
+    if (!kIsWeb) {
+    await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  }
+  unawaited(JuiceFX.warmUp());
+  }
 
   // 初始化偏好存储
   final prefs = await SharedPreferences.getInstance();

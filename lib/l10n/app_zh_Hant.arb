@@ -303,5 +303,61 @@
       }
     }
   },
-  "codNote": "貨到付款 · 簽收時扣款"
+  "codNote": "貨到付款 · 簽收時扣款",
+  "chargeHint": "再買 {amount} 解鎖滿減券",
+  "@chargeHint": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "chargeFull": "已達到滿減門檻！",
+  "critActive": "暴擊！優惠券 ×2",
+  "gachaTitle": "幸運盲盒",
+  "gachaOpen": "開箱 ({cost} 金幣)",
+  "gachaNeedCoins": "還差 {amount} 金幣",
+  "@gachaNeedCoins": {
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "gachaPity": "還有 {n} 次保底",
+  "@gachaPity": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "coinsLabel": "金幣",
+  "exchangeCoins": "1000 金幣兌 ¥10",
+  "exchangeSuccess": "兌換成功！",
+  "coinEarned": "+{n} 金幣",
+  "@coinEarned": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "notEnoughCoins": "金幣不足",
+  "banner4Title": "幸運盲盒開啟！",
+  "banner4Sub": "金幣開箱，贏大額紅包",
+  "prizeCoins150": "150 金幣",
+  "prizeCoins400": "400 金幣",
+  "prizeCoins2000": "2000 金幣",
+  "prizeCredit1": "¥1 紅包",
+  "prizeCredit20": "¥20 紅包",
+  "prizeCredit50": "¥50 超級紅包",
+  "prizeCoupon": "滿50折10券",
+  "rarityN": "N",
+  "rarityR": "R",
+  "raritySR": "SR",
+  "raritySSR": "SSR",
+  "tapToSkip": "點擊跳過",
+  "sfxLabel": "音效",
+  "sfxDesc": "金幣、連擊與升級提示音"
 }

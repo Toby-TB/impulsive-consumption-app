@@ -34,12 +34,14 @@ class CheckoutService {
 
   CheckoutService(this._db);
 
+  /// [critMultiplier]：暴击时由 UI 传入 2，将券折扣翻倍（游戏层 → 逻辑层单向参数）。
   Future<CheckoutResult> checkout({
     required List<CartItemWithProduct> items,
     int? couponId,
     AddressesData? address,
     PaymentMethod method = PaymentMethod.balance,
     String? remark,
+    double critMultiplier = 1,
   }) async {
     assert(items.isNotEmpty, 'checkout requires non-empty items');
     final selected = items.where((e) => e.item.selected).toList();
@@ -62,7 +64,10 @@ class CheckoutService {
             !CouponRepository.isUsable(usedCoupon, DateTime.now())) {
           throw const CouponNotApplicableException('unavailable or expired');
         }
-        discount = CouponRepository.discountFor(usedCoupon, total);
+        discount = (CouponRepository.discountFor(usedCoupon, total) *
+                critMultiplier)
+            .round();
+        discount = discount.clamp(0, total);
         if (discount <= 0) {
           throw const CouponNotApplicableException('below threshold');
         }

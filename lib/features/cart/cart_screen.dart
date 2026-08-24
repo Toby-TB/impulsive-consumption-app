@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/providers/app_providers.dart';
+import '../../../core/juice/juice_fx.dart';
+import '../../../core/providers/preferences_provider.dart';
+import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
 import '../../../data/database/database.dart';
 import '../../../data/repositories/cart_repository.dart';
@@ -50,6 +54,22 @@ class CartScreen extends ConsumerWidget {
         .where((e) => e.item.selected)
         .fold<int>(0, (sum, e) => sum + e.lineTotalCents);
 
+    // 满减充能：跨过阈值时爆金币
+    final prevTotal = ref.watch(_prevTotalProvider);
+    if (prevTotal > 0) {
+      final crossed = _nextThreshold(prevTotal) != null &&
+          _nextThreshold(selectedTotal) == null;
+      if (crossed) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) JuiceFX.coinBurst(context, count: 20);
+        });
+      }
+    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.microtask(
+          () => ref.read(_prevTotalProvider.notifier).state = selectedTotal);
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: Text(l.navCart),
@@ -76,7 +96,11 @@ class CartScreen extends ConsumerWidget {
               top: BorderSide(color: Theme.of(context).dividerColor),
             ),
           ),
-          child: Row(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _ChargeBar(totalCents: selectedTotal),
+              Row(
             children: [
               GestureDetector(
                 onTap: () =>
@@ -126,6 +150,8 @@ class CartScreen extends ConsumerWidget {
               ),
             ],
           ),
+            ],
+          ),
         ),
       ),
     );
@@ -166,6 +192,81 @@ class CartScreen extends ConsumerWidget {
 final _cartItemsProvider = StreamProvider(
   (ref) => ref.watch(cartRepositoryProvider).watchDetailed(),
 );
+
+final _prevTotalProvider = StateProvider<int>((ref) => 0);
+
+/// 下一个未达标的满减门槛；全部达标返回 null。
+int? _nextThreshold(int totalCents) {
+  const thresholds = [30000, 100000];
+  for (final t in thresholds) {
+    if (totalCents < t) return t;
+  }
+  return null;
+}
+
+/// 满减充能条。
+class _ChargeBar extends ConsumerWidget {
+  final int totalCents;
+
+  const _ChargeBar({required this.totalCents});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final theme = Theme.of(context);
+    final next = _nextThreshold(totalCents);
+    if (next == null) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 6),
+        child: Row(
+          children: [
+            Icon(Icons.bolt, size: 14, color: theme.colorScheme.primary),
+            const SizedBox(width: 4),
+            Text(l.chargeFull,
+                style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    color: theme.colorScheme.primary)),
+          ],
+        ),
+      );
+    }
+    final progress = (totalCents / next).clamp(0.0, 1.0);
+    final remain = next - totalCents;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l.chargeHint(
+              formatMoney(remain,
+                  cur: ref.watch(regionProvider),
+                  locale: Localizations.localeOf(context).toString()),
+            ),
+            style: TextStyle(fontSize: 11, color: theme.hintColor),
+          ),
+          const SizedBox(height: 4),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: progress,
+              minHeight: 6,
+              backgroundColor:
+                  theme.colorScheme.surfaceContainerHighest.withValues(alpha: .6),
+              valueColor: AlwaysStoppedAnimation(
+                Color.lerp(theme.hintColor, theme.colorScheme.primary,
+                        progress) ??
+                    theme.colorScheme.primary,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class _CartItemTile extends ConsumerWidget {
   final CartItemWithProduct entry;

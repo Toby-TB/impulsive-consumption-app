@@ -28,6 +28,13 @@ class HomeScreen extends ConsumerWidget {
             pinned: true,
             toolbarHeight: 56,
             title: _SearchBar(hint: l.searchHint),
+            actions: [
+              IconButton(
+                tooltip: l.gachaTitle,
+                icon: const Icon(Icons.card_giftcard),
+                onPressed: () => context.push('/gacha'),
+              ),
+            ],
           ),
           SliverToBoxAdapter(child: _BannerCarousel()),
           SliverToBoxAdapter(
@@ -91,11 +98,13 @@ class _BannerCarouselState extends State<_BannerCarousel> {
   final _controller = PageController(viewportFraction: 0.92);
   Timer? _timer;
   int _page = 0;
+  int get _slideCount => 4;
 
   static const _gradients = [
     [Color(0xFFFF5F3C), Color(0xFFFF9A44)],
     [Color(0xFF7B4DFF), Color(0xFFB388FF)],
     [Color(0xFFFF2E63), Color(0xFFFF7A9E)],
+    [Color(0xFFFFB300), Color(0xFFFF6F00)],
   ];
 
   @override
@@ -103,7 +112,7 @@ class _BannerCarouselState extends State<_BannerCarousel> {
     super.initState();
     _timer = Timer.periodic(const Duration(seconds: 4), (_) {
       if (!_controller.hasClients) return;
-      _page = (_page + 1) % 3;
+      _page = (_page + 1) % _slideCount;
       _controller.animateToPage(_page,
           duration: const Duration(milliseconds: 350), curve: Curves.easeOut);
     });
@@ -123,6 +132,7 @@ class _BannerCarouselState extends State<_BannerCarousel> {
       (l.banner1Title, l.banner1Sub),
       (l.banner2Title, l.banner2Sub),
       (l.banner3Title, l.banner3Sub),
+      (l.banner4Title, l.banner4Sub),
     ];
 
     return Padding(

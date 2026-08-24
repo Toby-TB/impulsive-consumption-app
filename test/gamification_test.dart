@@ -239,6 +239,56 @@ void main() {
       );
     });
   });
+  group('Coins & Gacha', () {
+    test('addCoins/spendCoins/exchange round trip', () async {
+      // 种子初始 2000 金币
+      expect(await game.watchCoins().first, 2000);
+      expect(await game.addCoins(1500, reason: 'test'), 3500);
+      expect(await game.spendCoins(500), isTrue);
+      expect(await game.watchCoins().first, 3000);
+
+      final got = await game.exchangeCoinsToBalance(1000);
+      expect(got, 1000); // ¥10
+      expect(await game.watchCoins().first, 2000);
+      expect(await game.exchangeCoinsToBalance(350), isNull); // 非百倍数
+    });
+
+    test('openGacha deducts cost, applies prize, tracks pity', () async {
+      await game.addCoins(12000, reason: 'seed');
+      final before = await game.watchCoins().first;
+
+      var sawSrOrAbove = false;
+      for (var i = 1; i <= 10; i++) {
+        final prize = await game.openGacha();
+        expect(prize.amount, greaterThan(0));
+        if (prize.rarity == GachaRarity.sr ||
+            prize.rarity == GachaRarity.ssr) {
+          sawSrOrAbove = true;
+        }
+        final pity = await game.gachaPityCount();
+        expect(pity, i % 10);
+      }
+      expect(sawSrOrAbove, isTrue); // 10 抽内保底触发
+
+      final after = await game.watchCoins().first;
+      // 10 次扣 5000 + 奖励返还 > 0
+      expect(after, greaterThan(before - 5000));
+    });
+
+    test('openGacha throws when coins insufficient', () async {
+      await game.spendCoins(2000); // 清空种子金币
+      await expectLater(
+        game.openGacha(),
+        throwsA(isA<InsufficientCoinsException>()),
+      );
+    });
+
+    test('order paid grants coins', () async {
+      final r = await game.onOrderPaid(payableCents: 200000, itemCount: 1);
+      expect(r.coinsGained, 200000 ~/ 1000 + 10);
+      expect(await game.watchCoins().first, 2000 + r.coinsGained);
+    });
+  });
 }
 
 class OrderRepositoryForTest {

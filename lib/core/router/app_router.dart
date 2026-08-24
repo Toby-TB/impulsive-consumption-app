@@ -8,6 +8,7 @@ import '../../features/home/home_screen.dart';
 import '../../features/catalog/screens/product_detail_screen.dart';
 import '../../features/catalog/screens/search_screen.dart';
 import '../../features/checkout/checkout_screen.dart';
+import '../../features/gacha/gacha_screen.dart';
 import '../../features/orders/order_detail_screen.dart';
 import '../../features/orders/orders_screen.dart';
 import '../../features/profile/achievements_screen.dart';
@@ -79,6 +80,11 @@ GoRouter buildRouter() {
         path: '/settings',
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/gacha',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const GachaScreen(),
       ),
       GoRoute(
         path: '/achievements',

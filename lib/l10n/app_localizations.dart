@@ -1148,6 +1148,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'COD · charged when signed'**
   String get codNote;
+
+  /// No description provided for @chargeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Spend {amount} more to unlock coupon'**
+  String chargeHint(String amount);
+
+  /// No description provided for @chargeFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Coupon threshold reached!'**
+  String get chargeFull;
+
+  /// No description provided for @critActive.
+  ///
+  /// In en, this message translates to:
+  /// **'CRIT! Coupon ×2'**
+  String get critActive;
+
+  /// No description provided for @gachaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lucky Box'**
+  String get gachaTitle;
+
+  /// No description provided for @gachaOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open ({cost} coins)'**
+  String gachaOpen(Object cost);
+
+  /// No description provided for @gachaNeedCoins.
+  ///
+  /// In en, this message translates to:
+  /// **'Need {amount} more coins'**
+  String gachaNeedCoins(int amount);
+
+  /// No description provided for @gachaPity.
+  ///
+  /// In en, this message translates to:
+  /// **'Guaranteed in {n}'**
+  String gachaPity(int n);
+
+  /// No description provided for @coinsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Coins'**
+  String get coinsLabel;
+
+  /// No description provided for @exchangeCoins.
+  ///
+  /// In en, this message translates to:
+  /// **'Exchange 1000 → ¥10'**
+  String get exchangeCoins;
+
+  /// No description provided for @exchangeSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Exchanged!'**
+  String get exchangeSuccess;
+
+  /// No description provided for @coinEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'+{n} coins'**
+  String coinEarned(int n);
+
+  /// No description provided for @notEnoughCoins.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough coins'**
+  String get notEnoughCoins;
+
+  /// No description provided for @banner4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Lucky Box Open!'**
+  String get banner4Title;
+
+  /// No description provided for @banner4Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Spend coins, win big red packets'**
+  String get banner4Sub;
+
+  /// No description provided for @prizeCoins150.
+  ///
+  /// In en, this message translates to:
+  /// **'150 Coins'**
+  String get prizeCoins150;
+
+  /// No description provided for @prizeCoins400.
+  ///
+  /// In en, this message translates to:
+  /// **'400 Coins'**
+  String get prizeCoins400;
+
+  /// No description provided for @prizeCoins2000.
+  ///
+  /// In en, this message translates to:
+  /// **'2,000 Coins'**
+  String get prizeCoins2000;
+
+  /// No description provided for @prizeCredit1.
+  ///
+  /// In en, this message translates to:
+  /// **'¥1 Red Packet'**
+  String get prizeCredit1;
+
+  /// No description provided for @prizeCredit20.
+  ///
+  /// In en, this message translates to:
+  /// **'¥20 Red Packet'**
+  String get prizeCredit20;
+
+  /// No description provided for @prizeCredit50.
+  ///
+  /// In en, this message translates to:
+  /// **'¥50 Mega Red Packet'**
+  String get prizeCredit50;
+
+  /// No description provided for @prizeCoupon.
+  ///
+  /// In en, this message translates to:
+  /// **'¥10 off ¥50 Coupon'**
+  String get prizeCoupon;
+
+  /// No description provided for @rarityN.
+  ///
+  /// In en, this message translates to:
+  /// **'N'**
+  String get rarityN;
+
+  /// No description provided for @rarityR.
+  ///
+  /// In en, this message translates to:
+  /// **'R'**
+  String get rarityR;
+
+  /// No description provided for @raritySR.
+  ///
+  /// In en, this message translates to:
+  /// **'SR'**
+  String get raritySR;
+
+  /// No description provided for @raritySSR.
+  ///
+  /// In en, this message translates to:
+  /// **'SSR'**
+  String get raritySSR;
+
+  /// No description provided for @tapToSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to skip'**
+  String get tapToSkip;
+
+  /// No description provided for @sfxLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound Effects'**
+  String get sfxLabel;
+
+  /// No description provided for @sfxDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Coin, combo and level-up sounds'**
+  String get sfxDesc;
 }
 
 class _AppLocalizationsDelegate

@@ -132,6 +132,10 @@ class GamificationState extends Table {
   IntColumn get level => integer().withDefault(const Constant(1))();
   IntColumn get impulsePoints => integer().withDefault(const Constant(0))();
 
+  // v3：金币软货币 + 开箱保底计数
+  IntColumn get coins => integer().withDefault(const Constant(0))();
+  IntColumn get gachaPity => integer().withDefault(const Constant(0))();
+
   @override
   Set<Column> get primaryKey => {id};
 }

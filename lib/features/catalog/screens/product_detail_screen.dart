@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/providers/app_providers.dart';
+import '../../../core/juice/combo_controller.dart';
 import '../../../core/providers/preferences_provider.dart';
 import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
@@ -44,11 +45,19 @@ class ProductDetailScreen extends ConsumerWidget {
             final added = await ref
                 .read(wishlistRepositoryProvider)
                 .toggle(productId);
+            // 收藏类成就（如种草达人）
+            final unlocked = await ref
+                .read(gamificationServiceProvider)
+                .evaluateActivity();
             if (!context.mounted) return;
+            final extra = unlocked.isEmpty
+                ? ''
+                : ' · ${unlocked.map((a) => achievementL10n(context, a.key)).join(' · ')}';
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(added ? l.wishlistTitle : l.itemRemoved),
-                duration: const Duration(milliseconds: 800),
+                content: Text(
+                    '${added ? context.l10n.wishlistTitle : context.l10n.itemRemoved}$extra'),
+                duration: const Duration(milliseconds: 1000),
               ),
             );
           },
@@ -188,27 +197,29 @@ class ProductDetailScreen extends ConsumerWidget {
             children: [
               Expanded(
                 flex: 2,
-                child: FilledButton.tonal(
-                  onPressed: () => _addToCart(context, ref, product),
+                child: Builder(builder: (btnCtx) => FilledButton.tonal(
+                  onPressed: () => _addToCart(context, ref, product,
+                      anchor: _centerOf(btnCtx)),
                   style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(46),
                   ),
                   child: Text(l.addToCart),
-                ),
+                )),
               ),
               const SizedBox(width: 10),
               Expanded(
                 flex: 2,
-                child: FilledButton(
+                child: Builder(builder: (btnCtx) => FilledButton(
                   onPressed: () async {
-                    await _addToCart(context, ref, product);
+                    await _addToCart(context, ref, product,
+                        anchor: _centerOf(btnCtx));
                     if (context.mounted) context.push('/checkout');
                   },
                   style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(46),
                   ),
                   child: Text(l.buyNow),
-                ),
+                )),
               ),
             ],
           ),
@@ -217,30 +228,35 @@ class ProductDetailScreen extends ConsumerWidget {
     );
   }
 
+  Offset? _centerOf(BuildContext btnContext) {
+    final box = btnContext.findRenderObject() as RenderBox?;
+    if (box == null || !box.hasSize) return null;
+    return box.localToGlobal(box.size.center(Offset.zero));
+  }
+
   Future<void> _addToCart(
     BuildContext context,
     WidgetRef ref,
-    Product product,
-  ) async {
+    Product product, {
+    Offset? anchor,
+  }) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final combo = ref.read(comboProvider.notifier);
+    combo.attachContext(context);
     await ref.read(cartRepositoryProvider).add(product.id);
+    combo.registerAdd(anchor: anchor);
     // 活动类成就（如购物车满员）
     final unlocked =
         await ref.read(gamificationServiceProvider).evaluateActivity();
     if (!context.mounted) return;
-    if (unlocked.isNotEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            '${context.l10n.achievementUnlocked} ${unlocked.map((a) => achievementL10n(context, a.key)).join(' · ')}',
-          ),
-          duration: const Duration(seconds: 2),
-        ),
-      );
-    }
-    ScaffoldMessenger.of(context).showSnackBar(
+    final l = context.l10n;
+    final message = unlocked.isEmpty
+        ? l.addedToCart
+        : '${l.achievementUnlocked} ${unlocked.map((a) => achievementL10n(context, a.key)).join(' · ')}';
+    messenger.showSnackBar(
       SnackBar(
-        content: Text(context.l10n.addedToCart),
-        duration: const Duration(milliseconds: 900),
+        content: Text(message),
+        duration: const Duration(milliseconds: 1200),
       ),
     );
   }

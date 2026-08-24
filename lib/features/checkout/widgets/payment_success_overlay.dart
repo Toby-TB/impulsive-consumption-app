@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../../../core/juice/juice_fx.dart';
 import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
 
@@ -13,6 +14,7 @@ class PaymentCelebration {
   final int oldLevel;
   final int newLevel;
   final int levelUpRewardCents;
+  final int coinsGained;
   final List<String> achievementKeys;
 
   bool get leveledUp => newLevel > oldLevel;
@@ -25,6 +27,7 @@ class PaymentCelebration {
     required this.newLevel,
     required this.levelUpRewardCents,
     required this.achievementKeys,
+    this.coinsGained = 0,
   });
 }
 
@@ -64,6 +67,10 @@ void showPaymentSuccess(
 
   Overlay.of(context).insert(entry);
   controller.forward();
+  // 金币爆发（圆环出现后）
+  Future.delayed(const Duration(milliseconds: 500), () {
+    if (context.mounted) JuiceFX.coinBurst(context, count: 18);
+  });
 }
 
 class _SuccessOverlay extends StatelessWidget {
@@ -209,11 +216,18 @@ class _CelebrationCard extends StatelessWidget {
                     color: const Color(0xFF64B5F6),
                   ),
                   const SizedBox(width: 10),
-                  if (celebration.impulseGained > 0)
+                  if (celebration.coinsGained > 0)
+                    _StatChip(
+                      text: '+${celebration.coinsGained} 🪙',
+                      color: const Color(0xFFFFC93C),
+                    ),
+                  if (celebration.impulseGained > 0) ...[
+                    const SizedBox(width: 10),
                     _StatChip(
                       text: '+${celebration.impulseGained} ⚡',
                       color: const Color(0xFFFF9A44),
                     ),
+                  ],
                 ],
               ),
             ),

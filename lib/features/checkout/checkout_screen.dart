@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -12,6 +14,7 @@ import '../../../data/repositories/coupon_repository.dart';
 import '../../../data/repositories/exceptions.dart';
 import 'checkout_providers.dart';
 import 'widgets/address_sheets.dart';
+import '../../../core/juice/juice_fx.dart';
 import 'widgets/insufficient_dialog.dart';
 import 'widgets/payment_success_overlay.dart';
 
@@ -24,6 +27,7 @@ class CheckoutScreen extends ConsumerStatefulWidget {
 
 class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
   bool _couponInited = false;
+  bool _crit = false;
   AddressesData? _address;
   PaymentMethod _method = PaymentMethod.balance;
   final _remarkController = TextEditingController();
@@ -54,13 +58,22 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
     if (!_couponInited && items.isNotEmpty) {
       _couponInited = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) initCouponSelection(ref, total);
+        if (!mounted) return;
+        initCouponSelection(ref, total);
+        // 暴击判定：25% 概率（有可用券时才有意义）
+        final couponsNow = ref.read(availableCouponsProvider).value ?? const [];
+        final hasUsable =
+            couponsNow.any((c) => CouponRepository.isUsable(c, DateTime.now()));
+        if (hasUsable && Random().nextDouble() < 0.25) {
+          setState(() => _crit = true);
+          JuiceFX.critFlash(context, label: l.critActive);
+        }
       });
     }
 
     final couponId = ref.watch(selectedCouponProvider);
     final coupons = ref.watch(availableCouponsProvider).value ?? const [];
-    final discount = couponId == null
+    final baseDiscount = couponId == null
         ? 0
         : CouponRepository.discountFor(
             coupons.firstWhere(
@@ -69,6 +82,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
             ),
             total,
           );
+    final discount = (_crit ? baseDiscount * 2 : baseDiscount).clamp(0, total);
     final payable = total - discount;
     final firstInstallment = (payable / 3).ceil();
 
@@ -101,6 +115,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
                   total: total,
                   discount: discount,
                   couponId: couponId,
+                  crit: _crit,
                   onTap: () => _openCouponSheet(total),
                 ),
                 const SizedBox(height: 10),
@@ -202,6 +217,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
             couponId: couponId,
             address: _address,
             method: _method,
+            critMultiplier: _crit ? 2 : 1,
             remark: _remarkController.text.trim().isEmpty
                 ? null
                 : _remarkController.text.trim(),
@@ -227,6 +243,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
           oldLevel: celebrationData.oldLevel,
           newLevel: celebrationData.newLevel,
           levelUpRewardCents: celebrationData.levelUpRewardCents,
+          coinsGained: celebrationData.coinsGained,
           achievementKeys:
               celebrationData.unlocked.map((a) => a.key).toList(),
         ),
@@ -369,12 +386,14 @@ class _CouponCard extends ConsumerWidget {
   final int total;
   final int discount;
   final int? couponId;
+  final bool crit;
   final VoidCallback onTap;
 
   const _CouponCard({
     required this.total,
     required this.discount,
     required this.couponId,
+    required this.crit,
     required this.onTap,
   });
 
@@ -407,9 +426,9 @@ class _CouponCard extends ConsumerWidget {
               const Spacer(),
               Text(
                 discount > 0
-                    ? l.savedAmount(formatMoney(discount,
-                        cur: ref.watch(regionProvider),
-                        locale: Localizations.localeOf(context).toString()))
+                    ? (couponId != null && crit
+                        ? '\${l.critActive} \${l.savedAmount(formatMoney(discount, cur: ref.watch(regionProvider), locale: Localizations.localeOf(context).toString()))}'
+                        : l.savedAmount(formatMoney(discount, cur: ref.watch(regionProvider), locale: Localizations.localeOf(context).toString())))
                     : title,
                 style: TextStyle(
                   fontSize: 13,

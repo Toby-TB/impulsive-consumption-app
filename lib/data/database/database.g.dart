@@ -2656,6 +2656,7 @@ class $OrdersTable extends Orders with TableInfo<$OrdersTable, Order> {
     false,
     type: DriftSqlType.string,
     requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
   );
   @override
   late final GeneratedColumnWithTypeConverter<OrderStatus, int> status =
@@ -4916,8 +4917,37 @@ class $GamificationStateTable extends GamificationState
     requiredDuringInsert: false,
     defaultValue: const Constant(0),
   );
+  static const VerificationMeta _coinsMeta = const VerificationMeta('coins');
   @override
-  List<GeneratedColumn> get $columns => [id, xp, level, impulsePoints];
+  late final GeneratedColumn<int> coins = GeneratedColumn<int>(
+    'coins',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _gachaPityMeta = const VerificationMeta(
+    'gachaPity',
+  );
+  @override
+  late final GeneratedColumn<int> gachaPity = GeneratedColumn<int>(
+    'gacha_pity',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    xp,
+    level,
+    impulsePoints,
+    coins,
+    gachaPity,
+  ];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -4951,6 +4981,18 @@ class $GamificationStateTable extends GamificationState
         ),
       );
     }
+    if (data.containsKey('coins')) {
+      context.handle(
+        _coinsMeta,
+        coins.isAcceptableOrUnknown(data['coins']!, _coinsMeta),
+      );
+    }
+    if (data.containsKey('gacha_pity')) {
+      context.handle(
+        _gachaPityMeta,
+        gachaPity.isAcceptableOrUnknown(data['gacha_pity']!, _gachaPityMeta),
+      );
+    }
     return context;
   }
 
@@ -4976,6 +5018,14 @@ class $GamificationStateTable extends GamificationState
         DriftSqlType.int,
         data['${effectivePrefix}impulse_points'],
       )!,
+      coins: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}coins'],
+      )!,
+      gachaPity: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}gacha_pity'],
+      )!,
     );
   }
 
@@ -4991,11 +5041,15 @@ class GamificationStateData extends DataClass
   final int xp;
   final int level;
   final int impulsePoints;
+  final int coins;
+  final int gachaPity;
   const GamificationStateData({
     required this.id,
     required this.xp,
     required this.level,
     required this.impulsePoints,
+    required this.coins,
+    required this.gachaPity,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -5004,6 +5058,8 @@ class GamificationStateData extends DataClass
     map['xp'] = Variable<int>(xp);
     map['level'] = Variable<int>(level);
     map['impulse_points'] = Variable<int>(impulsePoints);
+    map['coins'] = Variable<int>(coins);
+    map['gacha_pity'] = Variable<int>(gachaPity);
     return map;
   }
 
@@ -5013,6 +5069,8 @@ class GamificationStateData extends DataClass
       xp: Value(xp),
       level: Value(level),
       impulsePoints: Value(impulsePoints),
+      coins: Value(coins),
+      gachaPity: Value(gachaPity),
     );
   }
 
@@ -5026,6 +5084,8 @@ class GamificationStateData extends DataClass
       xp: serializer.fromJson<int>(json['xp']),
       level: serializer.fromJson<int>(json['level']),
       impulsePoints: serializer.fromJson<int>(json['impulsePoints']),
+      coins: serializer.fromJson<int>(json['coins']),
+      gachaPity: serializer.fromJson<int>(json['gachaPity']),
     );
   }
   @override
@@ -5036,6 +5096,8 @@ class GamificationStateData extends DataClass
       'xp': serializer.toJson<int>(xp),
       'level': serializer.toJson<int>(level),
       'impulsePoints': serializer.toJson<int>(impulsePoints),
+      'coins': serializer.toJson<int>(coins),
+      'gachaPity': serializer.toJson<int>(gachaPity),
     };
   }
 
@@ -5044,11 +5106,15 @@ class GamificationStateData extends DataClass
     int? xp,
     int? level,
     int? impulsePoints,
+    int? coins,
+    int? gachaPity,
   }) => GamificationStateData(
     id: id ?? this.id,
     xp: xp ?? this.xp,
     level: level ?? this.level,
     impulsePoints: impulsePoints ?? this.impulsePoints,
+    coins: coins ?? this.coins,
+    gachaPity: gachaPity ?? this.gachaPity,
   );
   GamificationStateData copyWithCompanion(GamificationStateCompanion data) {
     return GamificationStateData(
@@ -5058,6 +5124,8 @@ class GamificationStateData extends DataClass
       impulsePoints: data.impulsePoints.present
           ? data.impulsePoints.value
           : this.impulsePoints,
+      coins: data.coins.present ? data.coins.value : this.coins,
+      gachaPity: data.gachaPity.present ? data.gachaPity.value : this.gachaPity,
     );
   }
 
@@ -5067,13 +5135,16 @@ class GamificationStateData extends DataClass
           ..write('id: $id, ')
           ..write('xp: $xp, ')
           ..write('level: $level, ')
-          ..write('impulsePoints: $impulsePoints')
+          ..write('impulsePoints: $impulsePoints, ')
+          ..write('coins: $coins, ')
+          ..write('gachaPity: $gachaPity')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, xp, level, impulsePoints);
+  int get hashCode =>
+      Object.hash(id, xp, level, impulsePoints, coins, gachaPity);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -5081,7 +5152,9 @@ class GamificationStateData extends DataClass
           other.id == this.id &&
           other.xp == this.xp &&
           other.level == this.level &&
-          other.impulsePoints == this.impulsePoints);
+          other.impulsePoints == this.impulsePoints &&
+          other.coins == this.coins &&
+          other.gachaPity == this.gachaPity);
 }
 
 class GamificationStateCompanion
@@ -5090,29 +5163,39 @@ class GamificationStateCompanion
   final Value<int> xp;
   final Value<int> level;
   final Value<int> impulsePoints;
+  final Value<int> coins;
+  final Value<int> gachaPity;
   const GamificationStateCompanion({
     this.id = const Value.absent(),
     this.xp = const Value.absent(),
     this.level = const Value.absent(),
     this.impulsePoints = const Value.absent(),
+    this.coins = const Value.absent(),
+    this.gachaPity = const Value.absent(),
   });
   GamificationStateCompanion.insert({
     this.id = const Value.absent(),
     this.xp = const Value.absent(),
     this.level = const Value.absent(),
     this.impulsePoints = const Value.absent(),
+    this.coins = const Value.absent(),
+    this.gachaPity = const Value.absent(),
   });
   static Insertable<GamificationStateData> custom({
     Expression<int>? id,
     Expression<int>? xp,
     Expression<int>? level,
     Expression<int>? impulsePoints,
+    Expression<int>? coins,
+    Expression<int>? gachaPity,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (xp != null) 'xp': xp,
       if (level != null) 'level': level,
       if (impulsePoints != null) 'impulse_points': impulsePoints,
+      if (coins != null) 'coins': coins,
+      if (gachaPity != null) 'gacha_pity': gachaPity,
     });
   }
 
@@ -5121,12 +5204,16 @@ class GamificationStateCompanion
     Value<int>? xp,
     Value<int>? level,
     Value<int>? impulsePoints,
+    Value<int>? coins,
+    Value<int>? gachaPity,
   }) {
     return GamificationStateCompanion(
       id: id ?? this.id,
       xp: xp ?? this.xp,
       level: level ?? this.level,
       impulsePoints: impulsePoints ?? this.impulsePoints,
+      coins: coins ?? this.coins,
+      gachaPity: gachaPity ?? this.gachaPity,
     );
   }
 
@@ -5145,6 +5232,12 @@ class GamificationStateCompanion
     if (impulsePoints.present) {
       map['impulse_points'] = Variable<int>(impulsePoints.value);
     }
+    if (coins.present) {
+      map['coins'] = Variable<int>(coins.value);
+    }
+    if (gachaPity.present) {
+      map['gacha_pity'] = Variable<int>(gachaPity.value);
+    }
     return map;
   }
 
@@ -5154,7 +5247,9 @@ class GamificationStateCompanion
           ..write('id: $id, ')
           ..write('xp: $xp, ')
           ..write('level: $level, ')
-          ..write('impulsePoints: $impulsePoints')
+          ..write('impulsePoints: $impulsePoints, ')
+          ..write('coins: $coins, ')
+          ..write('gachaPity: $gachaPity')
           ..write(')'))
         .toString();
   }
@@ -5187,6 +5282,7 @@ class $AchievementsTable extends Achievements
     false,
     type: DriftSqlType.string,
     requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
   );
   static const VerificationMeta _unlockedAtMeta = const VerificationMeta(
     'unlockedAt',
@@ -9274,6 +9370,8 @@ typedef $$GamificationStateTableCreateCompanionBuilder =
       Value<int> xp,
       Value<int> level,
       Value<int> impulsePoints,
+      Value<int> coins,
+      Value<int> gachaPity,
     });
 typedef $$GamificationStateTableUpdateCompanionBuilder =
     GamificationStateCompanion Function({
@@ -9281,6 +9379,8 @@ typedef $$GamificationStateTableUpdateCompanionBuilder =
       Value<int> xp,
       Value<int> level,
       Value<int> impulsePoints,
+      Value<int> coins,
+      Value<int> gachaPity,
     });
 
 class $$GamificationStateTableFilterComposer
@@ -9309,6 +9409,16 @@ class $$GamificationStateTableFilterComposer
 
   ColumnFilters<int> get impulsePoints => $composableBuilder(
     column: $table.impulsePoints,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get coins => $composableBuilder(
+    column: $table.coins,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get gachaPity => $composableBuilder(
+    column: $table.gachaPity,
     builder: (column) => ColumnFilters(column),
   );
 }
@@ -9341,6 +9451,16 @@ class $$GamificationStateTableOrderingComposer
     column: $table.impulsePoints,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<int> get coins => $composableBuilder(
+    column: $table.coins,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get gachaPity => $composableBuilder(
+    column: $table.gachaPity,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$GamificationStateTableAnnotationComposer
@@ -9365,6 +9485,12 @@ class $$GamificationStateTableAnnotationComposer
     column: $table.impulsePoints,
     builder: (column) => column,
   );
+
+  GeneratedColumn<int> get coins =>
+      $composableBuilder(column: $table.coins, builder: (column) => column);
+
+  GeneratedColumn<int> get gachaPity =>
+      $composableBuilder(column: $table.gachaPity, builder: (column) => column);
 }
 
 class $$GamificationStateTableTableManager
@@ -9411,11 +9537,15 @@ class $$GamificationStateTableTableManager
                 Value<int> xp = const Value.absent(),
                 Value<int> level = const Value.absent(),
                 Value<int> impulsePoints = const Value.absent(),
+                Value<int> coins = const Value.absent(),
+                Value<int> gachaPity = const Value.absent(),
               }) => GamificationStateCompanion(
                 id: id,
                 xp: xp,
                 level: level,
                 impulsePoints: impulsePoints,
+                coins: coins,
+                gachaPity: gachaPity,
               ),
           createCompanionCallback:
               ({
@@ -9423,11 +9553,15 @@ class $$GamificationStateTableTableManager
                 Value<int> xp = const Value.absent(),
                 Value<int> level = const Value.absent(),
                 Value<int> impulsePoints = const Value.absent(),
+                Value<int> coins = const Value.absent(),
+                Value<int> gachaPity = const Value.absent(),
               }) => GamificationStateCompanion.insert(
                 id: id,
                 xp: xp,
                 level: level,
                 impulsePoints: impulsePoints,
+                coins: coins,
+                gachaPity: gachaPity,
               ),
           withReferenceMapper: (p0) => p0
               .map((e) => (e.readTable(table), BaseReferences(db, table, e)))

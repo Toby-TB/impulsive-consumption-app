@@ -303,5 +303,61 @@
       }
     }
   },
-  "codNote": "COD · charged when signed"
+  "codNote": "COD · charged when signed",
+  "chargeHint": "Spend {amount} more to unlock coupon",
+  "@chargeHint": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "chargeFull": "Coupon threshold reached!",
+  "critActive": "CRIT! Coupon ×2",
+  "gachaTitle": "Lucky Box",
+  "gachaOpen": "Open ({cost} coins)",
+  "gachaNeedCoins": "Need {amount} more coins",
+  "@gachaNeedCoins": {
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "gachaPity": "Guaranteed in {n}",
+  "@gachaPity": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "coinsLabel": "Coins",
+  "exchangeCoins": "Exchange 1000 → ¥10",
+  "exchangeSuccess": "Exchanged!",
+  "coinEarned": "+{n} coins",
+  "@coinEarned": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "notEnoughCoins": "Not enough coins",
+  "banner4Title": "Lucky Box Open!",
+  "banner4Sub": "Spend coins, win big red packets",
+  "prizeCoins150": "150 Coins",
+  "prizeCoins400": "400 Coins",
+  "prizeCoins2000": "2,000 Coins",
+  "prizeCredit1": "¥1 Red Packet",
+  "prizeCredit20": "¥20 Red Packet",
+  "prizeCredit50": "¥50 Mega Red Packet",
+  "prizeCoupon": "¥10 off ¥50 Coupon",
+  "rarityN": "N",
+  "rarityR": "R",
+  "raritySR": "SR",
+  "raritySSR": "SSR",
+  "tapToSkip": "Tap to skip",
+  "sfxLabel": "Sound Effects",
+  "sfxDesc": "Coin, combo and level-up sounds"
 }

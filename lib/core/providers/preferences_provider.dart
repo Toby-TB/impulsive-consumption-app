@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../juice/juice_fx.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,6 +15,7 @@ class AppPreferences {
   static const _kTheme = 'pref_theme_mode';
   static const _kLang = 'pref_language';
   static const _kRegion = 'pref_region';
+  static const _kSfx = 'pref_sfx';
 
   final SharedPreferences _sp;
 
@@ -35,6 +38,13 @@ class AppPreferences {
   }
 
   Future<void> setLanguage(AppLanguage v) => _sp.setString(_kLang, v.name);
+
+  bool get sfxEnabled => _sp.getBool(_kSfx) ?? true;
+
+  Future<void> setSfxEnabled(bool v) {
+    JuiceFX.setSfxEnabled(v);
+    return _sp.setBool(_kSfx, v);
+  }
 
   FxCurrency get region {
     final raw = _sp.getString(_kRegion);
@@ -65,6 +75,10 @@ final regionProvider = StateProvider<FxCurrency>(
   (ref) => ref.watch(preferencesProvider).region,
 );
 
+final sfxEnabledProvider = StateProvider<bool>(
+  (ref) => ref.watch(preferencesProvider).sfxEnabled,
+);
+
 /// 持久化副作用监听：UI 只改 state，这里负责落盘。
 final preferenceSyncProvider = Provider<void>((ref) {
   final prefs = ref.watch(preferencesProvider);
@@ -73,4 +87,5 @@ final preferenceSyncProvider = Provider<void>((ref) {
     if (next != null) prefs.setLanguage(next);
   });
   ref.listen(regionProvider, (_, next) => prefs.setRegion(next));
+  ref.listen(sfxEnabledProvider, (_, next) => prefs.setSfxEnabled(next));
 });
