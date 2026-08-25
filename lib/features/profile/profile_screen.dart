@@ -6,6 +6,7 @@ import '../../../core/providers/app_providers.dart';
 import '../../../core/providers/preferences_provider.dart';
 import '../../../core/utils/money.dart';
 import '../../../core/widgets/common.dart';
+import '../../../core/utils/version.dart';
 import '../../../data/repositories/checkin_repository.dart';
 import '../../../data/services/gamification_service.dart';
 
@@ -141,7 +142,7 @@ class ProfileScreen extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('${l.appTitle} v1.0.0'),
+            Text('${l.appTitle} v$kAppVersion'),
             const SizedBox(height: 10),
             Text(l.aboutDisclaimer,
                 style: const TextStyle(fontSize: 12, height: 1.5)),

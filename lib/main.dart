@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,7 +17,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   if (!kIsWeb) {
-    if (!kIsWeb) {
+    if (kIsWeb) {
+    // GitHub Pages 子路径托管：必须用 hash 路由，否则刷新/直达 404 → 白屏
+    setUrlStrategy(const HashUrlStrategy());
+  } else {
     await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   }
   unawaited(JuiceFX.warmUp());
