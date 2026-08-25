@@ -36,10 +36,8 @@ class AppDatabase extends _$AppDatabase {
   @override
   MigrationStrategy get migration => MigrationStrategy(
         onUpgrade: (m, from, to) async {
-          if (from < 3) {
-            await m.addColumn(gamificationState, gamificationState.coins);
-            await m.addColumn(gamificationState, gamificationState.gachaPity);
-          }
+          // 顺序至关重要：先建 v2 新表，再加 v3 新列。
+          // （曾因先 ALTER 后 CREATE 导致老库升级报 no such table）
           if (from < 2) {
             await m.createTable(addresses);
             await m.createTable(gamificationState);
@@ -52,8 +50,29 @@ class AppDatabase extends _$AppDatabase {
             await m.addColumn(orders, orders.settled);
             await m.addColumn(orders, orders.installmentsPaid);
           }
+          if (from < 3) {
+            await _addColumnIfMissing(m, gamificationState,
+                gamificationState.coins);
+            await _addColumnIfMissing(m, gamificationState,
+                gamificationState.gachaPity);
+          }
         },
       );
+
+  /// 防御性加列：列已存在时跳过（应对任何中间态数据库）。
+  Future<void> _addColumnIfMissing(
+    Migrator m,
+    TableInfo table,
+    Column column,
+  ) async {
+    final info = await customSelect(
+      'PRAGMA table_info(${table.actualTableName})',
+    ).get();
+    final exists = info.any((row) => row.data['name'] == column.name);
+    if (!exists) {
+      await m.addColumn(table, column as GeneratedColumn);
+    }
+  }
 }
 
 QueryExecutor openConnection() => driftDatabase(
