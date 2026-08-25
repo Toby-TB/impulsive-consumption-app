@@ -77,9 +77,12 @@ class _OrderDetailScreenState extends ConsumerState<OrderDetailScreen> {
                           style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                       const Spacer(),
-                      Text('${l.orderNoLabel} ${o.orderNo}',
-                          style: TextStyle(
-                              fontSize: 11, color: theme.hintColor)),
+                      Flexible(
+                        child: Text('${l.orderNoLabel} ${o.orderNo}',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 11, color: theme.hintColor)),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 18),
@@ -258,11 +261,14 @@ class _OrderDetailScreenState extends ConsumerState<OrderDetailScreen> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Text(label,
-              style: TextStyle(
-                  fontSize: 13,
-                  color: bold ? null : theme.hintColor,
-                  fontWeight: bold ? FontWeight.bold : null)),
+          Flexible(
+            child: Text(label,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    fontSize: 13,
+                    color: bold ? null : theme.hintColor,
+                    fontWeight: bold ? FontWeight.bold : null)),
+          ),
           const Spacer(),
           Text(value,
               style: TextStyle(
