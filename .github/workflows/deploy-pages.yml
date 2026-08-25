@@ -27,7 +27,11 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
-      - run: flutter build web --release --base-href /impulsive-consumption-app/
+      - name: Build web (self-hosted CanvasKit)
+        run: >-
+          flutter build web --release
+          --base-href /impulsive-consumption-app/
+          --dart-define=FLUTTER_WEB_CANVASKIT_URL=/impulsive-consumption-app/canvaskit/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
