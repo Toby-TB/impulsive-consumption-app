@@ -160,16 +160,20 @@ abstract final class JuiceFX {
       duration: duration,
     );
     late final OverlayEntry entry;
+    void removeEntry() {
+      if (entry.mounted) entry.remove();
+      controller.dispose();
+    }
+
+    controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        WidgetsBinding.instance.addPostFrameCallback((_) => removeEntry());
+      }
+    });
     entry = OverlayEntry(
       builder: (_) => AnimatedBuilder(
         animation: controller,
         builder: (context, _) {
-          if (controller.status == AnimationStatus.completed) {
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              if (entry.mounted) entry.remove();
-              controller.dispose();
-            });
-          }
           final size = MediaQuery.sizeOf(context);
           return Stack(
             children: [
@@ -187,7 +191,7 @@ abstract final class JuiceFX {
         },
       ),
     );
-    Overlay.of(context).insert(entry);
+    Overlay.of(context, rootOverlay: true).insert(entry);
     controller.forward();
   }
 }

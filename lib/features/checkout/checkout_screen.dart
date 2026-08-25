@@ -265,6 +265,25 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
       ref.read(selectedCouponProvider.notifier).state = null;
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(l.couponUnavailable)));
+    } catch (e, stack) {
+      // 兜底：任何支付异常都可见，绝不静默卡死
+      if (!mounted) return;
+      showDialog<void>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Payment Error'),
+          content: SingleChildScrollView(
+            child: Text('$e\n\n$stack',
+                style: const TextStyle(fontSize: 11, height: 1.4)),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: Text(l.confirm),
+            ),
+          ],
+        ),
+      );
     }
   }
 

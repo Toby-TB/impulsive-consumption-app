@@ -58,6 +58,11 @@ class AppDatabase extends _$AppDatabase {
 
 QueryExecutor openConnection() => driftDatabase(
       name: 'impulsive_consumption',
+      // Web 端必须提供 wasm 资源（相对路径基于 index.html 的 base-href 解析）
+      web: DriftWebOptions(
+        sqlite3Wasm: Uri.parse('sqlite3.wasm'),
+        driftWorker: Uri.parse('drift_worker.js'),
+      ),
       // 闭包参数类型由上下文推断，无需导入 sqlite3 的具体类型
       native: DriftNativeOptions(
         setup: (db) => db.execute('PRAGMA foreign_keys = ON'),

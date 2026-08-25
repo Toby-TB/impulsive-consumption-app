@@ -48,6 +48,15 @@ void showPaymentSuccess(
     duration: const Duration(milliseconds: 3600),
   );
   late final OverlayEntry entry;
+  var finished = false;
+
+  void finish() {
+    if (finished) return;
+    finished = true;
+    if (entry.mounted) entry.remove();
+    controller.dispose();
+    onFinished();
+  }
 
   entry = OverlayEntry(
     builder: (_) => _SuccessOverlay(
@@ -57,20 +66,18 @@ void showPaymentSuccess(
       locale: locale,
       localizeAchievement: localizeAchievement,
       continueLabel: continueLabel,
-      onDismissed: () {
-        if (entry.mounted) entry.remove();
-        controller.dispose();
-        onFinished();
-      },
+      onDismissed: finish,
     ),
   );
 
-  Overlay.of(context).insert(entry);
+  Overlay.of(context, rootOverlay: true).insert(entry);
   controller.forward();
   // 金币爆发（圆环出现后）
   Future.delayed(const Duration(milliseconds: 500), () {
     if (context.mounted) JuiceFX.coinBurst(context, count: 18);
   });
+  // 双保险：无论动画状态如何，4.5s 后强制退场，绝不卡死用户
+  Future.delayed(const Duration(milliseconds: 4500), finish);
 }
 
 class _SuccessOverlay extends StatelessWidget {
@@ -119,10 +126,6 @@ class _SuccessOverlay extends StatelessWidget {
               child: AnimatedBuilder(
                 animation: controller,
                 builder: (context, _) {
-                  if (controller.status == AnimationStatus.completed) {
-                    WidgetsBinding.instance
-                        .addPostFrameCallback((_) => onDismissed());
-                  }
                   return _CelebrationCard(
                     progress: controller.value,
                     celebration: celebration,
